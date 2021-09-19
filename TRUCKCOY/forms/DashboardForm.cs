@@ -20,11 +20,6 @@ namespace TRUCKCOY.forms
             loadMapSettings();
             getVehiclesFeet();
             setFrontEnd();
-            //#-> Load Form History
-            hform = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "formHistory" };
-            //hf.lblID.Text = 111;
-            panelHistory.Controls.Add(hform);
-            hform.Visible = true;
         }
 
         //#-> Private methods
@@ -111,7 +106,6 @@ namespace TRUCKCOY.forms
                 MessageBox.Show(ex.Message);
                 overlayGMap.Visible = true;
             }
-
         }
         private Bitmap RotateImage(Bitmap bmp, float angle)
         {
@@ -174,10 +168,26 @@ namespace TRUCKCOY.forms
         private void setFrontEnd()
         {
             //ttNoFleet.SetToolTip(this.picRegFleet, "No encontramos registros de flota vehicular, porfavor añadelos haciendo click en el botón :)");
-            panelStats.HorizontalScroll.Visible = false;
-            panelStats.VerticalScroll.Visible = false;
-        }
 
+            //-> Load Form History
+            hform = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "formHistory", AutoScroll = true };
+            panelHistory.Controls.Add(hform);
+            hform.Visible = true;
+            //-> Load Scrollbar
+            panelHistory.AutoScroll = true;
+            panelHistory.HorizontalScroll.Enabled = false;
+            panelHistory.HorizontalScroll.Visible = false;
+            panelHistory.VerticalScroll.Enabled = true;
+            panelHistory.VerticalScroll.Visible = false;
+            vScrollBar1.Value = panelHistory.VerticalScroll.Value;
+            vScrollBar1.Minimum = panelHistory.VerticalScroll.Minimum;
+            vScrollBar1.Maximum = panelHistory.VerticalScroll.Maximum;
+            vScrollBar1.Enabled = false;
+            vScrollBar1.Visible = false;
+
+            panelHistory.ControlAdded += panelHistory_ControlAdded;
+            panelHistory.ControlRemoved += panelHistory_ControlRemoved;
+        }
         private void add_Click(object sender, EventArgs e)
         {
             for(int x = 0; x < 10; x++)
@@ -187,6 +197,18 @@ namespace TRUCKCOY.forms
                 panelHistory.Controls.Add(hf);
                 hf.Visible = true;
             }
+        }
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            panelHistory.VerticalScroll.Value = vScrollBar1.Value;
+        }
+        private void panelHistory_ControlAdded(object sender, ControlEventArgs e)
+        {
+            vScrollBar1.Maximum = panelHistory.VerticalScroll.Maximum + 10;
+        }
+        private void panelHistory_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            vScrollBar1.Minimum = panelHistory.VerticalScroll.Minimum + 10;
         }
 
         //-> Async Methods

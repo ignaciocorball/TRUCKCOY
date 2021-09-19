@@ -21,20 +21,20 @@ namespace TRUCKCOY.forms
 
             if(con.testConnection() == "Successful")
             {
-                string[] incomeOrders = con.getlast14orders("ignaciocorball@techcoy.xyz");
+                string[] incomeOrders = con.getlast14orders("misupercorreo@123.cl");
 
-                if(incomeOrders.Length >= 14)                                               // If register exist show them
+                if (incomeOrders.Length >= 14)                                               // If register exist show them
                 {
-                    lblCreated0.Text = "Mayor de 14: " + incomeOrders.Length.ToString();
+                    lblTittleDesc.Text = "El array es mayor a 14: " + "[" + incomeOrders.Length.ToString() + "]";
                 }
                 
                 else if (incomeOrders.Length >= 1)                                          // If registers data is less than 14 show avalaible
                 {
-                    lblCreated0.Text = "Menor de 14: " + incomeOrders.Length.ToString();
+                    lblTittleDesc.Text = "El array es menor a 14: " + "[" + incomeOrders.Length.ToString() + "]";
                 }
                 else                                                                        // If registers doesn't exists load no data registered
                 {
-                    lblCreated0.Text = "Sin registros: " + incomeOrders.Length.ToString();
+                    lblTittleDesc.Text = "El array es nulo: " + "[" + incomeOrders.Length.ToString() + "]";
                 }
                 
             }
@@ -68,10 +68,6 @@ namespace TRUCKCOY.forms
                     cbox7.Image = Properties.Resources.checkbox_checked;
                     cbox8.Image = Properties.Resources.checkbox_checked;
                     cbox9.Image = Properties.Resources.checkbox_checked;
-                    cbox10.Image = Properties.Resources.checkbox_checked;
-                    cbox11.Image = Properties.Resources.checkbox_checked;
-                    cbox12.Image = Properties.Resources.checkbox_checked;
-                    cbox13.Image = Properties.Resources.checkbox_checked;
 
                     checkboxs[0] = 1;
                     checkboxs[1] = 1;
@@ -84,9 +80,6 @@ namespace TRUCKCOY.forms
                     checkboxs[8] = 1;
                     checkboxs[9] = 1;
                     checkboxs[10] = 1;
-                    checkboxs[11] = 1;
-                    checkboxs[12] = 1;
-                    checkboxs[13] = 1;
                     break;
                 case 1:
                     cbox.Image = Properties.Resources.checkbox_unchecked;
@@ -100,10 +93,6 @@ namespace TRUCKCOY.forms
                     cbox7.Image = Properties.Resources.checkbox_unchecked;
                     cbox8.Image = Properties.Resources.checkbox_unchecked;
                     cbox9.Image = Properties.Resources.checkbox_unchecked;
-                    cbox10.Image = Properties.Resources.checkbox_unchecked;
-                    cbox11.Image = Properties.Resources.checkbox_unchecked;
-                    cbox12.Image = Properties.Resources.checkbox_unchecked;
-                    cbox13.Image = Properties.Resources.checkbox_unchecked;
                     checkboxs[0] = 0;
                     checkboxs[0] = 0;
                     checkboxs[1] = 0;
@@ -116,9 +105,6 @@ namespace TRUCKCOY.forms
                     checkboxs[8] = 0;
                     checkboxs[9] = 0;
                     checkboxs[10] = 0;
-                    checkboxs[11] = 0;
-                    checkboxs[12] = 0;
-                    checkboxs[13] = 0;
                     break;
             }
         }
@@ -262,62 +248,6 @@ namespace TRUCKCOY.forms
                     break;
             }
         }
-        private void cbox10_Click(object sender, EventArgs e)
-        {
-            switch (checkboxs[11])
-            {
-                case 0:
-                    cbox10.Image = Properties.Resources.checkbox_checked;
-                    checkboxs[11] = 1;
-                    break;
-                case 1:
-                    cbox10.Image = Properties.Resources.checkbox_unchecked;
-                    checkboxs[11] = 0;
-                    break;
-            }
-        }
-        private void cbox11_Click(object sender, EventArgs e)
-        {
-            switch (checkboxs[12])
-            {
-                case 0:
-                    cbox11.Image = Properties.Resources.checkbox_checked;
-                    checkboxs[12] = 1;
-                    break;
-                case 1:
-                    cbox11.Image = Properties.Resources.checkbox_unchecked;
-                    checkboxs[12] = 0;
-                    break;
-            }
-        }
-        private void cbox12_Click(object sender, EventArgs e)
-        {
-            switch (checkboxs[13])
-            {
-                case 0:
-                    cbox12.Image = Properties.Resources.checkbox_checked;
-                    checkboxs[13] = 1;
-                    break;
-                case 1:
-                    cbox12.Image = Properties.Resources.checkbox_unchecked;
-                    checkboxs[13] = 0;
-                    break;
-            }
-        }
-        private void cbox13_Click(object sender, EventArgs e)
-        {
-            switch (checkboxs[14])
-            {
-                case 0:
-                    cbox13.Image = Properties.Resources.checkbox_checked;
-                    checkboxs[14] = 1;
-                    break;
-                case 1:
-                    cbox13.Image = Properties.Resources.checkbox_unchecked;
-                    checkboxs[14] = 0;
-                    break;
-            }
-        }
         #endregion
 
         #region Details Button Events
@@ -366,23 +296,6 @@ namespace TRUCKCOY.forms
         {
 
         }
-        private void details10_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void details11_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void details12_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void details13_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void details_MouseHover(object sender, EventArgs e)
         {
@@ -427,22 +340,6 @@ namespace TRUCKCOY.forms
         private void details9_MouseHover(object sender, EventArgs e)
         {
             details9.Image = Properties.Resources.eye_hover;
-        }
-        private void details10_MouseHover(object sender, EventArgs e)
-        {
-            details10.Image = Properties.Resources.eye_hover;
-        }
-        private void details11_MouseHover(object sender, EventArgs e)
-        {
-            details11.Image = Properties.Resources.eye_hover;
-        }
-        private void details12_MouseHover(object sender, EventArgs e)
-        {
-            details12.Image = Properties.Resources.eye_hover;
-        }
-        private void details13_MouseHover(object sender, EventArgs e)
-        {
-            details13.Image = Properties.Resources.eye_hover;
         }
 
         private void details_MouseLeave(object sender, EventArgs e)
@@ -489,25 +386,9 @@ namespace TRUCKCOY.forms
         {
             details9.Image = Properties.Resources.eye_leave;
         }
-        private void details10_MouseLeave(object sender, EventArgs e)
-        {
-            details10.Image = Properties.Resources.eye_leave;
-        }
-        private void details11_MouseLeave(object sender, EventArgs e)
-        {
-            details11.Image = Properties.Resources.eye_leave;
-        }
-        private void details12_MouseLeave(object sender, EventArgs e)
-        {
-            details12.Image = Properties.Resources.eye_leave;
-        }
-        private void details13_MouseLeave(object sender, EventArgs e)
-        {
-            details13.Image = Properties.Resources.eye_leave;
-        }
+
 
         #endregion
-
 
     }
 }

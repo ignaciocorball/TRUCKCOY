@@ -70,21 +70,23 @@ namespace TRUCKCOY.forms
             // 
             this.vScrollBar1.AutoRoundedCorners = true;
             this.vScrollBar1.BorderColor = System.Drawing.Color.Transparent;
-            this.vScrollBar1.BorderRadius = 4;
+            this.vScrollBar1.BorderRadius = 6;
             this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
             this.vScrollBar1.FillColor = System.Drawing.Color.White;
             this.vScrollBar1.HoverState.Parent = null;
             this.vScrollBar1.InUpdate = false;
-            this.vScrollBar1.LargeChange = 10;
-            this.vScrollBar1.Location = new System.Drawing.Point(864, 0);
+            this.vScrollBar1.LargeChange = 30;
+            this.vScrollBar1.Location = new System.Drawing.Point(859, 0);
+            this.vScrollBar1.MouseWheelBarPartitions = 30;
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.PressedState.Parent = this.vScrollBar1;
-            this.vScrollBar1.ScrollbarSize = 10;
-            this.vScrollBar1.Size = new System.Drawing.Size(10, 706);
+            this.vScrollBar1.ScrollbarSize = 15;
+            this.vScrollBar1.Size = new System.Drawing.Size(15, 706);
             this.vScrollBar1.TabIndex = 10;
             this.vScrollBar1.ThumbColor = System.Drawing.Color.Gainsboro;
-            this.vScrollBar1.ThumbSize = 550F;
-            this.vScrollBar1.ThumbStyle = Siticone.Desktop.UI.WinForms.Enums.ThumbStyle.Inset;
+            this.vScrollBar1.ThumbSize = 250F;
+            this.vScrollBar1.Visible = false;
+            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
             // panel1
             // 
@@ -93,7 +95,7 @@ namespace TRUCKCOY.forms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(864, 41);
+            this.panel1.Size = new System.Drawing.Size(859, 41);
             this.panel1.TabIndex = 11;
             // 
             // tableLayoutPanel1
@@ -102,14 +104,14 @@ namespace TRUCKCOY.forms
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.85714F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.14286F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.Controls.Add(this.btnRefresh, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSatellite, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNormal, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnTerrain, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(542, 6);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(537, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -121,9 +123,9 @@ namespace TRUCKCOY.forms
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRefresh.Image = global::TRUCKCOY.Properties.Resources.refresh;
-            this.btnRefresh.Location = new System.Drawing.Point(277, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(279, 3);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(23, 20);
+            this.btnRefresh.Size = new System.Drawing.Size(21, 20);
             this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnRefresh.TabIndex = 12;
             this.btnRefresh.TabStop = false;
@@ -133,9 +135,9 @@ namespace TRUCKCOY.forms
             this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSatellite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.sat_off;
-            this.btnSatellite.Location = new System.Drawing.Point(190, 3);
+            this.btnSatellite.Location = new System.Drawing.Point(196, 3);
             this.btnSatellite.Name = "btnSatellite";
-            this.btnSatellite.Size = new System.Drawing.Size(81, 20);
+            this.btnSatellite.Size = new System.Drawing.Size(77, 20);
             this.btnSatellite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSatellite.TabIndex = 13;
             this.btnSatellite.TabStop = false;
@@ -145,9 +147,9 @@ namespace TRUCKCOY.forms
             this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNormal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.normal_on;
-            this.btnNormal.Location = new System.Drawing.Point(108, 3);
+            this.btnNormal.Location = new System.Drawing.Point(113, 3);
             this.btnNormal.Name = "btnNormal";
-            this.btnNormal.Size = new System.Drawing.Size(76, 20);
+            this.btnNormal.Size = new System.Drawing.Size(77, 20);
             this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnNormal.TabIndex = 14;
             this.btnNormal.TabStop = false;
@@ -157,9 +159,9 @@ namespace TRUCKCOY.forms
             this.btnTerrain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTerrain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTerrain.Image = global::TRUCKCOY.Properties.Resources.terr_off;
-            this.btnTerrain.Location = new System.Drawing.Point(27, 3);
+            this.btnTerrain.Location = new System.Drawing.Point(28, 3);
             this.btnTerrain.Name = "btnTerrain";
-            this.btnTerrain.Size = new System.Drawing.Size(75, 20);
+            this.btnTerrain.Size = new System.Drawing.Size(79, 20);
             this.btnTerrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnTerrain.TabIndex = 15;
             this.btnTerrain.TabStop = false;
@@ -183,7 +185,7 @@ namespace TRUCKCOY.forms
             this.panelContainerTittle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelContainerTittle.Location = new System.Drawing.Point(31, 41);
             this.panelContainerTittle.Name = "panelContainerTittle";
-            this.panelContainerTittle.Size = new System.Drawing.Size(833, 298);
+            this.panelContainerTittle.Size = new System.Drawing.Size(828, 298);
             this.panelContainerTittle.TabIndex = 12;
             // 
             // pictureBox1
@@ -192,7 +194,7 @@ namespace TRUCKCOY.forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Location = new System.Drawing.Point(0, 271);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(820, 27);
+            this.pictureBox1.Size = new System.Drawing.Size(815, 27);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -201,7 +203,7 @@ namespace TRUCKCOY.forms
             this.overlayGMap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.overlayGMap.BackColor = System.Drawing.Color.Transparent;
             this.overlayGMap.Controls.Add(this.picRegFleet);
-            this.overlayGMap.Location = new System.Drawing.Point(694, 3);
+            this.overlayGMap.Location = new System.Drawing.Point(689, 3);
             this.overlayGMap.Name = "overlayGMap";
             this.overlayGMap.Size = new System.Drawing.Size(120, 30);
             this.overlayGMap.TabIndex = 5;
@@ -245,7 +247,7 @@ namespace TRUCKCOY.forms
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(820, 298);
+            this.gMapControl1.Size = new System.Drawing.Size(815, 298);
             this.gMapControl1.TabIndex = 3;
             this.gMapControl1.Zoom = 0D;
             // 
@@ -265,11 +267,14 @@ namespace TRUCKCOY.forms
             // 
             // panelHistory
             // 
+            this.panelHistory.AutoScroll = true;
             this.panelHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHistory.Location = new System.Drawing.Point(0, 0);
             this.panelHistory.Name = "panelHistory";
             this.panelHistory.Size = new System.Drawing.Size(819, 366);
             this.panelHistory.TabIndex = 27;
+            this.panelHistory.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panelHistory_ControlAdded);
+            this.panelHistory.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.panelHistory_ControlRemoved);
             // 
             // DashboardForm
             // 
