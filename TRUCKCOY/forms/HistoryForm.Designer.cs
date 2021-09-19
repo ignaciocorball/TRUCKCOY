@@ -1781,7 +1781,7 @@ namespace TRUCKCOY.forms
             // 
             this.lblTarget0.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.lblTarget0.ForeColor = System.Drawing.Color.Gray;
-            this.lblTarget0.Location = new System.Drawing.Point(528, 14);
+            this.lblTarget0.Location = new System.Drawing.Point(526, 14);
             this.lblTarget0.MaximumSize = new System.Drawing.Size(124, 20);
             this.lblTarget0.Name = "lblTarget0";
             this.lblTarget0.Size = new System.Drawing.Size(92, 20);
@@ -1793,7 +1793,7 @@ namespace TRUCKCOY.forms
             // 
             this.lblSource0.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.lblSource0.ForeColor = System.Drawing.Color.Gray;
-            this.lblSource0.Location = new System.Drawing.Point(417, 14);
+            this.lblSource0.Location = new System.Drawing.Point(415, 14);
             this.lblSource0.MaximumSize = new System.Drawing.Size(124, 20);
             this.lblSource0.Name = "lblSource0";
             this.lblSource0.Size = new System.Drawing.Size(92, 20);
@@ -1806,10 +1806,10 @@ namespace TRUCKCOY.forms
             this.lblStatus0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblStatus0.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.lblStatus0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
-            this.lblStatus0.Location = new System.Drawing.Point(628, 14);
+            this.lblStatus0.Location = new System.Drawing.Point(626, 14);
             this.lblStatus0.MaximumSize = new System.Drawing.Size(124, 20);
             this.lblStatus0.Name = "lblStatus0";
-            this.lblStatus0.Size = new System.Drawing.Size(96, 20);
+            this.lblStatus0.Size = new System.Drawing.Size(97, 20);
             this.lblStatus0.TabIndex = 18;
             this.lblStatus0.Text = "status";
             this.lblStatus0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1819,7 +1819,7 @@ namespace TRUCKCOY.forms
             this.lblDriver0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblDriver0.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.lblDriver0.ForeColor = System.Drawing.Color.Gray;
-            this.lblDriver0.Location = new System.Drawing.Point(214, 14);
+            this.lblDriver0.Location = new System.Drawing.Point(213, 14);
             this.lblDriver0.MaximumSize = new System.Drawing.Size(124, 20);
             this.lblDriver0.Name = "lblDriver0";
             this.lblDriver0.Size = new System.Drawing.Size(98, 20);
@@ -1832,10 +1832,10 @@ namespace TRUCKCOY.forms
             this.lblPatente0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPatente0.Font = new System.Drawing.Font("Bahnschrift", 10F);
             this.lblPatente0.ForeColor = System.Drawing.Color.Gray;
-            this.lblPatente0.Location = new System.Drawing.Point(318, 14);
+            this.lblPatente0.Location = new System.Drawing.Point(317, 14);
             this.lblPatente0.MaximumSize = new System.Drawing.Size(124, 20);
             this.lblPatente0.Name = "lblPatente0";
-            this.lblPatente0.Size = new System.Drawing.Size(93, 20);
+            this.lblPatente0.Size = new System.Drawing.Size(92, 20);
             this.lblPatente0.TabIndex = 17;
             this.lblPatente0.Text = "patente";
             this.lblPatente0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1873,11 +1873,11 @@ namespace TRUCKCOY.forms
             this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.72093F));
             this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.27907F));
             this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
-            this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
             this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
-            this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tl0.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tl0.Controls.Add(this.details0, 8, 1);
