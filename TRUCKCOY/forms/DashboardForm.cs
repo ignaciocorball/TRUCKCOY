@@ -7,7 +7,6 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.ComponentModel;
 
 namespace TRUCKCOY.forms
 {
@@ -22,6 +21,98 @@ namespace TRUCKCOY.forms
             setFrontEnd();
         }
 
+
+        #region Frontend
+        //#-> Buttons Events
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            gMapControl1.Zoom = 1;
+            gMapControl1.Position = new PointLatLng(Properties.Settings.Default.lat_coy, Properties.Settings.Default.lng_coy);
+            gMapControl1.MinZoom = 0;
+            gMapControl1.MaxZoom = 24;
+            gMapControl1.Zoom = 13;
+            gMapControl1.AutoScroll = true;
+            gMapControl1.ReloadMap();
+        }
+        private void btnSatellite_Click(object sender, EventArgs e)
+        {
+            gMapControl1.MapProvider = GMapProviders.GoogleHybridMap;
+            btnNormal.Image = Properties.Resources.normal_off;
+            btnTerrain.Image = Properties.Resources.terr_off;
+            btnSatellite.Image = Properties.Resources.sat_on;
+        }
+        private void btnNormal_Click(object sender, EventArgs e)
+        {
+            gMapControl1.MapProvider = GMapProviders.GoogleMap;
+            btnTerrain.Image = Properties.Resources.terr_off;
+            btnSatellite.Image = Properties.Resources.sat_off;
+            btnNormal.Image = Properties.Resources.normal_on;
+        }
+        private void btnTerrain_Click(object sender, EventArgs e)
+        {
+            gMapControl1.MapProvider = GMapProviders.GoogleTerrainMap;
+            btnSatellite.Image = Properties.Resources.sat_off;
+            btnNormal.Image = Properties.Resources.normal_off;
+            btnTerrain.Image = Properties.Resources.terr_on;
+        }
+        private void picRegFleet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //$-> FrontEnd 
+        private void setFrontEnd()
+        {
+            //ttNoFleet.SetToolTip(this.picRegFleet, "No encontramos registros de flota vehicular, porfavor añadelos haciendo click en el botón :)");
+
+            //-> Load Form History
+            hform = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "formHistory", AutoScroll = true };
+            panelHistory.Controls.Add(hform);
+            hform.Visible = true;
+            //-> Load Scrollbar
+            panelHistory.AutoScroll = true;
+            panelHistory.HorizontalScroll.Enabled = false;
+            panelHistory.HorizontalScroll.Visible = false;
+            panelHistory.VerticalScroll.Enabled = true;
+            panelHistory.VerticalScroll.Visible = false;
+            //-> Scrollbar Settings
+            //vScrollBar1.Value = panelHistory.VerticalScroll.Value;
+            //vScrollBar1.Minimum = panelHistory.VerticalScroll.Minimum;
+            //vScrollBar1.Maximum = panelHistory.VerticalScroll.Maximum;
+            //vScrollBar1.Enabled = false;
+            //vScrollBar1.Visible = false;
+
+            panelHistory.ControlAdded += panelHistory_ControlAdded;
+            panelHistory.ControlRemoved += panelHistory_ControlRemoved;
+        }
+        private void add_Click(object sender, EventArgs e)
+        {
+            for(int x = 0; x < 10; x++)
+            {
+                HistoryForm hf = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "p"+(x+5) };
+                //hf.lblID.Text = 111;
+                panelHistory.Controls.Add(hf);
+                hf.Visible = true;
+            }
+        }
+
+        //-> Scrollbar Settings
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            //panelHistory.VerticalScroll.Value = vScrollBar1.Value;
+        }
+        private void panelHistory_ControlAdded(object sender, ControlEventArgs e)
+        {
+            //vScrollBar1.Maximum = panelHistory.VerticalScroll.Maximum + 10;
+        }
+        private void panelHistory_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            //vScrollBar1.Minimum = panelHistory.VerticalScroll.Minimum + 10;
+        }
+
+        #endregion
+
+        #region Backend
         //#-> Private methods
         private void loadMapSettings()
         {
@@ -39,8 +130,8 @@ namespace TRUCKCOY.forms
 
             // Scroll Config
             panelStats.AutoScroll = true;
-            vScrollBar1.Visible = (panelStats.VerticalScroll.Visible == true) ? false : true;
-            vScrollBar1.ThumbColor = Color.FromArgb(0, 113, 188);
+            //vScrollBar1.Visible = (panelStats.VerticalScroll.Visible == true) ? false : true;
+            //vScrollBar1.ThumbColor = Color.FromArgb(0, 113, 188);
 
         }
         private void addMarker(PointLatLng pointToAdd, GMarkerGoogleType markerType = GMarkerGoogleType.arrow)
@@ -126,92 +217,7 @@ namespace TRUCKCOY.forms
 
             return rotatedImage;
         }
-
-        //#-> Buttons Events
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            gMapControl1.Zoom = 1;
-            gMapControl1.Position = new PointLatLng(Properties.Settings.Default.lat_coy, Properties.Settings.Default.lng_coy);
-            gMapControl1.MinZoom = 0;
-            gMapControl1.MaxZoom = 24;
-            gMapControl1.Zoom = 13;
-            gMapControl1.AutoScroll = true;
-            gMapControl1.ReloadMap();
-        }
-        private void btnSatellite_Click(object sender, EventArgs e)
-        {
-            gMapControl1.MapProvider = GMapProviders.GoogleHybridMap;
-            btnNormal.Image = Properties.Resources.normal_off;
-            btnTerrain.Image = Properties.Resources.terr_off;
-            btnSatellite.Image = Properties.Resources.sat_on;
-        }
-        private void btnNormal_Click(object sender, EventArgs e)
-        {
-            gMapControl1.MapProvider = GMapProviders.GoogleMap;
-            btnTerrain.Image = Properties.Resources.terr_off;
-            btnSatellite.Image = Properties.Resources.sat_off;
-            btnNormal.Image = Properties.Resources.normal_on;
-        }
-        private void btnTerrain_Click(object sender, EventArgs e)
-        {
-            gMapControl1.MapProvider = GMapProviders.GoogleTerrainMap;
-            btnSatellite.Image = Properties.Resources.sat_off;
-            btnNormal.Image = Properties.Resources.normal_off;
-            btnTerrain.Image = Properties.Resources.terr_on;
-        }
-        private void picRegFleet_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //$-> FrontEnd 
-        private void setFrontEnd()
-        {
-            //ttNoFleet.SetToolTip(this.picRegFleet, "No encontramos registros de flota vehicular, porfavor añadelos haciendo click en el botón :)");
-
-            //-> Load Form History
-            hform = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "formHistory", AutoScroll = true };
-            panelHistory.Controls.Add(hform);
-            hform.Visible = true;
-            //-> Load Scrollbar
-            panelHistory.AutoScroll = true;
-            panelHistory.HorizontalScroll.Enabled = false;
-            panelHistory.HorizontalScroll.Visible = false;
-            panelHistory.VerticalScroll.Enabled = true;
-            panelHistory.VerticalScroll.Visible = false;
-            vScrollBar1.Value = panelHistory.VerticalScroll.Value;
-            vScrollBar1.Minimum = panelHistory.VerticalScroll.Minimum;
-            vScrollBar1.Maximum = panelHistory.VerticalScroll.Maximum;
-            vScrollBar1.Enabled = false;
-            vScrollBar1.Visible = false;
-
-            panelHistory.ControlAdded += panelHistory_ControlAdded;
-            panelHistory.ControlRemoved += panelHistory_ControlRemoved;
-        }
-        private void add_Click(object sender, EventArgs e)
-        {
-            for(int x = 0; x < 10; x++)
-            {
-                HistoryForm hf = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "p"+(x+5) };
-                //hf.lblID.Text = 111;
-                panelHistory.Controls.Add(hf);
-                hf.Visible = true;
-            }
-        }
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            panelHistory.VerticalScroll.Value = vScrollBar1.Value;
-        }
-        private void panelHistory_ControlAdded(object sender, ControlEventArgs e)
-        {
-            vScrollBar1.Maximum = panelHistory.VerticalScroll.Maximum + 10;
-        }
-        private void panelHistory_ControlRemoved(object sender, ControlEventArgs e)
-        {
-            vScrollBar1.Minimum = panelHistory.VerticalScroll.Minimum + 10;
-        }
-
         //-> Async Methods
-
+        #endregion
     }
 }

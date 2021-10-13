@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using TRUCKCOY.forms;
 
@@ -7,37 +8,59 @@ namespace TRUCKCOY
     public partial class mainForm : Form
     {
         DashboardForm dform;
+        ProfilePopupForm ppForm = new ProfilePopupForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
         public mainForm()
         {
             InitializeComponent();
             getDateTime();
-            
-
         }
         private void mainForm_Load(object sender, EventArgs e)
         {
+            //#-> Load Dashboard content
             dform = new DashboardForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false, Opacity = 0 };
             panelContainer.Controls.Add(dform);
             dform.Visible = true;
 
+            pnlProfile.Controls.Add(ppForm);
+
         }
 
-        //#-> Front-End Inputs, Textbox & Labels
-        private void txtSearch_Click(object sender, EventArgs e)
-        {
-            txtSearch.Text = "";
-        }
-
+        #region BackEnd
         //#-> Internal methods
         private void getDateTime()
         {
             // Date & Time 
             DateTime currentDate = DateTime.Now;
-            lblDate.Text = currentDate.ToString("dd/MM/yyyy HH:mm:ss tt");
+            string monthToUpper = currentDate.ToString("MMM").ToUpper();
+            lblDate.Text = currentDate.ToString("dd-"+ monthToUpper + "-yyyy HH:mm:ss tt");
         }
         private void tmrSecond_Tick(object sender, EventArgs e)
         {
             getDateTime();
+        }
+        private void tmrLoadNavBar_Tick(object sender, EventArgs e)
+        {
+            if(panelNavBar.Width < 250)
+            {
+                panelNavBar.Width += 5;
+            }
+            else
+            {
+                tmrLoadNavBar.Enabled = false;
+                tmrLoadNavBar.Stop();
+            }
+        }
+        private void tmrHideNavBar_Tick(object sender, EventArgs e)
+        {
+            if (panelNavBar.Width > 60)
+            {
+                panelNavBar.Width -= 5;
+            }
+            else
+            {
+                tmrHideNavBar.Enabled = false;
+                tmrHideNavBar.Stop();
+            }
         }
         private void hideNavButtons()
         {
@@ -88,12 +111,9 @@ namespace TRUCKCOY
                     break;
             }
         }
-        private void divisorLine1_Click(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
-
-        //#-> Buttons & Clicks events
+        #region FrontEnd
         // MouseClick
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -111,8 +131,11 @@ namespace TRUCKCOY
         {
             selectNavButtons(4);
         }
-
-        // MouseLeave
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+        }
+        // MouseOver & MouseLeave
         private void txtSearch_Leave(object sender, EventArgs e)
         {
             if(txtSearch.Text == "")
@@ -120,7 +143,6 @@ namespace TRUCKCOY
                 txtSearch.Text = "Buscar . . .";
             }
         }
-        // MouseOver
         private void btnDashboard_MouseHover(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.navButtonSelected != 1)
@@ -177,10 +199,37 @@ namespace TRUCKCOY
                 btnTemperature.Image = Properties.Resources.temp_off;
             }
         }
+        #endregion
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnProfile_Click(object sender, EventArgs e)
         {
+            if(ppForm.Visible == false)
+            {
+                pnlProfile.Visible = true;
+                ppForm.Visible = true;
+                ppForm.Show();
+            }
+            else
+            {
+                pnlProfile.Visible = false;
+                ppForm.Visible = false;
+                ppForm.Hide();
+            }
+            
+        }
 
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if(panelNavBar.Width == 60)
+            {
+                tmrLoadNavBar.Enabled = true;
+                tmrLoadNavBar.Start();
+            }
+            if (panelNavBar.Width == 250)
+            {
+                tmrHideNavBar.Enabled = true;
+                tmrHideNavBar.Start();
+            }
         }
     }
 }
