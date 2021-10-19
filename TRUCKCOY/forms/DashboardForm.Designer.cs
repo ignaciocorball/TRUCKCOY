@@ -32,29 +32,29 @@ namespace TRUCKCOY.forms
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblTittlePanel = new System.Windows.Forms.Label();
-            this.panelContainerTittle = new System.Windows.Forms.Panel();
-            this.overlayGMap = new System.Windows.Forms.Panel();
-            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
-            this.panelStats = new System.Windows.Forms.Panel();
-            this.panelHistory = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picRegFleet = new System.Windows.Forms.PictureBox();
             this.btnRefresh = new System.Windows.Forms.PictureBox();
             this.btnSatellite = new System.Windows.Forms.PictureBox();
             this.btnNormal = new System.Windows.Forms.PictureBox();
             this.btnTerrain = new System.Windows.Forms.PictureBox();
+            this.lblTittlePanel = new System.Windows.Forms.Label();
+            this.panelContainerTittle = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.overlayGMap = new System.Windows.Forms.Panel();
+            this.picRegFleet = new System.Windows.Forms.PictureBox();
+            this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.panelStats = new System.Windows.Forms.Panel();
+            this.panelHistory = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panelContainerTittle.SuspendLayout();
-            this.overlayGMap.SuspendLayout();
-            this.panelStats.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSatellite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTerrain)).BeginInit();
+            this.panelContainerTittle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.overlayGMap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).BeginInit();
+            this.panelStats.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel13
@@ -83,7 +83,7 @@ namespace TRUCKCOY.forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.14286F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.Controls.Add(this.btnRefresh, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSatellite, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNormal, 2, 0);
@@ -94,6 +94,57 @@ namespace TRUCKCOY.forms
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(303, 26);
             this.tableLayoutPanel1.TabIndex = 13;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.Image = global::TRUCKCOY.Properties.Resources.refresh;
+            this.btnRefresh.Location = new System.Drawing.Point(277, 3);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(23, 20);
+            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRefresh.TabIndex = 12;
+            this.btnRefresh.TabStop = false;
+            // 
+            // btnSatellite
+            // 
+            this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSatellite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.sat_off;
+            this.btnSatellite.Location = new System.Drawing.Point(192, 3);
+            this.btnSatellite.Name = "btnSatellite";
+            this.btnSatellite.Size = new System.Drawing.Size(79, 20);
+            this.btnSatellite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSatellite.TabIndex = 13;
+            this.btnSatellite.TabStop = false;
+            this.btnSatellite.Click += new System.EventHandler(this.btnSatellite_Click);
+            // 
+            // btnNormal
+            // 
+            this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNormal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.normal_on;
+            this.btnNormal.Location = new System.Drawing.Point(109, 3);
+            this.btnNormal.Name = "btnNormal";
+            this.btnNormal.Size = new System.Drawing.Size(77, 20);
+            this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnNormal.TabIndex = 14;
+            this.btnNormal.TabStop = false;
+            this.btnNormal.Click += new System.EventHandler(this.btnNormal_Click);
+            // 
+            // btnTerrain
+            // 
+            this.btnTerrain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTerrain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTerrain.Image = global::TRUCKCOY.Properties.Resources.terr_off;
+            this.btnTerrain.Location = new System.Drawing.Point(27, 3);
+            this.btnTerrain.Name = "btnTerrain";
+            this.btnTerrain.Size = new System.Drawing.Size(76, 20);
+            this.btnTerrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnTerrain.TabIndex = 15;
+            this.btnTerrain.TabStop = false;
+            this.btnTerrain.Click += new System.EventHandler(this.btnTerrain_Click);
             // 
             // lblTittlePanel
             // 
@@ -117,6 +168,16 @@ namespace TRUCKCOY.forms
             this.panelContainerTittle.Size = new System.Drawing.Size(843, 298);
             this.panelContainerTittle.TabIndex = 12;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 277);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(824, 21);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // overlayGMap
             // 
             this.overlayGMap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -127,6 +188,19 @@ namespace TRUCKCOY.forms
             this.overlayGMap.Size = new System.Drawing.Size(120, 30);
             this.overlayGMap.TabIndex = 5;
             this.overlayGMap.Visible = false;
+            // 
+            // picRegFleet
+            // 
+            this.picRegFleet.BackColor = System.Drawing.Color.Transparent;
+            this.picRegFleet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picRegFleet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picRegFleet.Image = global::TRUCKCOY.Properties.Resources.reg_fleet;
+            this.picRegFleet.Location = new System.Drawing.Point(0, 0);
+            this.picRegFleet.Name = "picRegFleet";
+            this.picRegFleet.Size = new System.Drawing.Size(120, 30);
+            this.picRegFleet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRegFleet.TabIndex = 0;
+            this.picRegFleet.TabStop = false;
             // 
             // gMapControl1
             // 
@@ -173,88 +247,11 @@ namespace TRUCKCOY.forms
             // 
             // panelHistory
             // 
-            this.panelHistory.AutoScroll = true;
             this.panelHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHistory.Location = new System.Drawing.Point(0, 0);
             this.panelHistory.Name = "panelHistory";
             this.panelHistory.Size = new System.Drawing.Size(819, 366);
             this.panelHistory.TabIndex = 27;
-            this.panelHistory.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panelHistory_ControlAdded);
-            this.panelHistory.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.panelHistory_ControlRemoved);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 277);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(824, 21);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // picRegFleet
-            // 
-            this.picRegFleet.BackColor = System.Drawing.Color.Transparent;
-            this.picRegFleet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picRegFleet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picRegFleet.Image = global::TRUCKCOY.Properties.Resources.reg_fleet;
-            this.picRegFleet.Location = new System.Drawing.Point(0, 0);
-            this.picRegFleet.Name = "picRegFleet";
-            this.picRegFleet.Size = new System.Drawing.Size(120, 30);
-            this.picRegFleet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRegFleet.TabIndex = 0;
-            this.picRegFleet.TabStop = false;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefresh.Image = global::TRUCKCOY.Properties.Resources.refresh;
-            this.btnRefresh.Location = new System.Drawing.Point(278, 3);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(22, 20);
-            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnRefresh.TabIndex = 12;
-            this.btnRefresh.TabStop = false;
-            // 
-            // btnSatellite
-            // 
-            this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSatellite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.sat_off;
-            this.btnSatellite.Location = new System.Drawing.Point(193, 3);
-            this.btnSatellite.Name = "btnSatellite";
-            this.btnSatellite.Size = new System.Drawing.Size(79, 20);
-            this.btnSatellite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSatellite.TabIndex = 13;
-            this.btnSatellite.TabStop = false;
-            this.btnSatellite.Click += new System.EventHandler(this.btnSatellite_Click);
-            // 
-            // btnNormal
-            // 
-            this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNormal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.normal_on;
-            this.btnNormal.Location = new System.Drawing.Point(110, 3);
-            this.btnNormal.Name = "btnNormal";
-            this.btnNormal.Size = new System.Drawing.Size(77, 20);
-            this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnNormal.TabIndex = 14;
-            this.btnNormal.TabStop = false;
-            this.btnNormal.Click += new System.EventHandler(this.btnNormal_Click);
-            // 
-            // btnTerrain
-            // 
-            this.btnTerrain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTerrain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTerrain.Image = global::TRUCKCOY.Properties.Resources.terr_off;
-            this.btnTerrain.Location = new System.Drawing.Point(27, 3);
-            this.btnTerrain.Name = "btnTerrain";
-            this.btnTerrain.Size = new System.Drawing.Size(77, 20);
-            this.btnTerrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnTerrain.TabIndex = 15;
-            this.btnTerrain.TabStop = false;
-            this.btnTerrain.Click += new System.EventHandler(this.btnTerrain_Click);
             // 
             // DashboardForm
             // 
@@ -278,15 +275,15 @@ namespace TRUCKCOY.forms
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panelContainerTittle.ResumeLayout(false);
-            this.overlayGMap.ResumeLayout(false);
-            this.panelStats.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSatellite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTerrain)).EndInit();
+            this.panelContainerTittle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.overlayGMap.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).EndInit();
+            this.panelStats.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

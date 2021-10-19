@@ -45,7 +45,7 @@ namespace TRUCKCOY
             this.tmrSecond = new System.Windows.Forms.Timer(this.components);
             this.panelNavBar = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -83,7 +83,7 @@ namespace TRUCKCOY
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).BeginInit();
             this.panelNavBar.SuspendLayout();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -111,7 +111,7 @@ namespace TRUCKCOY
             this.layoutHeader.ColumnCount = 3;
             this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.40473F));
             this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.59527F));
-            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
             this.layoutHeader.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.layoutHeader.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.layoutHeader.Controls.Add(this.tableLayoutPanel2, 2, 0);
@@ -297,24 +297,24 @@ namespace TRUCKCOY
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.pictureBox13);
+            this.panel11.Controls.Add(this.btnLogout);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel11.Location = new System.Drawing.Point(0, 703);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(60, 58);
             this.panel11.TabIndex = 24;
             // 
-            // pictureBox13
+            // btnLogout
             // 
-            this.pictureBox13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox13.Image = global::TRUCKCOY.Properties.Resources.logout;
-            this.pictureBox13.Location = new System.Drawing.Point(18, 15);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 10;
-            this.pictureBox13.TabStop = false;
+            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.Image = global::TRUCKCOY.Properties.Resources.logout;
+            this.btnLogout.Location = new System.Drawing.Point(18, 15);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(25, 25);
+            this.btnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.TabStop = false;
             // 
             // panel10
             // 
@@ -603,7 +603,7 @@ namespace TRUCKCOY
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).EndInit();
             this.panelNavBar.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
@@ -649,7 +649,7 @@ namespace TRUCKCOY
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox btnLogout;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.PictureBox pictureBox12;

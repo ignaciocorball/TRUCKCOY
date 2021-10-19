@@ -66,24 +66,9 @@ namespace TRUCKCOY.forms
             //ttNoFleet.SetToolTip(this.picRegFleet, "No encontramos registros de flota vehicular, porfavor añadelos haciendo click en el botón :)");
 
             //-> Load Form History
-            hform = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "formHistory", AutoScroll = true };
+            hform = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "formHistory"};
             panelHistory.Controls.Add(hform);
             hform.Visible = true;
-            //-> Load Scrollbar
-            panelHistory.AutoScroll = true;
-            panelHistory.HorizontalScroll.Enabled = false;
-            panelHistory.HorizontalScroll.Visible = false;
-            panelHistory.VerticalScroll.Enabled = true;
-            panelHistory.VerticalScroll.Visible = false;
-            //-> Scrollbar Settings
-            //vScrollBar1.Value = panelHistory.VerticalScroll.Value;
-            //vScrollBar1.Minimum = panelHistory.VerticalScroll.Minimum;
-            //vScrollBar1.Maximum = panelHistory.VerticalScroll.Maximum;
-            //vScrollBar1.Enabled = false;
-            //vScrollBar1.Visible = false;
-
-            panelHistory.ControlAdded += panelHistory_ControlAdded;
-            panelHistory.ControlRemoved += panelHistory_ControlRemoved;
         }
         private void add_Click(object sender, EventArgs e)
         {
@@ -95,21 +80,6 @@ namespace TRUCKCOY.forms
                 hf.Visible = true;
             }
         }
-
-        //-> Scrollbar Settings
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            //panelHistory.VerticalScroll.Value = vScrollBar1.Value;
-        }
-        private void panelHistory_ControlAdded(object sender, ControlEventArgs e)
-        {
-            //vScrollBar1.Maximum = panelHistory.VerticalScroll.Maximum + 10;
-        }
-        private void panelHistory_ControlRemoved(object sender, ControlEventArgs e)
-        {
-            //vScrollBar1.Minimum = panelHistory.VerticalScroll.Minimum + 10;
-        }
-
         #endregion
 
         #region Backend

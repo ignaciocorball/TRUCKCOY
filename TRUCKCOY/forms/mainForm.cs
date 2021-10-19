@@ -22,7 +22,6 @@ namespace TRUCKCOY
             dform.Visible = true;
 
             pnlProfile.Controls.Add(ppForm);
-
         }
 
         #region BackEnd
