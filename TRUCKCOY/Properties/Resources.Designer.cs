@@ -63,6 +63,16 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar_ico {
+            get {
+                object obj = ResourceManager.GetObject("calendar_ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap checkbox_checked {
             get {
                 object obj = ResourceManager.GetObject("checkbox_checked", resourceCulture);
@@ -266,6 +276,16 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap reg_fleet {
             get {
                 object obj = ResourceManager.GetObject("reg_fleet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reloj_ico {
+            get {
+                object obj = ResourceManager.GetObject("reloj_ico", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

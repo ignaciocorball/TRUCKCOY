@@ -215,6 +215,8 @@
     <Content Include="Logo.ico" />
     <Content Include="resources\bell-off.png" />
     <Content Include="resources\bell-on.png" />
+    <None Include="resources\reloj_ico.png" />
+    <None Include="resources\calendar_ico.png" />
     <None Include="resources\graphCosts.png" />
     <None Include="resources\pencil.png" />
     <None Include="resources\configuracion.png" />

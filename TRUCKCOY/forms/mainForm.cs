@@ -31,7 +31,20 @@ namespace TRUCKCOY
             // Date & Time 
             DateTime currentDate = DateTime.Now;
             string monthToUpper = currentDate.ToString("MMM").ToUpper();
-            lblDate.Text = currentDate.ToString("dd-"+ monthToUpper + "-yyyy HH:mm:ss tt");
+
+            if(currentDate.ToString("dd." + monthToUpper + ".yyyy") != lblDate.Text)
+            {
+                lblDate.Text = currentDate.ToString("dd." + monthToUpper + ".yyyy");
+                lblTime.Text = currentDate.ToString("HH:mm:ss tt");
+            }
+            else
+            {
+                lblTime.Text = currentDate.ToString("HH:mm:ss tt");
+            }
+
+
+
+
         }
         private void tmrSecond_Tick(object sender, EventArgs e)
         {
@@ -42,6 +55,8 @@ namespace TRUCKCOY
             if(panelNavBar.Width < 250)
             {
                 panelNavBar.Width += 5;
+                divisorLine1.Width += 5;
+                divisorLine2.Width += 5;
             }
             else
             {
@@ -54,6 +69,8 @@ namespace TRUCKCOY
             if (panelNavBar.Width > 60)
             {
                 panelNavBar.Width -= 5;
+                divisorLine1.Width -= 5;
+                divisorLine2.Width -= 5;
             }
             else
             {
@@ -138,10 +155,14 @@ namespace TRUCKCOY
                 if (panelNavBar.Width == 60)
                 {
                     panelNavBar.Width = 250;
+                    divisorLine1.Width = 230;
+                    divisorLine2.Width = 230;
                 }
                 else if (panelNavBar.Width == 250)
                 {
                     panelNavBar.Width = 60;
+                    divisorLine1.Width = 40;
+                    divisorLine2.Width = 40;
                 }
             }
             else
