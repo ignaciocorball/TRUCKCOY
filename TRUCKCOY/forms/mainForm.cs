@@ -114,6 +114,51 @@ namespace TRUCKCOY
 
         #region FrontEnd
         // MouseClick
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            if (ppForm.Visible == false)
+            {
+                pnlProfile.Visible = true;
+                ppForm.Visible = true;
+                ppForm.Show();
+            }
+            else
+            {
+                pnlProfile.Visible = false;
+                ppForm.Visible = false;
+                ppForm.Hide();
+            }
+
+        }
+        private void btnExpand_Click(object sender, EventArgs e)
+        {
+            if (Width > 950)
+            {
+                // Without Animation
+                if (panelNavBar.Width == 60)
+                {
+                    panelNavBar.Width = 250;
+                }
+                else if (panelNavBar.Width == 250)
+                {
+                    panelNavBar.Width = 60;
+                }
+            }
+            else
+            {
+                // With Animation
+                if (panelNavBar.Width == 60)
+                {
+                    tmrLoadNavBar.Enabled = true;
+                    tmrLoadNavBar.Start();
+                }
+                else if (panelNavBar.Width == 250)
+                {
+                    tmrHideNavBar.Enabled = true;
+                    tmrHideNavBar.Start();
+                }
+            }
+        }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             selectNavButtons(1);
@@ -200,35 +245,5 @@ namespace TRUCKCOY
         }
         #endregion
 
-        private void btnProfile_Click(object sender, EventArgs e)
-        {
-            if(ppForm.Visible == false)
-            {
-                pnlProfile.Visible = true;
-                ppForm.Visible = true;
-                ppForm.Show();
-            }
-            else
-            {
-                pnlProfile.Visible = false;
-                ppForm.Visible = false;
-                ppForm.Hide();
-            }
-            
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            if(panelNavBar.Width == 60)
-            {
-                tmrLoadNavBar.Enabled = true;
-                tmrLoadNavBar.Start();
-            }
-            if (panelNavBar.Width == 250)
-            {
-                tmrHideNavBar.Enabled = true;
-                tmrHideNavBar.Start();
-            }
-        }
     }
 }

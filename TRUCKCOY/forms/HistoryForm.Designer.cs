@@ -40,7 +40,6 @@ namespace TRUCKCOY.forms
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.add = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.showForm = new System.Windows.Forms.Timer(this.components);
             this.dgvHistory = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +52,7 @@ namespace TRUCKCOY.forms
             this.delete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.details0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.select = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pTittleHF.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.add)).BeginInit();
@@ -104,7 +104,7 @@ namespace TRUCKCOY.forms
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.32164F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel2.Controls.Add(this.add, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(543, 35);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -120,20 +120,11 @@ namespace TRUCKCOY.forms
             this.add.Image = global::TRUCKCOY.Properties.Resources.terr_off;
             this.add.Location = new System.Drawing.Point(7, 3);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(89, 19);
+            this.add.Size = new System.Drawing.Size(87, 19);
             this.add.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.add.TabIndex = 15;
             this.add.TabStop = false;
             this.add.Click += new System.EventHandler(this.add_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 613);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(819, 40);
-            this.panel1.TabIndex = 59;
             // 
             // showForm
             // 
@@ -148,6 +139,9 @@ namespace TRUCKCOY.forms
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHistory.BackgroundColor = System.Drawing.Color.White;
             this.dgvHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -179,7 +173,6 @@ namespace TRUCKCOY.forms
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHistory.GridColor = System.Drawing.Color.LightSlateGray;
             this.dgvHistory.Location = new System.Drawing.Point(0, 60);
             this.dgvHistory.Name = "dgvHistory";
@@ -289,6 +282,15 @@ namespace TRUCKCOY.forms
             this.select.ReadOnly = true;
             this.select.Width = 25;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 613);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(819, 40);
+            this.panel1.TabIndex = 59;
+            // 
             // HistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,7 +323,6 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox add;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer showForm;
         private System.Windows.Forms.Label lblTittleDesc;
         private System.Windows.Forms.DataGridView dgvHistory;
@@ -335,5 +336,6 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.DataGridViewTextBoxColumn delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn details0;
         private System.Windows.Forms.DataGridViewTextBoxColumn select;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -66,10 +66,12 @@ namespace TRUCKCOY.forms
             row.Cells["details0"].Value         = "9";
             row.Cells["select"].Value           = "9";
             */
+            DateTime now = DateTime.Now;
+            
 
             string[] historyDGV = new string[]
             {
-                "1",DateTime.Today.ToString(),"Carlos Lopez","AB XX 11","5","6","7","x","o","s"
+                "1",now.ToString("dd/MM/yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En Proceso","x","o","s"
 
             };
             dgvHistory.Rows.Add(historyDGV);

@@ -153,6 +153,16 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap graphCosts {
+            get {
+                object obj = ResourceManager.GetObject("graphCosts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_chat {
             get {
                 object obj = ResourceManager.GetObject("icon_chat", resourceCulture);

@@ -33,7 +33,7 @@ namespace TRUCKCOY
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.layoutHeader = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btnExpand = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -74,7 +74,7 @@ namespace TRUCKCOY
             this.tmrHideNavBar = new System.Windows.Forms.Timer(this.components);
             this.layoutHeader.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExpand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -129,7 +129,7 @@ namespace TRUCKCOY
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.96296F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox6, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.btnExpand, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.txtSearch, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.pictureBox5, 1, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
@@ -141,18 +141,18 @@ namespace TRUCKCOY
             this.tableLayoutPanel4.Size = new System.Drawing.Size(545, 46);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
-            // pictureBox6
+            // btnExpand
             // 
-            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = global::TRUCKCOY.Properties.Resources.expand_on;
-            this.pictureBox6.Location = new System.Drawing.Point(9, 11);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(25, 23);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 11;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.btnExpand.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnExpand.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExpand.Image = global::TRUCKCOY.Properties.Resources.expand_on;
+            this.btnExpand.Location = new System.Drawing.Point(9, 11);
+            this.btnExpand.Name = "btnExpand";
+            this.btnExpand.Size = new System.Drawing.Size(25, 23);
+            this.btnExpand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnExpand.TabIndex = 11;
+            this.btnExpand.TabStop = false;
+            this.btnExpand.Click += new System.EventHandler(this.btnExpand_Click);
             // 
             // txtSearch
             // 
@@ -206,11 +206,11 @@ namespace TRUCKCOY
             // 
             this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(38)))), ((int)(((byte)(55)))));
-            this.lblDate.Location = new System.Drawing.Point(67, 12);
+            this.lblDate.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
+            this.lblDate.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lblDate.Location = new System.Drawing.Point(77, 13);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(134, 19);
+            this.lblDate.Size = new System.Drawing.Size(124, 17);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "01-01-21 11:11:11 AM";
             // 
@@ -593,7 +593,7 @@ namespace TRUCKCOY
             this.layoutHeader.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExpand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -662,7 +662,7 @@ namespace TRUCKCOY
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panelContainer2;
         private System.Windows.Forms.Panel panelContainer;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox btnExpand;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel12;

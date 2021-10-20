@@ -7,6 +7,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace TRUCKCOY.forms
 {
@@ -66,23 +67,19 @@ namespace TRUCKCOY.forms
             //ttNoFleet.SetToolTip(this.picRegFleet, "No encontramos registros de flota vehicular, porfavor añadelos haciendo click en el botón :)");
 
             //-> Load Form History
-            hform = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "formHistory"};
-            panelHistory.Controls.Add(hform);
-            hform.Visible = true;
-        }
-        private void add_Click(object sender, EventArgs e)
-        {
-            for(int x = 0; x < 10; x++)
-            {
-                HistoryForm hf = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "p"+(x+5) };
-                //hf.lblID.Text = 111;
-                panelHistory.Controls.Add(hf);
-                hf.Visible = true;
-            }
+            //hform = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "formHistory"};
+            //panelStats.Controls.Add(hform);
+            //hform.Visible = true;
+
+
+            // Set up History Travels Data grid view
+
+
         }
         #endregion
 
         #region Backend
+        // Google Map
         //#-> Private methods
         private void loadMapSettings()
         {
@@ -188,6 +185,44 @@ namespace TRUCKCOY.forms
             return rotatedImage;
         }
         //-> Async Methods
+
+        // History Data Grid View
+
         #endregion
+
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            string monthToUpper = now.ToString("MMM").ToUpper();
+
+            for (int x = 0; x < 30; x++)
+            {
+                // Array list to add data
+                string[] historyDGV = new string[]
+                {
+                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En Proceso","x","o","s"
+                };
+
+                // Add array to Data Grid View
+                dgvHistory.Rows.Add(historyDGV);
+
+                // Validate Cell Status and change color
+                string dataValidator = dgvHistory.Rows[x].Cells[6].Value.ToString();
+
+                if (dataValidator == "En Proceso")
+                {
+                    dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.CornflowerBlue;
+                }
+            }
+
+            // Sort Data Grid View by ID
+            // dgvHistory.Sort(dgvHistory.Columns["id"], ListSortDirection.Descending);
+        }
+        private void clear_Click(object sender, EventArgs e)
+        {
+            dgvHistory.Rows.Clear();
+        }
+
     }
 }

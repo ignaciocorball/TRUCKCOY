@@ -47,7 +47,7 @@ namespace TRUCKCOY.forms
             this.pictureBox3.Image = global::TRUCKCOY.Properties.Resources.configuracion;
             this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.Size = new System.Drawing.Size(22, 22);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
@@ -60,7 +60,7 @@ namespace TRUCKCOY.forms
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(33, 9);
+            this.label3.Location = new System.Drawing.Point(30, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 16);
             this.label3.TabIndex = 3;
@@ -74,10 +74,9 @@ namespace TRUCKCOY.forms
             this.btnEditProfile.Controls.Add(this.pictureBox4);
             this.btnEditProfile.Controls.Add(this.lblProfileEdit);
             this.btnEditProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditProfile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditProfile.Location = new System.Drawing.Point(0, 0);
+            this.btnEditProfile.Location = new System.Drawing.Point(3, 3);
             this.btnEditProfile.Name = "btnEditProfile";
-            this.btnEditProfile.Size = new System.Drawing.Size(150, 32);
+            this.btnEditProfile.Size = new System.Drawing.Size(144, 29);
             this.btnEditProfile.TabIndex = 0;
             this.btnEditProfile.Click += new System.EventHandler(this.btnEditProfile_Click);
             this.btnEditProfile.MouseLeave += new System.EventHandler(this.btnEditProfile_MouseLeave);
@@ -88,7 +87,7 @@ namespace TRUCKCOY.forms
             this.pictureBox4.Image = global::TRUCKCOY.Properties.Resources.pencil;
             this.pictureBox4.Location = new System.Drawing.Point(3, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox4.Size = new System.Drawing.Size(22, 22);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
@@ -100,7 +99,7 @@ namespace TRUCKCOY.forms
             this.lblProfileEdit.AutoSize = true;
             this.lblProfileEdit.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileEdit.ForeColor = System.Drawing.Color.Black;
-            this.lblProfileEdit.Location = new System.Drawing.Point(30, 8);
+            this.lblProfileEdit.Location = new System.Drawing.Point(30, 6);
             this.lblProfileEdit.Name = "lblProfileEdit";
             this.lblProfileEdit.Size = new System.Drawing.Size(77, 16);
             this.lblProfileEdit.TabIndex = 3;
@@ -114,10 +113,9 @@ namespace TRUCKCOY.forms
             this.btnConfig.Controls.Add(this.pictureBox3);
             this.btnConfig.Controls.Add(this.label3);
             this.btnConfig.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfig.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConfig.Location = new System.Drawing.Point(0, 32);
+            this.btnConfig.Location = new System.Drawing.Point(3, 32);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(150, 32);
+            this.btnConfig.Size = new System.Drawing.Size(144, 28);
             this.btnConfig.TabIndex = 2;
             this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             this.btnConfig.MouseLeave += new System.EventHandler(this.btnConfig_MouseLeave);
@@ -127,6 +125,7 @@ namespace TRUCKCOY.forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(150, 64);
             this.Controls.Add(this.btnConfig);
             this.Controls.Add(this.btnEditProfile);
