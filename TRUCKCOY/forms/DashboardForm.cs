@@ -8,6 +8,10 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Windows.Forms.DataVisualization.Charting;
+using LiveCharts.Wpf;
+using LiveCharts;
+using LiveCharts.Defaults;
 
 namespace TRUCKCOY.forms
 {
@@ -64,7 +68,6 @@ namespace TRUCKCOY.forms
         //$-> FrontEnd 
         private void setFrontEnd()
         {
-            //ttNoFleet.SetToolTip(this.picRegFleet, "No encontramos registros de flota vehicular, porfavor añadelos haciendo click en el botón :)");
 
             //-> Load Form History
             //hform = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "formHistory"};
@@ -75,6 +78,78 @@ namespace TRUCKCOY.forms
             // Set up History Travels Data grid view
 
 
+            // Set up Panel Chart 
+
+            cartesianChart1.Series = new LiveCharts.SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "$",
+                    LineSmoothness = 0.6,
+                    PointForeground = System.Windows.Media.Brushes.AliceBlue,
+                    Values = new ChartValues<ObservablePoint>
+                    {
+                                           //x y
+                        new ObservablePoint(1,100),
+                        new ObservablePoint(2,125),
+                        new ObservablePoint(3,146),
+                        new ObservablePoint(4,177),
+                        new ObservablePoint(5,157),
+                        new ObservablePoint(6,197),
+                        new ObservablePoint(7,205),
+                        new ObservablePoint(8,186),
+                        new ObservablePoint(9,242),
+                        new ObservablePoint(10,236),
+                        new ObservablePoint(11,260),
+                        new ObservablePoint(12,275),
+                    }
+                }
+            };
+            /*
+            cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "",
+                Labels = new[] { "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" }
+            });
+            cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "",
+                LabelFormatter = value => "$" + value,
+
+            });
+
+            cartesianChart1.Series.Add(new ColumnSeries
+            {
+                Values = new ChartValues<double> { 150, 125, 176, 242},
+                DataLabels = true,
+                LabelPoint = point => point.Y + "K",
+            }); */
+
+            // Panel 4
+            solidGauge1.Uses360Mode = true;
+            solidGauge1.From = 0;
+            solidGauge1.To = 100;
+            solidGauge1.Value = 75;
+            // Graph Gradient
+            solidGauge1.Base.LabelsVisibility = System.Windows.Visibility.Hidden;
+            solidGauge1.Base.GaugeActiveFill = new System.Windows.Media.LinearGradientBrush {  GradientStops = new System.Windows.Media.GradientStopCollection {
+                new System.Windows.Media.GradientStop(System.Windows.Media.Colors.RoyalBlue,.2),
+                new System.Windows.Media.GradientStop(System.Windows.Media.Colors.DodgerBlue,1),
+                }
+            };
+
+            // Transparent Images with labels
+            lblActive.Parent = picActive;
+            lblActive.Location = new Point(-2,0);
+            lblActive.ForeColor = Color.White;
+
+            lblInactive.Parent = picInactive;
+            lblInactive.Location = new Point(-2, 0);
+            lblInactive.ForeColor = Color.White;
+
+            lblTotal.Parent = picTotal;
+            lblTotal.Location = new Point(-2, 0);
+            lblTotal.ForeColor = Color.White;
         }
         #endregion
 
@@ -201,7 +276,7 @@ namespace TRUCKCOY.forms
                 // Array list to add data
                 string[] historyDGV = new string[]
                 {
-                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En Proceso","x","o","s"
+                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En Proceso","Delete","Details","Select"
                 };
 
                 // Add array to Data Grid View
@@ -209,11 +284,11 @@ namespace TRUCKCOY.forms
 
                 // Validate Cell Status and change color
                 string dataValidator = dgvHistory.Rows[x].Cells[6].Value.ToString();
-
                 if (dataValidator == "En Proceso")
                 {
                     dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.CornflowerBlue;
                 }
+
             }
 
             // Sort Data Grid View by ID
@@ -224,5 +299,18 @@ namespace TRUCKCOY.forms
             dgvHistory.Rows.Clear();
         }
 
+        private void dgvHistory_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            string colname = dgvHistory.Columns[e.ColumnIndex].Name;
+
+            if (colname != "select" && colname != "delete" && colname != "details0")
+            {
+                dgvHistory.Cursor = Cursors.Default;
+            }
+            else
+            {
+                dgvHistory.Cursor = Cursors.Hand;
+            }
+        }
     }
 }

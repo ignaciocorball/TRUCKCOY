@@ -32,7 +32,6 @@ namespace TRUCKCOY.forms
             this.add = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
-            this.siticoneVScrollBar1 = new Siticone.Desktop.UI.WinForms.SiticoneVScrollBar();
             this.SuspendLayout();
             // 
             // add
@@ -70,29 +69,11 @@ namespace TRUCKCOY.forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // siticoneVScrollBar1
-            // 
-            this.siticoneVScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.siticoneVScrollBar1.HoverState.Parent = null;
-            this.siticoneVScrollBar1.InUpdate = false;
-            this.siticoneVScrollBar1.LargeChange = 10;
-            this.siticoneVScrollBar1.Location = new System.Drawing.Point(799, 0);
-            this.siticoneVScrollBar1.Name = "siticoneVScrollBar1";
-            this.siticoneVScrollBar1.PressedState.Parent = this.siticoneVScrollBar1;
-            this.siticoneVScrollBar1.ScrollbarSize = 10;
-            this.siticoneVScrollBar1.Size = new System.Drawing.Size(10, 450);
-            this.siticoneVScrollBar1.TabIndex = 4;
-            this.siticoneVScrollBar1.ThumbSize = 200F;
-            this.siticoneVScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.siticoneVScrollBar1_Scroll);
-            this.siticoneVScrollBar1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanel1_ControlAdded);
-            this.siticoneVScrollBar1.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanel1_ControlRemoved);
-            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 450);
-            this.Controls.Add(this.siticoneVScrollBar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.add);
@@ -107,6 +88,5 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button1;
-        private Siticone.Desktop.UI.WinForms.SiticoneVScrollBar siticoneVScrollBar1;
     }
 }

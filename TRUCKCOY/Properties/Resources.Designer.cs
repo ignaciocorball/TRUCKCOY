@@ -63,6 +63,16 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap active_bg {
+            get {
+                object obj = ResourceManager.GetObject("active_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calendar_ico {
             get {
                 object obj = ResourceManager.GetObject("calendar_ico", resourceCulture);
@@ -176,6 +186,16 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap icon_chat {
             get {
                 object obj = ResourceManager.GetObject("icon_chat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inactive_bg {
+            get {
+                object obj = ResourceManager.GetObject("inactive_bg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,6 +406,16 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap terr_on {
             get {
                 object obj = ResourceManager.GetObject("terr_on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap total_bg {
+            get {
+                object obj = ResourceManager.GetObject("total_bg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
