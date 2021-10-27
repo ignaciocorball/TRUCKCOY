@@ -7,7 +7,9 @@ namespace TRUCKCOY
 {
     public partial class mainForm : Form
     {
+        FormCollection fc = Application.OpenForms;
         DashboardForm dform;
+        HistoricalForm hform;
         ProfilePopupForm ppForm = new ProfilePopupForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
         public mainForm()
         {
@@ -127,7 +129,27 @@ namespace TRUCKCOY
                     break;
             }
         }
+        private Bitmap RotateImage(Bitmap bmp, float angle)
+        {
+            Bitmap rotatedImage = new Bitmap(bmp.Width, bmp.Height);
+            rotatedImage.SetResolution(bmp.HorizontalResolution, bmp.VerticalResolution);
+
+            using (Graphics g = Graphics.FromImage(rotatedImage))
+            {
+                // Set the rotation point to the center in the matrix
+                g.TranslateTransform(bmp.Width / 2, bmp.Height / 2);
+                // Rotate
+                g.RotateTransform(angle);
+                // Restore rotation point in the matrix
+                g.TranslateTransform(-bmp.Width / 2, -bmp.Height / 2);
+                // Draw the image on the bitmap
+                g.DrawImage(bmp, new System.Drawing.Point(0, 0));
+            }
+
+            return rotatedImage;
+        }
         #endregion
+
 
         #region FrontEnd
         // MouseClick
@@ -149,6 +171,9 @@ namespace TRUCKCOY
         }
         private void btnExpand_Click(object sender, EventArgs e)
         {
+            Bitmap bmpExpand = (Bitmap)btnExpand.Image;
+            Bitmap bmpExpandRotated = RotateImage(bmpExpand, 180);
+            btnExpand.Image = bmpExpandRotated;
             if (Width > 950)
             {
                 // Without Animation
@@ -183,10 +208,36 @@ namespace TRUCKCOY
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             selectNavButtons(1);
+            // Load Dashboard Form
+            if (dform.Visible == false)
+            {
+                dform.Visible = true;
+            }
+            else
+            {
+                // Hide Others
+                //hform.Visible = false;
+            }
         }
         private void btnEvents_Click(object sender, EventArgs e)
         {
             selectNavButtons(2);
+            hform = new HistoricalForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false, Opacity = 0 };
+
+            if (hform.Visible == false)
+            {
+                // Load Historical Form
+                panelContainer.Controls.Add(hform);
+                hform.Visible = true;
+                dform.Visible = false;
+            }
+            else
+            {
+                // Hide Others
+                dform.Visible = false;
+            }
+
+            
         }
         private void btnMaps_Click(object sender, EventArgs e)
         {

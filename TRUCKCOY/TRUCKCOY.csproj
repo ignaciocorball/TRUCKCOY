@@ -146,16 +146,28 @@
     <Compile Include="forms\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\ProfilePopupForm.cs">
+    <Compile Include="forms\DriversForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\ProfilePopupForm.Designer.cs">
+    <Compile Include="forms\DriversForm.Designer.cs">
+      <DependentUpon>DriversForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\HistoricalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\HistoricalForm.Designer.cs">
+      <DependentUpon>HistoricalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\resforms\ProfilePopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\resforms\ProfilePopupForm.Designer.cs">
       <DependentUpon>ProfilePopupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\HistoryForm.cs">
+    <Compile Include="forms\resforms\HistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\HistoryForm.Designer.cs">
+    <Compile Include="forms\resforms\HistoryForm.Designer.cs">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\mainForm.cs">
@@ -164,10 +176,10 @@
     <Compile Include="forms\mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\_TestForm.cs">
+    <Compile Include="forms\resforms\_TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\_TestForm.Designer.cs">
+    <Compile Include="forms\resforms\_TestForm.Designer.cs">
       <DependentUpon>_TestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -175,16 +187,22 @@
     <EmbeddedResource Include="forms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\ProfilePopupForm.resx">
+    <EmbeddedResource Include="forms\DriversForm.resx">
+      <DependentUpon>DriversForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\HistoricalForm.resx">
+      <DependentUpon>HistoricalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\resforms\ProfilePopupForm.resx">
       <DependentUpon>ProfilePopupForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\HistoryForm.resx">
+    <EmbeddedResource Include="forms\resforms\HistoryForm.resx">
       <DependentUpon>HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\_TestForm.resx">
+    <EmbeddedResource Include="forms\resforms\_TestForm.resx">
       <DependentUpon>_TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -216,6 +234,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="resources\users_off.png" />
+    <None Include="resources\users_on.png" />
     <None Include="resources\total_bg.png" />
     <None Include="resources\active_bg.png" />
     <Content Include="resources\bell-off.png" />

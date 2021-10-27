@@ -12,12 +12,13 @@ using System.Windows.Forms.DataVisualization.Charting;
 using LiveCharts.Wpf;
 using LiveCharts;
 using LiveCharts.Defaults;
+using System.Windows;
+using System.Globalization;
 
 namespace TRUCKCOY.forms
 {
     public partial class DashboardForm : Form
     {
-        HistoryForm hform;
         public DashboardForm()
         {
             InitializeComponent();
@@ -62,10 +63,9 @@ namespace TRUCKCOY.forms
         }
         private void picRegFleet_Click(object sender, EventArgs e)
         {
-
+            System.Windows.MessageBox.Show("Estamos trabajando en ello");
         }
-
-        //$-> FrontEnd 
+        //#-> Methods Events
         private void setFrontEnd()
         {
 
@@ -78,18 +78,21 @@ namespace TRUCKCOY.forms
             // Set up History Travels Data grid view
 
 
-            // Set up Panel Chart 
-
+            // Set up Cartesian Chart
+            string[] months = new string[] { "Ene","Feb" };
             cartesianChart1.Series = new LiveCharts.SeriesCollection
             {
                 new LineSeries
                 {
+                    AreaLimit = -10,
                     Title = "$",
                     LineSmoothness = 0.6,
                     PointForeground = System.Windows.Media.Brushes.AliceBlue,
+                    DataLabels = true,
                     Values = new ChartValues<ObservablePoint>
                     {
-                                           //x y
+                        // Historical Income Money Per Year
+                                   // Graph x y
                         new ObservablePoint(1,100),
                         new ObservablePoint(2,125),
                         new ObservablePoint(3,146),
@@ -105,57 +108,64 @@ namespace TRUCKCOY.forms
                     }
                 }
             };
-            /*
-            cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
-            {
-                Title = "",
-                Labels = new[] { "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic" }
-            });
+
             cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
             {
-                Title = "",
-                LabelFormatter = value => "$" + value,
-
+                LabelFormatter = val => val + "K",
+                Separator = new Separator
+                {
+                    StrokeThickness = 1,
+                    StrokeDashArray = new System.Windows.Media.DoubleCollection(new double[] { 4 }),
+                    Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(64, 79, 86))
+                }
             });
 
-            cartesianChart1.Series.Add(new ColumnSeries
+            cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
             {
-                Values = new ChartValues<double> { 150, 125, 176, 242},
-                DataLabels = true,
-                LabelPoint = point => point.Y + "K",
-            }); */
-
-            // Panel 4
-            solidGauge1.Uses360Mode = true;
-            solidGauge1.From = 0;
-            solidGauge1.To = 100;
-            solidGauge1.Value = 75;
-            // Graph Gradient
-            solidGauge1.Base.LabelsVisibility = System.Windows.Visibility.Hidden;
-            solidGauge1.Base.GaugeActiveFill = new System.Windows.Media.LinearGradientBrush {  GradientStops = new System.Windows.Media.GradientStopCollection {
-                new System.Windows.Media.GradientStop(System.Windows.Media.Colors.RoyalBlue,.2),
-                new System.Windows.Media.GradientStop(System.Windows.Media.Colors.DodgerBlue,1),
+                LabelFormatter = val => getDateByNumber(val),
+                Separator = new Separator
+                {
+                    Step = 11,
+                    StrokeThickness = 1,
+                    StrokeDashArray = new System.Windows.Media.DoubleCollection(new double[] { 4 }),
+                    Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(64, 79, 86))
                 }
-            };
+            });
+
+
+
+
+            // Solid Gauge Chart
+            solidGaugeSetUp();
 
             // Transparent Images with labels
             lblActive.Parent = picActive;
-            lblActive.Location = new Point(-2,0);
+            lblActive.Location = new System.Drawing.Point(0,0);
             lblActive.ForeColor = Color.White;
+            lblActive.TextAlign = ContentAlignment.MiddleCenter;
 
             lblInactive.Parent = picInactive;
-            lblInactive.Location = new Point(-2, 0);
+            lblInactive.Location = new System.Drawing.Point(0, 0);
             lblInactive.ForeColor = Color.White;
+            lblInactive.TextAlign = ContentAlignment.MiddleCenter;
 
             lblTotal.Parent = picTotal;
-            lblTotal.Location = new Point(-2, 0);
+            lblTotal.Location = new System.Drawing.Point(0, 0);
             lblTotal.ForeColor = Color.White;
+            lblTotal.TextAlign = ContentAlignment.MiddleCenter;
         }
         #endregion
 
         #region Backend
-        // Google Map
-        //#-> Private methods
+
+        private string getDateByNumber(double num)
+        {
+            int num2 = Convert.ToInt32(num);
+            DateTime date = new DateTime(2021, num2, 01);
+            string month_name = date.ToString("MMMM", new CultureInfo("es"));
+            string month_name2 = char.ToUpper(month_name[0]) + month_name.Substring(1);
+            return month_name2;
+        }
         private void loadMapSettings()
         {
             gMapControl1.DragButton = MouseButtons.Left;
@@ -184,7 +194,6 @@ namespace TRUCKCOY.forms
             gMapControl1.Overlays.Add(markers);
 
         }
-        //#-> Storage Access
         private void getVehiclesFeet()
         {
             // SQL CONNECTION
@@ -236,7 +245,7 @@ namespace TRUCKCOY.forms
             catch (Exception ex)
             {
                 // Mostrar cualquier excepción
-                MessageBox.Show(ex.Message);
+                //System.Windows.MessageBox.Show("Error al obtener la flota desde la base de datos"+System.Environment.NewLine+ex.Message);
                 overlayGMap.Visible = true;
             }
         }
@@ -254,12 +263,32 @@ namespace TRUCKCOY.forms
                 // Restore rotation point in the matrix
                 g.TranslateTransform(-bmp.Width / 2, -bmp.Height / 2);
                 // Draw the image on the bitmap
-                g.DrawImage(bmp, new Point(0, 0));
+                g.DrawImage(bmp, new System.Drawing.Point(0, 0));
             }
 
             return rotatedImage;
         }
-        //-> Async Methods
+        private void solidGaugeSetUp()
+        {
+            // Solid Gauge Chart Set up
+            solidGauge1.HighFontSize = 20;
+            solidGauge1.ForeColor = Color.FromArgb(30, 96, 164);
+            solidGauge1.Uses360Mode = true;
+            solidGauge1.From = 0;
+            solidGauge1.To = 100;
+            solidGauge1.Value = Math.Round(77.7,1);
+
+            // Graph Gradient
+            solidGauge1.Base.LabelsVisibility = Visibility.Hidden;
+            solidGauge1.Base.GaugeActiveFill = new System.Windows.Media.LinearGradientBrush
+            {
+                GradientStops = new System.Windows.Media.GradientStopCollection {
+                new System.Windows.Media.GradientStop(System.Windows.Media.Colors.DodgerBlue,.2),
+                new System.Windows.Media.GradientStop(System.Windows.Media.Colors.AliceBlue,1),
+                }
+            };
+            solidGauge1.LabelFormatter = val => solidGauge1.Value + "%";
+        }
 
         // History Data Grid View
 
@@ -269,8 +298,8 @@ namespace TRUCKCOY.forms
         private void add_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
-            string monthToUpper = now.ToString("MMM").ToUpper();
-
+            string monthToUpper = now.ToString("MMM",new CultureInfo("cl")).ToUpper();
+            
             for (int x = 0; x < 30; x++)
             {
                 // Array list to add data
@@ -298,7 +327,6 @@ namespace TRUCKCOY.forms
         {
             dgvHistory.Rows.Clear();
         }
-
         private void dgvHistory_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             string colname = dgvHistory.Columns[e.ColumnIndex].Name;
