@@ -133,8 +133,6 @@ namespace TRUCKCOY.forms
             });
 
 
-
-
             // Solid Gauge Chart
             solidGaugeSetUp();
 
