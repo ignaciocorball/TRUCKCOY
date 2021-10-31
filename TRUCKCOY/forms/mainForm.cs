@@ -249,7 +249,9 @@ namespace TRUCKCOY
         }
         private void txtSearch_Click(object sender, EventArgs e)
         {
-            txtSearch.Text = "";
+            if(txtSearch.Text == "Buscar . . . ") { txtSearch.Text = ""; }
+            else{  }
+            
         }
         // MouseOver & MouseLeave
         private void txtSearch_Leave(object sender, EventArgs e)

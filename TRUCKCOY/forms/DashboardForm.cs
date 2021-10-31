@@ -14,6 +14,7 @@ using LiveCharts;
 using LiveCharts.Defaults;
 using System.Windows;
 using System.Globalization;
+using System.Data;
 
 namespace TRUCKCOY.forms
 {
@@ -69,71 +70,11 @@ namespace TRUCKCOY.forms
         private void setFrontEnd()
         {
 
-            //-> Load Form History
-            //hform = new HistoryForm() { TopLevel = false, Dock = DockStyle.Top, Name = "formHistory"};
-            //panelStats.Controls.Add(hform);
-            //hform.Visible = true;
-
-
-            // Set up History Travels Data grid view
-
-
+            // Set up History Data Grid View
+            loadDataGridView();
             // Set up Cartesian Chart
-            string[] months = new string[] { "Ene","Feb" };
-            cartesianChart1.Series = new LiveCharts.SeriesCollection
-            {
-                new LineSeries
-                {
-                    AreaLimit = -10,
-                    Title = "$",
-                    LineSmoothness = 0.6,
-                    PointForeground = System.Windows.Media.Brushes.AliceBlue,
-                    DataLabels = true,
-                    Values = new ChartValues<ObservablePoint>
-                    {
-                        // Historical Income Money Per Year
-                                   // Graph x y
-                        new ObservablePoint(1,100),
-                        new ObservablePoint(2,125),
-                        new ObservablePoint(3,146),
-                        new ObservablePoint(4,177),
-                        new ObservablePoint(5,157),
-                        new ObservablePoint(6,197),
-                        new ObservablePoint(7,205),
-                        new ObservablePoint(8,186),
-                        new ObservablePoint(9,242),
-                        new ObservablePoint(10,236),
-                        new ObservablePoint(11,260),
-                        new ObservablePoint(12,275),
-                    }
-                }
-            };
-
-            cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
-            {
-                LabelFormatter = val => val + "K",
-                Separator = new Separator
-                {
-                    StrokeThickness = 1,
-                    StrokeDashArray = new System.Windows.Media.DoubleCollection(new double[] { 4 }),
-                    Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(64, 79, 86))
-                }
-            });
-
-            cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
-            {
-                LabelFormatter = val => getDateByNumber(val),
-                Separator = new Separator
-                {
-                    Step = 11,
-                    StrokeThickness = 1,
-                    StrokeDashArray = new System.Windows.Media.DoubleCollection(new double[] { 4 }),
-                    Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(64, 79, 86))
-                }
-            });
-
-
-            // Solid Gauge Chart
+            cartesianChartSetUp();
+            // Set up Solid Gauge Chart
             solidGaugeSetUp();
 
             // Transparent Images with labels
@@ -151,6 +92,70 @@ namespace TRUCKCOY.forms
             lblTotal.Location = new System.Drawing.Point(0, 0);
             lblTotal.ForeColor = Color.White;
             lblTotal.TextAlign = ContentAlignment.MiddleCenter;
+
+            
+        }
+        private void loadDataGridView()
+        {
+            Bitmap img,img2,img3;
+
+            img = new Bitmap(Properties.Resources.eye_hover);
+            img2 = new Bitmap(Properties.Resources.trash);
+            img3 = new Bitmap(Properties.Resources.inactive_bg);
+
+            DateTime now = DateTime.Now;
+            string monthToUpper = now.ToString("MMM", new CultureInfo("cl")).ToUpper();
+
+            DataTable dtTemp = new DataTable();
+
+            dtTemp.Columns.Add("ID", typeof(int));
+            dtTemp.Columns.Add("Ingreso de orden", typeof(string));
+            dtTemp.Columns.Add("Conductor", typeof(string));
+            dtTemp.Columns.Add("Patente", typeof(string));
+            dtTemp.Columns.Add("Dirección de Origen", typeof(string));
+            dtTemp.Columns.Add("Dirección de Destino", typeof(string));
+            dtTemp.Columns.Add("Estado", typeof(string));
+
+
+
+            // Add array data in History Data Grid View
+            for (int x = 0; x < 30; x++)
+            {
+
+                
+                string[] historyDGV = new string[]
+                {
+                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En Proceso"
+                };
+
+                // Add array to Data Grid View
+                dgvHistory.Rows.Add(historyDGV);
+
+                // Validate Cell Status and change color
+                string dataValidator = dgvHistory.Rows[x].Cells[6].Value.ToString();
+                if (dataValidator == "En Proceso")
+                {
+                    dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.CornflowerBlue;
+                }
+
+                dgvHistory.Rows[x].Cells[7].Value = img;
+                dgvHistory.Rows[x].Cells[8].Value = img2;
+                dgvHistory.Rows[x].Cells[9].Value = false;
+                
+            }
+
+            // Add dtTemp to History data grid view
+            //dgvHistory.DataSource = dtTemp;
+
+            // Zoom Buttons
+            for (int i = 0; i < dgvHistory.Columns.Count; i++)
+                if (dgvHistory.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)dgvHistory.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Zoom;
+                }
+
+            // Sort Data Grid View by ID
+            // dgvHistory.Sort(dgvHistory.Columns["id"], ListSortDirection.Descending);
         }
         #endregion
 
@@ -287,40 +292,63 @@ namespace TRUCKCOY.forms
             };
             solidGauge1.LabelFormatter = val => solidGauge1.Value + "%";
         }
+        private void cartesianChartSetUp()
+        {
+            cartesianChart1.Series = new LiveCharts.SeriesCollection
+            {
+                new LineSeries
+                {
+                    AreaLimit = -10,
+                    Title = "$",
+                    LineSmoothness = 0.6,
+                    PointForeground = System.Windows.Media.Brushes.AliceBlue,
+                    DataLabels = true,
+                    Values = new ChartValues<ObservablePoint>
+                    {
+                        // Historical Income Money Per Year
+                                   // Graph x y
+                        new ObservablePoint(1,100),
+                        new ObservablePoint(2,125),
+                        new ObservablePoint(3,146),
+                        new ObservablePoint(4,177),
+                        new ObservablePoint(5,157),
+                        new ObservablePoint(6,197),
+                        new ObservablePoint(7,205),
+                        new ObservablePoint(8,186),
+                        new ObservablePoint(9,242),
+                        new ObservablePoint(10,236),
+                        new ObservablePoint(11,260),
+                        new ObservablePoint(12,275),
+                    }
+                }
+            };
 
-        // History Data Grid View
+            cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                LabelFormatter = val => val + "K",
+                Separator = new Separator
+                {
+                    StrokeThickness = 1,
+                    StrokeDashArray = new System.Windows.Media.DoubleCollection(new double[] { 4 }),
+                    Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(64, 79, 86))
+                }
+            });
+
+            cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                LabelFormatter = val => getDateByNumber(val),
+                Separator = new Separator
+                {
+                    Step = 11,
+                    StrokeThickness = 1,
+                    StrokeDashArray = new System.Windows.Media.DoubleCollection(new double[] { 4 }),
+                    Stroke = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(64, 79, 86))
+                }
+            });
+        }
 
         #endregion
 
-
-        private void add_Click(object sender, EventArgs e)
-        {
-            DateTime now = DateTime.Now;
-            string monthToUpper = now.ToString("MMM",new CultureInfo("cl")).ToUpper();
-            
-            for (int x = 0; x < 30; x++)
-            {
-                // Array list to add data
-                string[] historyDGV = new string[]
-                {
-                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En Proceso","Delete","Details","Select"
-                };
-
-                // Add array to Data Grid View
-                dgvHistory.Rows.Add(historyDGV);
-
-                // Validate Cell Status and change color
-                string dataValidator = dgvHistory.Rows[x].Cells[6].Value.ToString();
-                if (dataValidator == "En Proceso")
-                {
-                    dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.CornflowerBlue;
-                }
-
-            }
-
-            // Sort Data Grid View by ID
-            // dgvHistory.Sort(dgvHistory.Columns["id"], ListSortDirection.Descending);
-        }
         private void clear_Click(object sender, EventArgs e)
         {
             dgvHistory.Rows.Clear();

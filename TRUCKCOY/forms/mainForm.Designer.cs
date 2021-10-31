@@ -116,9 +116,9 @@ namespace TRUCKCOY
             // layoutHeader
             // 
             this.layoutHeader.ColumnCount = 3;
-            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.40211F));
-            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.59789F));
-            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.9397F));
+            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.0603F));
+            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.layoutHeader.Controls.Add(this.tableLayoutPanel1, 1, 0);
             this.layoutHeader.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.layoutHeader.Controls.Add(this.tableLayoutPanel2, 2, 0);
@@ -137,18 +137,18 @@ namespace TRUCKCOY
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.94737F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.05264F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanel1.Controls.Add(this.lblTime, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblDate, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox6, 2, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(548, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(502, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.62162F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.37838F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(246, 49);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(288, 49);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblTime
@@ -156,9 +156,9 @@ namespace TRUCKCOY
             this.lblTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTime.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
             this.lblTime.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblTime.Location = new System.Drawing.Point(148, 15);
+            this.lblTime.Location = new System.Drawing.Point(186, 15);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(86, 17);
+            this.lblTime.Size = new System.Drawing.Size(96, 17);
             this.lblTime.TabIndex = 2;
             this.lblTime.Text = "11:11:11 PM";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -168,9 +168,9 @@ namespace TRUCKCOY
             this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDate.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
             this.lblDate.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblDate.Location = new System.Drawing.Point(36, 15);
+            this.lblDate.Location = new System.Drawing.Point(47, 15);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(75, 17);
+            this.lblDate.Size = new System.Drawing.Size(102, 17);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "01.OCT.2021";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -190,7 +190,7 @@ namespace TRUCKCOY
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.84615F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(494, 46);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(493, 46);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
             // txtSearch
@@ -202,7 +202,7 @@ namespace TRUCKCOY
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtSearch.Location = new System.Drawing.Point(74, 11);
+            this.txtSearch.Location = new System.Drawing.Point(73, 11);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(417, 23);
@@ -426,7 +426,7 @@ namespace TRUCKCOY
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox2.Image = global::TRUCKCOY.Properties.Resources.calendar_ico;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(16, 11);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -437,7 +437,7 @@ namespace TRUCKCOY
             // 
             this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox6.Image = global::TRUCKCOY.Properties.Resources.reloj_ico;
-            this.pictureBox6.Location = new System.Drawing.Point(117, 11);
+            this.pictureBox6.Location = new System.Drawing.Point(155, 11);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(25, 25);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -462,7 +462,7 @@ namespace TRUCKCOY
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(43, 11);
+            this.pictureBox5.Location = new System.Drawing.Point(42, 11);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(25, 23);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;

@@ -65,7 +65,7 @@ namespace TRUCKCOY.forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.61224F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Controls.Add(this.btnRefresh, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSatellite, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNormal, 2, 0);
@@ -82,7 +82,7 @@ namespace TRUCKCOY.forms
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRefresh.Image = global::TRUCKCOY.Properties.Resources.refresh;
-            this.btnRefresh.Location = new System.Drawing.Point(257, 3);
+            this.btnRefresh.Location = new System.Drawing.Point(255, 3);
             this.btnRefresh.MaximumSize = new System.Drawing.Size(20, 20);
             this.btnRefresh.MinimumSize = new System.Drawing.Size(20, 20);
             this.btnRefresh.Name = "btnRefresh";
@@ -96,7 +96,7 @@ namespace TRUCKCOY.forms
             this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSatellite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.sat_off;
-            this.btnSatellite.Location = new System.Drawing.Point(178, 3);
+            this.btnSatellite.Location = new System.Drawing.Point(176, 3);
             this.btnSatellite.MaximumSize = new System.Drawing.Size(75, 20);
             this.btnSatellite.MinimumSize = new System.Drawing.Size(75, 20);
             this.btnSatellite.Name = "btnSatellite";
@@ -110,7 +110,7 @@ namespace TRUCKCOY.forms
             this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNormal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.normal_on;
-            this.btnNormal.Location = new System.Drawing.Point(98, 3);
+            this.btnNormal.Location = new System.Drawing.Point(96, 3);
             this.btnNormal.MaximumSize = new System.Drawing.Size(75, 20);
             this.btnNormal.MinimumSize = new System.Drawing.Size(75, 20);
             this.btnNormal.Name = "btnNormal";

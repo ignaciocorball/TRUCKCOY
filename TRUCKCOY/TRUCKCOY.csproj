@@ -234,10 +234,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="resources\filter.png" />
+    <None Include="resources\delete_on.png" />
+    <None Include="resources\modificar_on.png" />
     <None Include="resources\users_off.png" />
     <None Include="resources\users_on.png" />
     <None Include="resources\total_bg.png" />
     <None Include="resources\active_bg.png" />
+    <None Include="resources\anadir_on.png" />
     <Content Include="resources\bell-off.png" />
     <Content Include="resources\bell-on.png" />
     <None Include="resources\inactive_bg.png" />

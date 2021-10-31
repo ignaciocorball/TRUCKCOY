@@ -73,6 +73,16 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anadir_on {
+            get {
+                object obj = ResourceManager.GetObject("anadir_on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calendar_ico {
             get {
                 object obj = ResourceManager.GetObject("calendar_ico", resourceCulture);
@@ -143,6 +153,16 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_on {
+            get {
+                object obj = ResourceManager.GetObject("delete_on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap expand_on {
             get {
                 object obj = ResourceManager.GetObject("expand_on", resourceCulture);
@@ -166,6 +186,16 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap eye_leave {
             get {
                 object obj = ResourceManager.GetObject("eye_leave", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filter {
+            get {
+                object obj = ResourceManager.GetObject("filter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +256,16 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap maps_on {
             get {
                 object obj = ResourceManager.GetObject("maps_on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap modificar_on {
+            get {
+                object obj = ResourceManager.GetObject("modificar_on", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

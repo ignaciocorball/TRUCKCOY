@@ -121,6 +121,9 @@
   <data name="active_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\active_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="anadir_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\anadir_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="calendar_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\calendar_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,6 +145,9 @@
   <data name="dashboard_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\dashboard-on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="delete_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\delete_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="expand_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\expand_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +156,9 @@
   </data>
   <data name="eye_leave" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\eye_leave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="graphCosts" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\graphCosts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -168,6 +177,9 @@
   </data>
   <data name="maps_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\maps_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="modificar_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\modificar_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="normal_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\normal_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
