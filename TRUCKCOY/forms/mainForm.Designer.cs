@@ -35,82 +35,82 @@ namespace TRUCKCOY
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnExpand = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnProfile = new System.Windows.Forms.PictureBox();
             this.tmrSecond = new System.Windows.Forms.Timer(this.components);
             this.panelNavBar = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.divisorLine2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnTemperature = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnMaps = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnEvents = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDashboard = new System.Windows.Forms.PictureBox();
             this.panel111 = new System.Windows.Forms.Panel();
             this.divisorLine1 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelContainer2 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.pnlProfile = new System.Windows.Forms.Panel();
             this.tmrLoadNavBar = new System.Windows.Forms.Timer(this.components);
             this.tmrHideNavBar = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.btnExpand = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnProfile = new System.Windows.Forms.PictureBox();
-            this.btnLogout = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.btnTemperature = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.btnMaps = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.btnEvents = new System.Windows.Forms.PictureBox();
-            this.btnDashboard = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.layoutHeader.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.panelNavBar.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel111.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panelHeader.SuspendLayout();
-            this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExpand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).BeginInit();
+            this.panelNavBar.SuspendLayout();
+            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnTemperature)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaps)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEvents)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDashboard)).BeginInit();
+            this.panel111.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelHeader.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutHeader
@@ -118,7 +118,7 @@ namespace TRUCKCOY
             this.layoutHeader.ColumnCount = 3;
             this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.9397F));
             this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.0603F));
-            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.layoutHeader.Controls.Add(this.tableLayoutPanel1, 1, 0);
             this.layoutHeader.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.layoutHeader.Controls.Add(this.tableLayoutPanel2, 2, 0);
@@ -137,12 +137,12 @@ namespace TRUCKCOY
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.94737F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.05264F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel1.Controls.Add(this.lblTime, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblDate, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox6, 2, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(502, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(520, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.62162F));
@@ -156,7 +156,7 @@ namespace TRUCKCOY
             this.lblTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTime.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
             this.lblTime.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblTime.Location = new System.Drawing.Point(186, 15);
+            this.lblTime.Location = new System.Drawing.Point(185, 15);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(96, 17);
             this.lblTime.TabIndex = 2;
@@ -168,12 +168,34 @@ namespace TRUCKCOY
             this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDate.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
             this.lblDate.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblDate.Location = new System.Drawing.Point(47, 15);
+            this.lblDate.Location = new System.Drawing.Point(46, 15);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(102, 17);
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "01.OCT.2021";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox2.Image = global::TRUCKCOY.Properties.Resources.calendar_ico;
+            this.pictureBox2.Location = new System.Drawing.Point(15, 11);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox6.Image = global::TRUCKCOY.Properties.Resources.reloj_ico;
+            this.pictureBox6.Location = new System.Drawing.Point(154, 11);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 3;
+            this.pictureBox6.TabStop = false;
             // 
             // tableLayoutPanel4
             // 
@@ -192,6 +214,19 @@ namespace TRUCKCOY
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(493, 46);
             this.tableLayoutPanel4.TabIndex = 6;
+            // 
+            // btnExpand
+            // 
+            this.btnExpand.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnExpand.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExpand.Image = global::TRUCKCOY.Properties.Resources.expand_on;
+            this.btnExpand.Location = new System.Drawing.Point(4, 11);
+            this.btnExpand.Name = "btnExpand";
+            this.btnExpand.Size = new System.Drawing.Size(25, 23);
+            this.btnExpand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnExpand.TabIndex = 11;
+            this.btnExpand.TabStop = false;
+            this.btnExpand.Click += new System.EventHandler(this.btnExpand_Click);
             // 
             // txtSearch
             // 
@@ -212,6 +247,18 @@ namespace TRUCKCOY
             this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(42, 11);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(25, 23);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox5.TabIndex = 11;
+            this.pictureBox5.TabStop = false;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -231,6 +278,42 @@ namespace TRUCKCOY
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(104, 46);
             this.tableLayoutPanel2.TabIndex = 4;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::TRUCKCOY.Properties.Resources.settings;
+            this.pictureBox4.Location = new System.Drawing.Point(6, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(39, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfile.Image = global::TRUCKCOY.Properties.Resources.profile;
+            this.btnProfile.Location = new System.Drawing.Point(69, 10);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(25, 24);
+            this.btnProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnProfile.TabIndex = 4;
+            this.btnProfile.TabStop = false;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // tmrSecond
             // 
@@ -266,6 +349,18 @@ namespace TRUCKCOY
             this.panel11.Size = new System.Drawing.Size(60, 58);
             this.panel11.TabIndex = 24;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.Image = global::TRUCKCOY.Properties.Resources.logout;
+            this.btnLogout.Location = new System.Drawing.Point(18, 15);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(25, 25);
+            this.btnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.TabStop = false;
+            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.divisorLine2);
@@ -293,6 +388,17 @@ namespace TRUCKCOY
             this.panel9.Size = new System.Drawing.Size(60, 58);
             this.panel9.TabIndex = 22;
             // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox12.Location = new System.Drawing.Point(18, 15);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.TabIndex = 10;
+            this.pictureBox12.TabStop = false;
+            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.pictureBox11);
@@ -301,6 +407,17 @@ namespace TRUCKCOY
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(60, 58);
             this.panel8.TabIndex = 21;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox11.Location = new System.Drawing.Point(18, 15);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 10;
+            this.pictureBox11.TabStop = false;
             // 
             // panel7
             // 
@@ -312,6 +429,32 @@ namespace TRUCKCOY
             this.panel7.Size = new System.Drawing.Size(60, 58);
             this.panel7.TabIndex = 20;
             // 
+            // btnTemperature
+            // 
+            this.btnTemperature.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnTemperature.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTemperature.Image = global::TRUCKCOY.Properties.Resources.temp_off;
+            this.btnTemperature.Location = new System.Drawing.Point(18, 15);
+            this.btnTemperature.Name = "btnTemperature";
+            this.btnTemperature.Size = new System.Drawing.Size(25, 25);
+            this.btnTemperature.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnTemperature.TabIndex = 10;
+            this.btnTemperature.TabStop = false;
+            this.btnTemperature.Click += new System.EventHandler(this.btnTemperature_Click);
+            this.btnTemperature.MouseLeave += new System.EventHandler(this.btnTemperature_MouseLeave);
+            this.btnTemperature.MouseHover += new System.EventHandler(this.btnTemperature_MouseHover);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Location = new System.Drawing.Point(18, 15);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 10;
+            this.pictureBox7.TabStop = false;
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.btnMaps);
@@ -320,6 +463,21 @@ namespace TRUCKCOY
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(60, 58);
             this.panel6.TabIndex = 19;
+            // 
+            // btnMaps
+            // 
+            this.btnMaps.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnMaps.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaps.Image = global::TRUCKCOY.Properties.Resources.maps_off;
+            this.btnMaps.Location = new System.Drawing.Point(18, 16);
+            this.btnMaps.Name = "btnMaps";
+            this.btnMaps.Size = new System.Drawing.Size(25, 25);
+            this.btnMaps.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMaps.TabIndex = 10;
+            this.btnMaps.TabStop = false;
+            this.btnMaps.Click += new System.EventHandler(this.btnMaps_Click);
+            this.btnMaps.MouseLeave += new System.EventHandler(this.btnMaps_MouseLeave);
+            this.btnMaps.MouseHover += new System.EventHandler(this.btnMaps_MouseHover);
             // 
             // panel5
             // 
@@ -330,6 +488,18 @@ namespace TRUCKCOY
             this.panel5.Size = new System.Drawing.Size(60, 58);
             this.panel5.TabIndex = 18;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox8.Image = global::TRUCKCOY.Properties.Resources.users_off;
+            this.pictureBox8.Location = new System.Drawing.Point(18, 17);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 11;
+            this.pictureBox8.TabStop = false;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btnEvents);
@@ -339,6 +509,21 @@ namespace TRUCKCOY
             this.panel4.Size = new System.Drawing.Size(60, 58);
             this.panel4.TabIndex = 17;
             // 
+            // btnEvents
+            // 
+            this.btnEvents.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnEvents.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEvents.Image = global::TRUCKCOY.Properties.Resources.schedule_off;
+            this.btnEvents.Location = new System.Drawing.Point(18, 15);
+            this.btnEvents.Name = "btnEvents";
+            this.btnEvents.Size = new System.Drawing.Size(25, 25);
+            this.btnEvents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnEvents.TabIndex = 10;
+            this.btnEvents.TabStop = false;
+            this.btnEvents.Click += new System.EventHandler(this.btnEvents_Click);
+            this.btnEvents.MouseLeave += new System.EventHandler(this.btnEvents_MouseLeave);
+            this.btnEvents.MouseHover += new System.EventHandler(this.btnEvents_MouseHover);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnDashboard);
@@ -347,6 +532,21 @@ namespace TRUCKCOY
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(60, 58);
             this.panel3.TabIndex = 16;
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDashboard.Image = global::TRUCKCOY.Properties.Resources.dashboard_on;
+            this.btnDashboard.Location = new System.Drawing.Point(18, 15);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(25, 25);
+            this.btnDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnDashboard.TabIndex = 10;
+            this.btnDashboard.TabStop = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            this.btnDashboard.MouseLeave += new System.EventHandler(this.btnDashboard_MouseLeave);
+            this.btnDashboard.MouseHover += new System.EventHandler(this.btnDashboard_MouseHover);
             // 
             // panel111
             // 
@@ -374,6 +574,18 @@ namespace TRUCKCOY
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(60, 55);
             this.panel1.TabIndex = 14;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::TRUCKCOY.Properties.Resources.profile_pic_default;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panelHeader
             // 
@@ -422,218 +634,6 @@ namespace TRUCKCOY
             this.tmrHideNavBar.Interval = 5;
             this.tmrHideNavBar.Tick += new System.EventHandler(this.tmrHideNavBar_Tick);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox2.Image = global::TRUCKCOY.Properties.Resources.calendar_ico;
-            this.pictureBox2.Location = new System.Drawing.Point(16, 11);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox6.Image = global::TRUCKCOY.Properties.Resources.reloj_ico;
-            this.pictureBox6.Location = new System.Drawing.Point(155, 11);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 3;
-            this.pictureBox6.TabStop = false;
-            // 
-            // btnExpand
-            // 
-            this.btnExpand.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnExpand.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExpand.Image = global::TRUCKCOY.Properties.Resources.expand_on;
-            this.btnExpand.Location = new System.Drawing.Point(4, 11);
-            this.btnExpand.Name = "btnExpand";
-            this.btnExpand.Size = new System.Drawing.Size(25, 23);
-            this.btnExpand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnExpand.TabIndex = 11;
-            this.btnExpand.TabStop = false;
-            this.btnExpand.Click += new System.EventHandler(this.btnExpand_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(42, 11);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(25, 23);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox5.TabIndex = 11;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::TRUCKCOY.Properties.Resources.settings;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 12);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(39, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // btnProfile
-            // 
-            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProfile.Image = global::TRUCKCOY.Properties.Resources.profile;
-            this.btnProfile.Location = new System.Drawing.Point(69, 10);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(25, 24);
-            this.btnProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnProfile.TabIndex = 4;
-            this.btnProfile.TabStop = false;
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.Image = global::TRUCKCOY.Properties.Resources.logout;
-            this.btnLogout.Location = new System.Drawing.Point(18, 15);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(25, 25);
-            this.btnLogout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnLogout.TabIndex = 10;
-            this.btnLogout.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox12.Location = new System.Drawing.Point(18, 15);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 10;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox11.Location = new System.Drawing.Point(18, 15);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 10;
-            this.pictureBox11.TabStop = false;
-            // 
-            // btnTemperature
-            // 
-            this.btnTemperature.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnTemperature.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTemperature.Image = global::TRUCKCOY.Properties.Resources.temp_off;
-            this.btnTemperature.Location = new System.Drawing.Point(18, 15);
-            this.btnTemperature.Name = "btnTemperature";
-            this.btnTemperature.Size = new System.Drawing.Size(25, 25);
-            this.btnTemperature.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnTemperature.TabIndex = 10;
-            this.btnTemperature.TabStop = false;
-            this.btnTemperature.Click += new System.EventHandler(this.btnTemperature_Click);
-            this.btnTemperature.MouseLeave += new System.EventHandler(this.btnTemperature_MouseLeave);
-            this.btnTemperature.MouseHover += new System.EventHandler(this.btnTemperature_MouseHover);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox7.Location = new System.Drawing.Point(18, 15);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 10;
-            this.pictureBox7.TabStop = false;
-            // 
-            // btnMaps
-            // 
-            this.btnMaps.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnMaps.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaps.Image = global::TRUCKCOY.Properties.Resources.maps_off;
-            this.btnMaps.Location = new System.Drawing.Point(18, 16);
-            this.btnMaps.Name = "btnMaps";
-            this.btnMaps.Size = new System.Drawing.Size(25, 25);
-            this.btnMaps.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMaps.TabIndex = 10;
-            this.btnMaps.TabStop = false;
-            this.btnMaps.Click += new System.EventHandler(this.btnMaps_Click);
-            this.btnMaps.MouseLeave += new System.EventHandler(this.btnMaps_MouseLeave);
-            this.btnMaps.MouseHover += new System.EventHandler(this.btnMaps_MouseHover);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox8.Image = global::TRUCKCOY.Properties.Resources.users_off;
-            this.pictureBox8.Location = new System.Drawing.Point(18, 17);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 11;
-            this.pictureBox8.TabStop = false;
-            // 
-            // btnEvents
-            // 
-            this.btnEvents.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnEvents.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEvents.Image = global::TRUCKCOY.Properties.Resources.schedule_off;
-            this.btnEvents.Location = new System.Drawing.Point(18, 15);
-            this.btnEvents.Name = "btnEvents";
-            this.btnEvents.Size = new System.Drawing.Size(25, 25);
-            this.btnEvents.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnEvents.TabIndex = 10;
-            this.btnEvents.TabStop = false;
-            this.btnEvents.Click += new System.EventHandler(this.btnEvents_Click);
-            this.btnEvents.MouseLeave += new System.EventHandler(this.btnEvents_MouseLeave);
-            this.btnEvents.MouseHover += new System.EventHandler(this.btnEvents_MouseHover);
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDashboard.Image = global::TRUCKCOY.Properties.Resources.dashboard_on;
-            this.btnDashboard.Location = new System.Drawing.Point(18, 15);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(25, 25);
-            this.btnDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnDashboard.TabIndex = 10;
-            this.btnDashboard.TabStop = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
-            this.btnDashboard.MouseLeave += new System.EventHandler(this.btnDashboard_MouseLeave);
-            this.btnDashboard.MouseHover += new System.EventHandler(this.btnDashboard_MouseHover);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::TRUCKCOY.Properties.Resources.profile_pic_default;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 43);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -650,40 +650,40 @@ namespace TRUCKCOY
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.layoutHeader.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.panelNavBar.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel111.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panelHeader.ResumeLayout(false);
-            this.panelContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExpand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProfile)).EndInit();
+            this.panelNavBar.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnTemperature)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMaps)).EndInit();
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnEvents)).EndInit();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnDashboard)).EndInit();
+            this.panel111.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelHeader.ResumeLayout(false);
+            this.panelContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -234,6 +234,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="resources\eye24x24.png" />
+    <None Include="resources\ojo %281%29.png" />
+    <None Include="resources\trash_small.png" />
     <None Include="resources\filter.png" />
     <None Include="resources\delete_on.png" />
     <None Include="resources\modificar_on.png" />

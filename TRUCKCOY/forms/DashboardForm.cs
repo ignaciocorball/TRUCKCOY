@@ -7,12 +7,9 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.ComponentModel;
-using System.Windows.Forms.DataVisualization.Charting;
 using LiveCharts.Wpf;
 using LiveCharts;
 using LiveCharts.Defaults;
-using System.Windows;
 using System.Globalization;
 using System.Data;
 
@@ -26,11 +23,13 @@ namespace TRUCKCOY.forms
             loadMapSettings();
             getVehiclesFeet();
             setFrontEnd();
+
         }
 
 
         #region Frontend
-        //#-> Buttons Events
+
+        /// Buttons Events
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             gMapControl1.Zoom = 1;
@@ -64,22 +63,42 @@ namespace TRUCKCOY.forms
         }
         private void picRegFleet_Click(object sender, EventArgs e)
         {
-            System.Windows.MessageBox.Show("Estamos trabajando en ello");
+            System.Windows.MessageBox.Show("Estamos trabajando en ello :)");
         }
-        //#-> Methods Events
+
+        /// DataGridView Events
+        private void dgvHistory_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            string colname = dgvHistory.Columns[e.ColumnIndex].Name;
+
+            if (colname != "select" && colname != "delete" && colname != "details0")
+            {
+                dgvHistory.Cursor = Cursors.Default;
+            }
+            else
+            {
+                dgvHistory.Cursor = Cursors.Hand;
+            }
+        }
+        private void clear_Click(object sender, EventArgs e)
+        {
+            dgvHistory.Rows.Clear();
+        }
+
+        /// Methods Events
         private void setFrontEnd()
         {
 
-            // Set up History Data Grid View
+            /// Set up History Data Grid View
             loadDataGridView();
-            // Set up Cartesian Chart
+            /// Set up Cartesian Chart
             cartesianChartSetUp();
-            // Set up Solid Gauge Chart
+            /// Set up Solid Gauge Chart
             solidGaugeSetUp();
-
-            // Transparent Images with labels
+            /// Labels background transparent 
+            #region Transparent Images with labels
             lblActive.Parent = picActive;
-            lblActive.Location = new System.Drawing.Point(0,0);
+            lblActive.Location = new System.Drawing.Point(0, 0);
             lblActive.ForeColor = Color.White;
             lblActive.TextAlign = ContentAlignment.MiddleCenter;
 
@@ -92,14 +111,14 @@ namespace TRUCKCOY.forms
             lblTotal.Location = new System.Drawing.Point(0, 0);
             lblTotal.ForeColor = Color.White;
             lblTotal.TextAlign = ContentAlignment.MiddleCenter;
-
+            #endregion
             
         }
         private void loadDataGridView()
         {
             Bitmap img,img2,img3;
 
-            img = new Bitmap(Properties.Resources.eye_hover);
+            img = new Bitmap(Properties.Resources.eye17x17);
             img2 = new Bitmap(Properties.Resources.trash);
             img3 = new Bitmap(Properties.Resources.inactive_bg);
 
@@ -121,42 +140,44 @@ namespace TRUCKCOY.forms
             // Add array data in History Data Grid View
             for (int x = 0; x < 30; x++)
             {
-
-                
+                /// Array to add
                 string[] historyDGV = new string[]
                 {
                 ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En Proceso"
                 };
 
-                // Add array to Data Grid View
+                /// Add array to Data Grid View
                 dgvHistory.Rows.Add(historyDGV);
 
-                // Validate Cell Status and change color
+                /// Validate Cell Status and change color
                 string dataValidator = dgvHistory.Rows[x].Cells[6].Value.ToString();
                 if (dataValidator == "En Proceso")
                 {
                     dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.CornflowerBlue;
                 }
 
+                /// Add cells buttons
                 dgvHistory.Rows[x].Cells[7].Value = img;
                 dgvHistory.Rows[x].Cells[8].Value = img2;
                 dgvHistory.Rows[x].Cells[9].Value = false;
                 
             }
 
-            // Add dtTemp to History data grid view
-            //dgvHistory.DataSource = dtTemp;
+            /// Add dtTemp to History data grid view
+            // dgvHistory.DataSource = dtTemp;
 
-            // Zoom Buttons
+            /// Zoom Buttons
             for (int i = 0; i < dgvHistory.Columns.Count; i++)
                 if (dgvHistory.Columns[i] is DataGridViewImageColumn)
                 {
                     ((DataGridViewImageColumn)dgvHistory.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Zoom;
                 }
 
-            // Sort Data Grid View by ID
+
+            /// Sort Data Grid View by ID
             // dgvHistory.Sort(dgvHistory.Columns["id"], ListSortDirection.Descending);
         }
+
         #endregion
 
         #region Backend
@@ -183,15 +204,13 @@ namespace TRUCKCOY.forms
             gMapControl1.Zoom = 13;
             gMapControl1.AutoScroll = true;
 
-            // Scroll Config
+            /// Scroll Config
             panelStats.AutoScroll = true;
-            //vScrollBar1.Visible = (panelStats.VerticalScroll.Visible == true) ? false : true;
-            //vScrollBar1.ThumbColor = Color.FromArgb(0, 113, 188);
 
         }
         private void addMarker(PointLatLng pointToAdd, GMarkerGoogleType markerType = GMarkerGoogleType.arrow)
         {
-            // Marker Personalized
+            /// Marker Personalized
             GMapOverlay markers = new GMapOverlay("markers");
             markers.Markers.Add(new GMapPointExpanded(new PointLatLng(Properties.Settings.Default.lat_coy, Properties.Settings.Default.lng_coy), 10));
             gMapControl1.Overlays.Add(markers);
@@ -199,7 +218,7 @@ namespace TRUCKCOY.forms
         }
         private void getVehiclesFeet()
         {
-            // SQL CONNECTION
+            /// SQL CONNECTION
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=truckcoy;SSL Mode=None";
             string query = "SELECT * FROM `routes` WHERE `company` = 'truckcoy' ORDER BY `id` DESC";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -220,10 +239,13 @@ namespace TRUCKCOY.forms
                     {
                         string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10) };
                         int degrees = Convert.ToInt32(row[7]);
-                        // Marker Personalized
-                        //GMapOverlay points_ = new GMapOverlay("pointCollection");
-                        //points_.Markers.Add(new GMapPointExpanded(new PointLatLng(reader.GetFloat(4), reader.GetFloat(5)), 10));
-                        //gMapControl1.Overlays.Add(points_);
+
+                        /// Marker Personalized
+                        
+                        // GMapOverlay points_ = new GMapOverlay("pointCollection");
+                        // points_.Markers.Add(new GMapPointExpanded(new PointLatLng(reader.GetFloat(4), reader.GetFloat(5)), 10));
+                        // gMapControl1.Overlays.Add(points_);
+
                         PointLatLng point = new PointLatLng(reader.GetFloat(4), reader.GetFloat(5));
 
                         Bitmap bmpmarker = (Bitmap)Image.FromFile("img/fleeticon_20x20.png");
@@ -259,13 +281,13 @@ namespace TRUCKCOY.forms
 
             using (Graphics g = Graphics.FromImage(rotatedImage))
             {
-                // Set the rotation point to the center in the matrix
+                /// Set the rotation point to the center in the matrix
                 g.TranslateTransform(bmp.Width / 2, bmp.Height / 2);
-                // Rotate
+                /// Rotate
                 g.RotateTransform(angle);
-                // Restore rotation point in the matrix
+                /// Restore rotation point in the matrix
                 g.TranslateTransform(-bmp.Width / 2, -bmp.Height / 2);
-                // Draw the image on the bitmap
+                /// Draw the image on the bitmap
                 g.DrawImage(bmp, new System.Drawing.Point(0, 0));
             }
 
@@ -273,24 +295,28 @@ namespace TRUCKCOY.forms
         }
         private void solidGaugeSetUp()
         {
-            // Solid Gauge Chart Set up
-            solidGauge1.HighFontSize = 20;
-            solidGauge1.ForeColor = Color.FromArgb(30, 96, 164);
-            solidGauge1.Uses360Mode = true;
-            solidGauge1.From = 0;
-            solidGauge1.To = 100;
-            solidGauge1.Value = Math.Round(77.7,1);
 
-            // Graph Gradient
-            solidGauge1.Base.LabelsVisibility = Visibility.Hidden;
-            solidGauge1.Base.GaugeActiveFill = new System.Windows.Media.LinearGradientBrush
-            {
-                GradientStops = new System.Windows.Media.GradientStopCollection {
-                new System.Windows.Media.GradientStop(System.Windows.Media.Colors.DodgerBlue,.2),
-                new System.Windows.Media.GradientStop(System.Windows.Media.Colors.AliceBlue,1),
-                }
-            };
-            solidGauge1.LabelFormatter = val => solidGauge1.Value + "%";
+            /// Solid Gauge Chart Set up
+
+            // solidGauge1.HighFontSize = 20;
+            // solidGauge1.ForeColor = Color.FromArgb(30, 96, 164);
+            // solidGauge1.Uses360Mode = true;
+            // solidGauge1.From = 0;
+            // solidGauge1.To = 100;
+            // solidGauge1.Value = Math.Round(77.7,1);
+
+            /// Graph Gradient
+            
+            // solidGauge1.Base.LabelsVisibility = Visibility.Hidden;
+            // solidGauge1.Base.GaugeActiveFill = new System.Windows.Media.LinearGradientBrush
+            // {
+            //     GradientStops = new System.Windows.Media.GradientStopCollection {
+            //     new System.Windows.Media.GradientStop(System.Windows.Media.Colors.DodgerBlue,.2),
+            //     new System.Windows.Media.GradientStop(System.Windows.Media.Colors.AliceBlue,1),
+            //     }
+            // };
+            // solidGauge1.LabelFormatter = val => solidGauge1.Value + "%";
+            
         }
         private void cartesianChartSetUp()
         {
@@ -305,8 +331,8 @@ namespace TRUCKCOY.forms
                     DataLabels = true,
                     Values = new ChartValues<ObservablePoint>
                     {
-                        // Historical Income Money Per Year
-                                   // Graph x y
+                        /// Historical Income Money Per Year
+                                         // x y
                         new ObservablePoint(1,100),
                         new ObservablePoint(2,125),
                         new ObservablePoint(3,146),
@@ -349,22 +375,5 @@ namespace TRUCKCOY.forms
 
         #endregion
 
-        private void clear_Click(object sender, EventArgs e)
-        {
-            dgvHistory.Rows.Clear();
-        }
-        private void dgvHistory_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            string colname = dgvHistory.Columns[e.ColumnIndex].Name;
-
-            if (colname != "select" && colname != "delete" && colname != "details0")
-            {
-                dgvHistory.Cursor = Cursors.Default;
-            }
-            else
-            {
-                dgvHistory.Cursor = Cursors.Hand;
-            }
-        }
     }
 }
