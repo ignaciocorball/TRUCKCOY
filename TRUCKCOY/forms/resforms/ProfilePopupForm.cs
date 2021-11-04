@@ -24,7 +24,7 @@ namespace TRUCKCOY.forms
         }
         private void btnEditProfile_MouseHover(object sender, EventArgs e)
         {
-            btnEditProfile.BackColor = Color.FromArgb(102, 191, 222);
+            btnEditProfile.BackColor = Color.FromArgb(245, 247, 251);
         }
         private void btnEditProfile_MouseLeave(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace TRUCKCOY.forms
         }
         private void lblProfileEdit_MouseHover(object sender, EventArgs e)
         {
-            btnEditProfile.BackColor = Color.FromArgb(102, 191, 222);
+            btnEditProfile.BackColor = Color.FromArgb(245, 247, 251);
         }
         private void lblProfileEdit_MouseLeave(object sender, EventArgs e)
         {
@@ -40,7 +40,7 @@ namespace TRUCKCOY.forms
         }
         private void pictureBox4_MouseHover(object sender, EventArgs e)
         {
-            btnEditProfile.BackColor = Color.FromArgb(102, 191, 222);
+            btnEditProfile.BackColor = Color.FromArgb(245, 247, 251);
         }
         private void pictureBox4_MouseLeave(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace TRUCKCOY.forms
         }
         private void btnConfig_MouseHover(object sender, EventArgs e)
         {
-            btnConfig.BackColor = Color.FromArgb(102, 191, 222);
+            btnConfig.BackColor = Color.FromArgb(245, 247, 251);
         }
         private void btnConfig_MouseLeave(object sender, EventArgs e)
         {
@@ -63,7 +63,7 @@ namespace TRUCKCOY.forms
 
         private void label3_MouseHover(object sender, EventArgs e)
         {
-            btnConfig.BackColor = Color.FromArgb(102, 191, 222);
+            btnConfig.BackColor = Color.FromArgb(245, 247, 251);
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace TRUCKCOY.forms
 
         private void pictureBox3_MouseHover(object sender, EventArgs e)
         {
-            btnConfig.BackColor = Color.FromArgb(102, 191, 222);
+            btnConfig.BackColor = Color.FromArgb(245, 247, 251);
         }
 
         private void pictureBox3_MouseLeave(object sender, EventArgs e)

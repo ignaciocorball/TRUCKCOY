@@ -163,6 +163,26 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap drivers_off {
+            get {
+                object obj = ResourceManager.GetObject("drivers_off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap drivers_on {
+            get {
+                object obj = ResourceManager.GetObject("drivers_on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap expand_on {
             get {
                 object obj = ResourceManager.GetObject("expand_on", resourceCulture);
@@ -496,26 +516,6 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap trash_small {
             get {
                 object obj = ResourceManager.GetObject("trash_small", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap users_off {
-            get {
-                object obj = ResourceManager.GetObject("users_off", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap users_on {
-            get {
-                object obj = ResourceManager.GetObject("users_on", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

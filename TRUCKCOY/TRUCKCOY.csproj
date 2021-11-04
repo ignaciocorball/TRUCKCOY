@@ -158,6 +158,12 @@
     <Compile Include="forms\HistoricalForm.Designer.cs">
       <DependentUpon>HistoricalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\resforms\NotificationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\resforms\NotificationsForm.Designer.cs">
+      <DependentUpon>NotificationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\resforms\ProfilePopupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\HistoricalForm.resx">
       <DependentUpon>HistoricalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\resforms\NotificationsForm.resx">
+      <DependentUpon>NotificationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\resforms\ProfilePopupForm.resx">
       <DependentUpon>ProfilePopupForm.cs</DependentUpon>
@@ -234,6 +243,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="resources\drivers_on.png" />
+    <None Include="resources\drivers_off.png" />
     <None Include="resources\eye24x24.png" />
     <None Include="resources\ojo %281%29.png" />
     <None Include="resources\trash_small.png" />

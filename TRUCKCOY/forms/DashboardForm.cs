@@ -12,6 +12,7 @@ using LiveCharts;
 using LiveCharts.Defaults;
 using System.Globalization;
 using System.Data;
+using System.Linq;
 
 namespace TRUCKCOY.forms
 {
@@ -84,6 +85,14 @@ namespace TRUCKCOY.forms
         {
             dgvHistory.Rows.Clear();
         }
+        private void checkBoxMain_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvHistory.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[9];
+                chk.Value = !(chk.Value == null ? false : (bool)chk.Value);
+            }
+        }
 
         /// Methods Events
         private void setFrontEnd()
@@ -112,7 +121,20 @@ namespace TRUCKCOY.forms
             lblTotal.ForeColor = Color.White;
             lblTotal.TextAlign = ContentAlignment.MiddleCenter;
             #endregion
-            
+            /// Get Data Grid View Scrollbar status
+            foreach (var scroll in dgvHistory.Controls.OfType<VScrollBar>())
+            {
+                if (scroll.Visible == false) {
+                    // Scrollbar is Visible
+                    //checkBoxMain.Location = new Point(795, 61);
+                }
+                else
+                {
+                    // Scrollbar is Invisible
+
+                }
+            }
+
         }
         private void loadDataGridView()
         {
@@ -374,6 +396,7 @@ namespace TRUCKCOY.forms
         }
 
         #endregion
+
 
     }
 }

@@ -2,15 +2,20 @@
 using System.Drawing;
 using System.Windows.Forms;
 using TRUCKCOY.forms;
+using TRUCKCOY.forms.resforms;
 
 namespace TRUCKCOY
 {
     public partial class mainForm : Form
     {
         FormCollection fc = Application.OpenForms;
-        DashboardForm dform;
+        DashboardForm dform = new DashboardForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false, Opacity = 0 };
         HistoricalForm hform;
-        ProfilePopupForm ppForm = new ProfilePopupForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill };
+        DriversForm drform;
+        NotificationsForm notform = new NotificationsForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
+        ProfilePopupForm ppForm = new ProfilePopupForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
+        int[] formsInitialized = { 1, 0, 0, 0, 0, 0 };
+
         public mainForm()
         {
             InitializeComponent();
@@ -18,12 +23,10 @@ namespace TRUCKCOY
         }
         private void mainForm_Load(object sender, EventArgs e)
         {
-            //#-> Load Dashboard content
-            dform = new DashboardForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false, Opacity = 0 };
             panelContainer.Controls.Add(dform);
-            dform.Visible = true;
-
             pnlProfile.Controls.Add(ppForm);
+            pnlNotification.Controls.Add(notform);
+            dform.Visible = true;
         }
 
         #region BackEnd
@@ -43,10 +46,6 @@ namespace TRUCKCOY
             {
                 lblTime.Text = currentDate.ToString("HH:mm:ss tt");
             }
-
-
-
-
         }
         private void tmrSecond_Tick(object sender, EventArgs e)
         {
@@ -84,6 +83,7 @@ namespace TRUCKCOY
         {
             btnDashboard.Image = Properties.Resources.dashboard_off;
             btnEvents.Image = Properties.Resources.schedule_off;
+            btnDrivers.Image = Properties.Resources.drivers_off;
             btnMaps.Image = Properties.Resources.maps_off;
             btnTemperature.Image = Properties.Resources.temp_off;
         }
@@ -91,42 +91,102 @@ namespace TRUCKCOY
         {
             switch (num)
             {
-                case 1:
-                    // Load Dashboard
+                case 0: // Form Dashboard
+
+                    // FrontEnd
                     hideNavButtons();
+                    hideChildOpenForms(0);
+
+                    // Add childForm
+                    dform.Visible = true;
+
+                    // Variables
                     btnDashboard.Image = Properties.Resources.dashboard_on;
-                    Properties.Settings.Default.navButtonSelected = 1;
+                    Properties.Settings.Default.navButtonSelected = 0;
+
                     break;
-                case 2:
-                    // Load Events
+                case 1: // Form Orders List
+
+                    // FrontEnd
                     hideNavButtons();
+                    hideChildOpenForms(1);
+                    hform = new HistoricalForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false, Opacity = 0 };
                     btnEvents.Image = Properties.Resources.schedule_on;
-                    Properties.Settings.Default.navButtonSelected = 2;
+
+                    // Add childForm
+                    panelContainer.Controls.Add(hform);
+                    hform.Visible = true;
+
+                    // Variables 
+                    formsInitialized[1] = 1;
+                    Properties.Settings.Default.navButtonSelected = 1;
+
                     break;
-                case 3:
-                    // Load Maps
+                case 2:  // Form Drivers
+
+                    // FrontEnd
                     hideNavButtons();
-                    btnMaps.Image = Properties.Resources.maps_on;
+                    hideChildOpenForms(2);
+                    drform = new DriversForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false, Opacity = 0 };
+                    btnDrivers.Image = Properties.Resources.drivers_on;
+
+                    // Add childForm
+                    panelContainer.Controls.Add(drform);
+                    drform.Visible = true;
+
+                    // Variables
+                    formsInitialized[2] = 1;
+                    Properties.Settings.Default.navButtonSelected = 2;
+
+                    break;
+                case 3:  // Form Maps
+
+                    //hideNavButtons();
+                    //btnMaps.Image = Properties.Resources.maps_on;
+                    //Properties.Settings.Default.navButtonSelected = 4;
+                    //if (mform.Visible == false)
+                    //{
+                    //    mform.Visible = true;
+                    //}
+
                     Properties.Settings.Default.navButtonSelected = 3;
                     break;
-                case 4:
-                    // Load Temperature
-                    hideNavButtons();
-                    btnTemperature.Image = Properties.Resources.temp_on;
+                case 4:  // Form Temperature
+
                     Properties.Settings.Default.navButtonSelected = 4;
                     break;
-                case 5:
+                case 5:  // Form 
                     // do something
                     break;
-                case 6:
+                case 6:  // Form 
                     // do something
                     break;
-                case 7:
+                case 7:  // Form 
                     // do something
                     break;
-                case 8:
-                    // do something
-                    break;
+            }
+        }
+        private void hideChildOpenForms(int buttonID)
+        {
+            if(formsInitialized[0] == 1)
+            {
+                dform.Visible = false;
+            }
+            if (formsInitialized[1] == 1)
+            {
+                hform.Visible = false;
+            }
+            if (formsInitialized[2] == 1)
+            {
+                drform.Visible = false;
+            }
+            if (formsInitialized[3] == 1)
+            {
+                // add more forms
+            }
+            if (formsInitialized[4] == 1)
+            {
+                // add more forms
             }
         }
         private Bitmap RotateImage(Bitmap bmp, float angle)
@@ -155,19 +215,29 @@ namespace TRUCKCOY
         // MouseClick
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            if (ppForm.Visible == false)
+            switch (pnlProfile.Visible)
             {
-                pnlProfile.Visible = true;
-                ppForm.Visible = true;
-                ppForm.Show();
+                case true:
+                    pnlProfile.Visible = false;
+                    break;
+                case false:
+                    pnlNotification.Visible = false;
+                    pnlProfile.Visible = true;
+                    break;
             }
-            else
+        }
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+            switch (pnlNotification.Visible)
             {
-                pnlProfile.Visible = false;
-                ppForm.Visible = false;
-                ppForm.Hide();
+                case true:
+                    pnlNotification.Visible = false;
+                    break;
+                case false:
+                    pnlProfile.Visible = false;
+                    pnlNotification.Visible = true;
+                    break;
             }
-
         }
         private void btnExpand_Click(object sender, EventArgs e)
         {
@@ -207,37 +277,15 @@ namespace TRUCKCOY
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            selectNavButtons(1);
-            // Load Dashboard Form
-            if (dform.Visible == false)
-            {
-                dform.Visible = true;
-            }
-            else
-            {
-                // Hide Others
-                //hform.Visible = false;
-            }
+            selectNavButtons(0);
         }
         private void btnEvents_Click(object sender, EventArgs e)
         {
+            selectNavButtons(1);
+        }
+        private void btnDrivers_Click(object sender, EventArgs e)
+        {
             selectNavButtons(2);
-            hform = new HistoricalForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false, Opacity = 0 };
-
-            if (hform.Visible == false)
-            {
-                // Load Historical Form
-                panelContainer.Controls.Add(hform);
-                hform.Visible = true;
-                dform.Visible = false;
-            }
-            else
-            {
-                // Hide Others
-                dform.Visible = false;
-            }
-
-            
         }
         private void btnMaps_Click(object sender, EventArgs e)
         {
@@ -247,6 +295,11 @@ namespace TRUCKCOY
         {
             selectNavButtons(4);
         }
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+            // Redirect to main page
+        }
+
         private void txtSearch_Click(object sender, EventArgs e)
         {
             if(txtSearch.Text == "Buscar . . . ") { txtSearch.Text = ""; }
@@ -261,63 +314,8 @@ namespace TRUCKCOY
                 txtSearch.Text = "Buscar . . .";
             }
         }
-        private void btnDashboard_MouseHover(object sender, EventArgs e)
-        {
-            if (Properties.Settings.Default.navButtonSelected != 1)
-            {
-                btnDashboard.Image = Properties.Resources.dashboard_on;
-            }
-        }
-        private void btnDashboard_MouseLeave(object sender, EventArgs e)
-        {
-            if (Properties.Settings.Default.navButtonSelected != 1)
-            {
-                btnDashboard.Image = Properties.Resources.dashboard_off;
-            }
-        }
-        private void btnEvents_MouseHover(object sender, EventArgs e)
-        {
-            if (Properties.Settings.Default.navButtonSelected != 2)
-            {
-                btnEvents.Image = Properties.Resources.schedule_on;
-            }
-        }
-        private void btnEvents_MouseLeave(object sender, EventArgs e)
-        {
-            if(Properties.Settings.Default.navButtonSelected != 2)
-            {
-                btnEvents.Image = Properties.Resources.schedule_off;
-            }
-        }
-        private void btnMaps_MouseHover(object sender, EventArgs e)
-        {
-            if (Properties.Settings.Default.navButtonSelected != 3)
-            {
-                btnMaps.Image = Properties.Resources.maps_on;
-            }
-        }
-        private void btnMaps_MouseLeave(object sender, EventArgs e)
-        {
-            if (Properties.Settings.Default.navButtonSelected != 3)
-            {
-                btnMaps.Image = Properties.Resources.maps_off;
-            }
-        }
-        private void btnTemperature_MouseHover(object sender, EventArgs e)
-        {
-            if (Properties.Settings.Default.navButtonSelected != 4)
-            {
-                btnTemperature.Image = Properties.Resources.temp_on;
-            }
-        }
-        private void btnTemperature_MouseLeave(object sender, EventArgs e)
-        {
-            if (Properties.Settings.Default.navButtonSelected != 4)
-            {
-                btnTemperature.Image = Properties.Resources.temp_off;
-            }
-        }
-        #endregion
 
+
+        #endregion
     }
 }

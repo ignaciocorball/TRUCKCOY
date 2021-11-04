@@ -78,7 +78,7 @@ namespace TRUCKCOY.forms
             this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel13.Location = new System.Drawing.Point(0, 41);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(30, 665);
+            this.panel13.Size = new System.Drawing.Size(25, 665);
             this.panel13.TabIndex = 13;
             // 
             // panel1
@@ -98,9 +98,9 @@ namespace TRUCKCOY.forms
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.23364F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.76636F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.checkBox1, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSatellite, 3, 0);
@@ -131,9 +131,9 @@ namespace TRUCKCOY.forms
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox1.Location = new System.Drawing.Point(266, 3);
+            this.checkBox1.Location = new System.Drawing.Point(261, 3);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(22, 20);
+            this.checkBox1.Size = new System.Drawing.Size(27, 20);
             this.checkBox1.TabIndex = 65;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -142,7 +142,7 @@ namespace TRUCKCOY.forms
             this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSatellite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.delete_on;
-            this.btnSatellite.Location = new System.Drawing.Point(186, 3);
+            this.btnSatellite.Location = new System.Drawing.Point(181, 3);
             this.btnSatellite.MaximumSize = new System.Drawing.Size(75, 20);
             this.btnSatellite.MinimumSize = new System.Drawing.Size(75, 20);
             this.btnSatellite.Name = "btnSatellite";
@@ -156,7 +156,7 @@ namespace TRUCKCOY.forms
             this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNormal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.modificar_on;
-            this.btnNormal.Location = new System.Drawing.Point(106, 3);
+            this.btnNormal.Location = new System.Drawing.Point(104, 3);
             this.btnNormal.MaximumSize = new System.Drawing.Size(75, 20);
             this.btnNormal.MinimumSize = new System.Drawing.Size(75, 20);
             this.btnNormal.Name = "btnNormal";
@@ -170,7 +170,7 @@ namespace TRUCKCOY.forms
             this.btnTerrain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTerrain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTerrain.Image = global::TRUCKCOY.Properties.Resources.anadir_on;
-            this.btnTerrain.Location = new System.Drawing.Point(29, 3);
+            this.btnTerrain.Location = new System.Drawing.Point(28, 3);
             this.btnTerrain.MaximumSize = new System.Drawing.Size(75, 20);
             this.btnTerrain.MinimumSize = new System.Drawing.Size(75, 20);
             this.btnTerrain.Name = "btnTerrain";
@@ -184,11 +184,11 @@ namespace TRUCKCOY.forms
             this.lblTittlePanel.AutoSize = true;
             this.lblTittlePanel.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTittlePanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(38)))), ((int)(((byte)(55)))));
-            this.lblTittlePanel.Location = new System.Drawing.Point(33, 9);
+            this.lblTittlePanel.Location = new System.Drawing.Point(31, 9);
             this.lblTittlePanel.Name = "lblTittlePanel";
-            this.lblTittlePanel.Size = new System.Drawing.Size(217, 23);
+            this.lblTittlePanel.Size = new System.Drawing.Size(93, 23);
             this.lblTittlePanel.TabIndex = 0;
-            this.lblTittlePanel.Text = "HISTORIAL DE ORDENES";
+            this.lblTittlePanel.Text = "ORDENES";
             // 
             // dgvHistory
             // 
@@ -238,7 +238,7 @@ namespace TRUCKCOY.forms
             this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvHistory.EnableHeadersVisualStyles = false;
             this.dgvHistory.GridColor = System.Drawing.Color.Silver;
-            this.dgvHistory.Location = new System.Drawing.Point(30, 41);
+            this.dgvHistory.Location = new System.Drawing.Point(24, 41);
             this.dgvHistory.Name = "dgvHistory";
             this.dgvHistory.ReadOnly = true;
             this.dgvHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -271,7 +271,7 @@ namespace TRUCKCOY.forms
             this.dgvHistory.RowTemplate.ReadOnly = true;
             this.dgvHistory.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistory.Size = new System.Drawing.Size(821, 604);
+            this.dgvHistory.Size = new System.Drawing.Size(824, 604);
             this.dgvHistory.TabIndex = 64;
             // 
             // id
