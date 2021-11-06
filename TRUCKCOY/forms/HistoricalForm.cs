@@ -35,7 +35,7 @@ namespace TRUCKCOY.forms
                 // Array list to add data
                 string[] historyDGV = new string[]
                 {
-                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En Proceso","Delete","Details","Select"
+                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En recorrido"
                 };
 
                 // Add array to Data Grid View
@@ -43,9 +43,9 @@ namespace TRUCKCOY.forms
 
                 // Validate Cell Status and change color
                 string dataValidator = dgvHistory.Rows[x].Cells[6].Value.ToString();
-                if (dataValidator == "En Proceso")
+                if (dataValidator == "En recorrido")
                 {
-                    dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.CornflowerBlue;
+                    dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.LightSeaGreen;
                 }
 
             }

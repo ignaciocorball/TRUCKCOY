@@ -29,32 +29,16 @@ namespace TRUCKCOY.forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.btnSatellite = new System.Windows.Forms.PictureBox();
-            this.btnNormal = new System.Windows.Forms.PictureBox();
-            this.btnTerrain = new System.Windows.Forms.PictureBox();
             this.lblTittlePanel = new System.Windows.Forms.Label();
             this.dgvHistory = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.income_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.driver = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address_source = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address_out = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.details0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.select = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblFleetStatus = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,14 +46,27 @@ namespace TRUCKCOY.forms
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnSatellite = new System.Windows.Forms.PictureBox();
+            this.btnNormal = new System.Windows.Forms.PictureBox();
+            this.btnTerrain = new System.Windows.Forms.PictureBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.income_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.driver = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address_source = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address_out = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSatellite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTerrain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel13
@@ -92,93 +89,6 @@ namespace TRUCKCOY.forms
             this.panel1.Size = new System.Drawing.Size(874, 41);
             this.panel1.TabIndex = 14;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.23364F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.76636F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnSatellite, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNormal, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnTerrain, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(560, 9);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(291, 26);
-            this.tableLayoutPanel1.TabIndex = 14;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::TRUCKCOY.Properties.Resources.filter;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.MaximumSize = new System.Drawing.Size(20, 20);
-            this.pictureBox2.MinimumSize = new System.Drawing.Size(20, 20);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox1.Location = new System.Drawing.Point(261, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(27, 20);
-            this.checkBox1.TabIndex = 65;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // btnSatellite
-            // 
-            this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSatellite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.delete_on;
-            this.btnSatellite.Location = new System.Drawing.Point(181, 3);
-            this.btnSatellite.MaximumSize = new System.Drawing.Size(75, 20);
-            this.btnSatellite.MinimumSize = new System.Drawing.Size(75, 20);
-            this.btnSatellite.Name = "btnSatellite";
-            this.btnSatellite.Size = new System.Drawing.Size(75, 20);
-            this.btnSatellite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSatellite.TabIndex = 13;
-            this.btnSatellite.TabStop = false;
-            // 
-            // btnNormal
-            // 
-            this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNormal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.modificar_on;
-            this.btnNormal.Location = new System.Drawing.Point(104, 3);
-            this.btnNormal.MaximumSize = new System.Drawing.Size(75, 20);
-            this.btnNormal.MinimumSize = new System.Drawing.Size(75, 20);
-            this.btnNormal.Name = "btnNormal";
-            this.btnNormal.Size = new System.Drawing.Size(75, 20);
-            this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnNormal.TabIndex = 14;
-            this.btnNormal.TabStop = false;
-            // 
-            // btnTerrain
-            // 
-            this.btnTerrain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTerrain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTerrain.Image = global::TRUCKCOY.Properties.Resources.anadir_on;
-            this.btnTerrain.Location = new System.Drawing.Point(28, 3);
-            this.btnTerrain.MaximumSize = new System.Drawing.Size(75, 20);
-            this.btnTerrain.MinimumSize = new System.Drawing.Size(75, 20);
-            this.btnTerrain.Name = "btnTerrain";
-            this.btnTerrain.Size = new System.Drawing.Size(75, 20);
-            this.btnTerrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnTerrain.TabIndex = 15;
-            this.btnTerrain.TabStop = false;
-            // 
             // lblTittlePanel
             // 
             this.lblTittlePanel.AutoSize = true;
@@ -194,11 +104,11 @@ namespace TRUCKCOY.forms
             // 
             this.dgvHistory.AllowUserToAddRows = false;
             this.dgvHistory.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -207,14 +117,14 @@ namespace TRUCKCOY.forms
             this.dgvHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(38)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(38)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -223,43 +133,40 @@ namespace TRUCKCOY.forms
             this.patente,
             this.address_source,
             this.address_out,
-            this.status,
-            this.delete,
-            this.details0,
-            this.select});
+            this.status});
             this.dgvHistory.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvHistory.EnableHeadersVisualStyles = false;
             this.dgvHistory.GridColor = System.Drawing.Color.Silver;
             this.dgvHistory.Location = new System.Drawing.Point(24, 41);
             this.dgvHistory.Name = "dgvHistory";
             this.dgvHistory.ReadOnly = true;
             this.dgvHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvHistory.RowHeadersVisible = false;
             this.dgvHistory.RowHeadersWidth = 20;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle6.NullValue = "Indefinido";
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistory.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle12.NullValue = "Indefinido";
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistory.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvHistory.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvHistory.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dgvHistory.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -273,99 +180,6 @@ namespace TRUCKCOY.forms
             this.dgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistory.Size = new System.Drawing.Size(824, 604);
             this.dgvHistory.TabIndex = 64;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.id.DefaultCellStyle = dataGridViewCellStyle3;
-            this.id.DividerWidth = 1;
-            this.id.HeaderText = "ID";
-            this.id.MaxInputLength = 10;
-            this.id.MinimumWidth = 30;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id.Width = 35;
-            // 
-            // income_date
-            // 
-            this.income_date.DividerWidth = 1;
-            this.income_date.HeaderText = "Ingreso de orden";
-            this.income_date.MinimumWidth = 130;
-            this.income_date.Name = "income_date";
-            this.income_date.ReadOnly = true;
-            // 
-            // driver
-            // 
-            this.driver.DividerWidth = 1;
-            this.driver.HeaderText = "Conductor";
-            this.driver.MinimumWidth = 100;
-            this.driver.Name = "driver";
-            this.driver.ReadOnly = true;
-            // 
-            // patente
-            // 
-            this.patente.DividerWidth = 1;
-            this.patente.HeaderText = "Patente";
-            this.patente.MinimumWidth = 88;
-            this.patente.Name = "patente";
-            this.patente.ReadOnly = true;
-            // 
-            // address_source
-            // 
-            this.address_source.DividerWidth = 1;
-            this.address_source.HeaderText = "Dirección de Origen";
-            this.address_source.MinimumWidth = 150;
-            this.address_source.Name = "address_source";
-            this.address_source.ReadOnly = true;
-            // 
-            // address_out
-            // 
-            this.address_out.DividerWidth = 1;
-            this.address_out.HeaderText = "Dirección de Destino";
-            this.address_out.MinimumWidth = 150;
-            this.address_out.Name = "address_out";
-            this.address_out.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.DividerWidth = 1;
-            this.status.HeaderText = "Estado";
-            this.status.MinimumWidth = 90;
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // delete
-            // 
-            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.delete.HeaderText = "x";
-            this.delete.MinimumWidth = 25;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.delete.ToolTipText = "Con este botón puedes eliminar multiples registros.";
-            this.delete.Width = 25;
-            // 
-            // details0
-            // 
-            this.details0.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.details0.HeaderText = "o";
-            this.details0.MinimumWidth = 25;
-            this.details0.Name = "details0";
-            this.details0.ReadOnly = true;
-            this.details0.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.details0.Width = 25;
-            // 
-            // select
-            // 
-            this.select.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.select.HeaderText = "s";
-            this.select.MinimumWidth = 25;
-            this.select.Name = "select";
-            this.select.ReadOnly = true;
-            this.select.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.select.Width = 25;
             // 
             // lblFleetStatus
             // 
@@ -468,6 +282,155 @@ namespace TRUCKCOY.forms
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.18182F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.81818F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSatellite, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnNormal, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnTerrain, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(555, 9);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(291, 26);
+            this.tableLayoutPanel1.TabIndex = 16;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::TRUCKCOY.Properties.Resources.filter;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.MaximumSize = new System.Drawing.Size(20, 20);
+            this.pictureBox2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox1.Location = new System.Drawing.Point(273, 3);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 20);
+            this.checkBox1.TabIndex = 65;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // btnSatellite
+            // 
+            this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSatellite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.delete_on;
+            this.btnSatellite.Location = new System.Drawing.Point(192, 3);
+            this.btnSatellite.MaximumSize = new System.Drawing.Size(75, 20);
+            this.btnSatellite.MinimumSize = new System.Drawing.Size(75, 20);
+            this.btnSatellite.Name = "btnSatellite";
+            this.btnSatellite.Size = new System.Drawing.Size(75, 20);
+            this.btnSatellite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSatellite.TabIndex = 13;
+            this.btnSatellite.TabStop = false;
+            // 
+            // btnNormal
+            // 
+            this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNormal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.modificar_on;
+            this.btnNormal.Location = new System.Drawing.Point(113, 3);
+            this.btnNormal.MaximumSize = new System.Drawing.Size(75, 20);
+            this.btnNormal.MinimumSize = new System.Drawing.Size(75, 20);
+            this.btnNormal.Name = "btnNormal";
+            this.btnNormal.Size = new System.Drawing.Size(75, 20);
+            this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnNormal.TabIndex = 14;
+            this.btnNormal.TabStop = false;
+            // 
+            // btnTerrain
+            // 
+            this.btnTerrain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTerrain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTerrain.Image = global::TRUCKCOY.Properties.Resources.anadir_on;
+            this.btnTerrain.Location = new System.Drawing.Point(34, 3);
+            this.btnTerrain.MaximumSize = new System.Drawing.Size(75, 20);
+            this.btnTerrain.MinimumSize = new System.Drawing.Size(75, 20);
+            this.btnTerrain.Name = "btnTerrain";
+            this.btnTerrain.Size = new System.Drawing.Size(75, 20);
+            this.btnTerrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnTerrain.TabIndex = 15;
+            this.btnTerrain.TabStop = false;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.id.DefaultCellStyle = dataGridViewCellStyle9;
+            this.id.DividerWidth = 1;
+            this.id.HeaderText = "ID";
+            this.id.MaxInputLength = 10;
+            this.id.MinimumWidth = 30;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id.Width = 35;
+            // 
+            // income_date
+            // 
+            this.income_date.DividerWidth = 1;
+            this.income_date.HeaderText = "Ingreso de orden";
+            this.income_date.MinimumWidth = 130;
+            this.income_date.Name = "income_date";
+            this.income_date.ReadOnly = true;
+            // 
+            // driver
+            // 
+            this.driver.DividerWidth = 1;
+            this.driver.HeaderText = "Conductor";
+            this.driver.MinimumWidth = 100;
+            this.driver.Name = "driver";
+            this.driver.ReadOnly = true;
+            // 
+            // patente
+            // 
+            this.patente.DividerWidth = 1;
+            this.patente.HeaderText = "Patente";
+            this.patente.MinimumWidth = 88;
+            this.patente.Name = "patente";
+            this.patente.ReadOnly = true;
+            // 
+            // address_source
+            // 
+            this.address_source.DividerWidth = 1;
+            this.address_source.HeaderText = "Dirección de Origen";
+            this.address_source.MinimumWidth = 150;
+            this.address_source.Name = "address_source";
+            this.address_source.ReadOnly = true;
+            // 
+            // address_out
+            // 
+            this.address_out.DividerWidth = 1;
+            this.address_out.HeaderText = "Dirección de Destino";
+            this.address_out.MinimumWidth = 150;
+            this.address_out.Name = "address_out";
+            this.address_out.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.DividerWidth = 1;
+            this.status.HeaderText = "Estado";
+            this.status.MinimumWidth = 90;
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
             // HistoricalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,14 +454,14 @@ namespace TRUCKCOY.forms
             this.Load += new System.EventHandler(this.HistoricalForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSatellite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTerrain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -509,11 +472,19 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTittlePanel;
+        private System.Windows.Forms.DataGridView dgvHistory;
+        private System.Windows.Forms.Label lblFleetStatus;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.PictureBox btnSatellite;
         private System.Windows.Forms.PictureBox btnNormal;
         private System.Windows.Forms.PictureBox btnTerrain;
-        private System.Windows.Forms.DataGridView dgvHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn income_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn driver;
@@ -521,16 +492,5 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.DataGridViewTextBoxColumn address_source;
         private System.Windows.Forms.DataGridViewTextBoxColumn address_out;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn delete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn details0;
-        private System.Windows.Forms.DataGridViewTextBoxColumn select;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label lblFleetStatus;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace TRUCKCOY.forms.resforms
 {
@@ -72,6 +73,8 @@ namespace TRUCKCOY.forms.resforms
             pictureBox11.MouseLeave += (s, ee) => mouseLeaveEvent(3);
             pictureBox12.MouseLeave += (s, ee) => mouseLeaveEvent(3);
             #endregion
+            panel2.BackColor = Color.White;
+            panel3.BackColor = Color.White;
         }
 
         private void mouseEnterEvent(int num)
@@ -101,22 +104,39 @@ namespace TRUCKCOY.forms.resforms
             switch (num)
             {
                 case 0:
-                    panel0.BackColor = Color.White;
+                    panel0.BackColor = Color.FromArgb(240, 240, 240);
                     panel4.Visible = true;
                     break;
                 case 1:
-                    panel1.BackColor = Color.White;
-                    panel5.Visible = true;
-                    break;
-                case 2:
+                    panel1.BackColor = Color.FromArgb(240, 240, 240);
+                    panel5.Visible = true;  
+                    break;                  
+                case 2:                     
                     panel2.BackColor = Color.White;
-                    panel6.Visible = true;
-                    break;            
-                case 3:               
+                    panel6.Visible = true;  
+                    break;                  
+                case 3:                     
                     panel3.BackColor = Color.White;
                     panel7.Visible = true;
                     break;
             }
+        }
+
+        private void label3_Click(object sender, System.EventArgs e)
+        {
+            Process.Start("https://www.truckcoy.cl/");
+        }
+        private void label0_Click(object sender, System.EventArgs e)
+        {
+            Process.Start("https://www.truckcoy.cl/");
+        }
+        private void label6_Click(object sender, System.EventArgs e)
+        {
+            Process.Start("https://www.truckcoy.cl/");
+        }
+        private void label9_Click(object sender, System.EventArgs e)
+        {
+            Process.Start("https://www.truckcoy.cl/");
         }
     }
 }

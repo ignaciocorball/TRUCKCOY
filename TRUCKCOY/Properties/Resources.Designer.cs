@@ -183,6 +183,26 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit {
+            get {
+                object obj = ResourceManager.GetObject("edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_w {
+            get {
+                object obj = ResourceManager.GetObject("edit_w", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap expand_on {
             get {
                 object obj = ResourceManager.GetObject("expand_on", resourceCulture);
@@ -246,6 +266,16 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap graphCosts {
             get {
                 object obj = ResourceManager.GetObject("graphCosts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hearth {
+            get {
+                object obj = ResourceManager.GetObject("hearth", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,6 +546,16 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap trash_small {
             get {
                 object obj = ResourceManager.GetObject("trash_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash2 {
+            get {
+                object obj = ResourceManager.GetObject("trash2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -8,14 +8,14 @@ namespace TRUCKCOY
 {
     public partial class mainForm : Form
     {
-        FormCollection fc = Application.OpenForms;
-        DashboardForm dform = new DashboardForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false, Opacity = 0 };
-        HistoricalForm hform;
-        DriversForm drform;
+        #region Forms and Collections
+        DashboardForm     dform = new DashboardForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
+        HistoricalForm    hform;
+        DriversForm       drform;
         NotificationsForm notform = new NotificationsForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
-        ProfilePopupForm ppForm = new ProfilePopupForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
-        int[] formsInitialized = { 1, 0, 0, 0, 0, 0 };
-
+        ProfilePopupForm  ppForm = new ProfilePopupForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
+        int[]             formsInitialized = { 1, 0, 0, 0, 0, 0 };
+        #endregion
         public mainForm()
         {
             InitializeComponent();
@@ -26,11 +26,12 @@ namespace TRUCKCOY
             panelContainer.Controls.Add(dform);
             pnlProfile.Controls.Add(ppForm);
             pnlNotification.Controls.Add(notform);
-            dform.Visible = true;
         }
 
         #region BackEnd
-        //#-> Internal methods
+        /// <summary>
+        /// Backend Methods
+        /// </summary>
         private void getDateTime()
         {
             // Date & Time 
@@ -85,7 +86,12 @@ namespace TRUCKCOY
             btnEvents.Image = Properties.Resources.schedule_off;
             btnDrivers.Image = Properties.Resources.drivers_off;
             btnMaps.Image = Properties.Resources.maps_off;
-            btnTemperature.Image = Properties.Resources.temp_off;
+            btnStats.Image = Properties.Resources.temp_off;
+            lblHome.ForeColor = Color.FromArgb(128, 128, 128);
+            lblHistory.ForeColor = Color.FromArgb(128, 128, 128);
+            lblDrivers.ForeColor = Color.FromArgb(128, 128, 128);
+            lblStats.ForeColor = Color.FromArgb(128, 128, 128);
+            lblMaps.ForeColor = Color.FromArgb(128, 128, 128);
         }
         private void selectNavButtons(int num)
         {
@@ -96,6 +102,7 @@ namespace TRUCKCOY
                     // FrontEnd
                     hideNavButtons();
                     hideChildOpenForms(0);
+                    lblHome.ForeColor = Color.CornflowerBlue;
 
                     // Add childForm
                     dform.Visible = true;
@@ -110,6 +117,7 @@ namespace TRUCKCOY
                     // FrontEnd
                     hideNavButtons();
                     hideChildOpenForms(1);
+                    lblHistory.ForeColor = Color.CornflowerBlue;
                     hform = new HistoricalForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false, Opacity = 0 };
                     btnEvents.Image = Properties.Resources.schedule_on;
 
@@ -127,6 +135,8 @@ namespace TRUCKCOY
                     // FrontEnd
                     hideNavButtons();
                     hideChildOpenForms(2);
+                    lblDrivers.ForeColor = Color.CornflowerBlue;
+
                     drform = new DriversForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false, Opacity = 0 };
                     btnDrivers.Image = Properties.Resources.drivers_on;
 
@@ -140,20 +150,18 @@ namespace TRUCKCOY
 
                     break;
                 case 3:  // Form Maps
-
-                    //hideNavButtons();
-                    //btnMaps.Image = Properties.Resources.maps_on;
-                    //Properties.Settings.Default.navButtonSelected = 4;
-                    //if (mform.Visible == false)
-                    //{
-                    //    mform.Visible = true;
-                    //}
+                    hideNavButtons();
+                    btnMaps.Image = Properties.Resources.maps_on;
+                    lblMaps.ForeColor = Color.CornflowerBlue;
 
                     Properties.Settings.Default.navButtonSelected = 3;
                     break;
-                case 4:  // Form Temperature
-
+                case 4:  // Form Stats
+                    hideNavButtons();
+                    btnStats.Image = Properties.Resources.temp_on;
+                    lblStats.ForeColor = Color.CornflowerBlue;
                     Properties.Settings.Default.navButtonSelected = 4;
+
                     break;
                 case 5:  // Form 
                     // do something
@@ -210,9 +218,10 @@ namespace TRUCKCOY
         }
         #endregion
 
-
         #region FrontEnd
-        // MouseClick
+        /// <summary>
+        /// Frontend Events
+        /// </summary>
         private void btnProfile_Click(object sender, EventArgs e)
         {
             switch (pnlProfile.Visible)
@@ -241,19 +250,21 @@ namespace TRUCKCOY
         }
         private void btnExpand_Click(object sender, EventArgs e)
         {
+            /// Rotate button image
             Bitmap bmpExpand = (Bitmap)btnExpand.Image;
             Bitmap bmpExpandRotated = RotateImage(bmpExpand, 180);
             btnExpand.Image = bmpExpandRotated;
+
             if (Width > 950)
             {
                 // Without Animation
                 if (panelNavBar.Width == 60)
                 {
-                    panelNavBar.Width = 250;
-                    divisorLine1.Width = 230;
-                    divisorLine2.Width = 230;
+                    panelNavBar.Width = 190;
+                    divisorLine1.Width = 170;
+                    divisorLine2.Width = 170;
                 }
-                else if (panelNavBar.Width == 250)
+                else if (panelNavBar.Width == 190)
                 {
                     panelNavBar.Width = 60;
                     divisorLine1.Width = 40;
@@ -268,7 +279,7 @@ namespace TRUCKCOY
                     tmrLoadNavBar.Enabled = true;
                     tmrLoadNavBar.Start();
                 }
-                else if (panelNavBar.Width == 250)
+                else if (panelNavBar.Width == 190)
                 {
                     tmrHideNavBar.Enabled = true;
                     tmrHideNavBar.Start();
@@ -279,7 +290,7 @@ namespace TRUCKCOY
         {
             selectNavButtons(0);
         }
-        private void btnEvents_Click(object sender, EventArgs e)
+        private void btnHistory_Click(object sender, EventArgs e)
         {
             selectNavButtons(1);
         }
@@ -291,31 +302,55 @@ namespace TRUCKCOY
         {
             selectNavButtons(3);
         }
-        private void btnTemperature_Click(object sender, EventArgs e)
+        private void btnStats_Click(object sender, EventArgs e)
         {
             selectNavButtons(4);
+        }
+        private void lblHome_Click(object sender, EventArgs e)
+        {
+            btnDashboard_Click(sender, e);
+        }
+        private void lblHistory_Click(object sender, EventArgs e)
+        {
+            btnHistory_Click(sender, e);
+        }
+        private void lblDrivers_Click(object sender, EventArgs e)
+        {
+            btnDrivers_Click(sender, e);
+        }
+        private void lblMaps_Click(object sender, EventArgs e)
+        {
+            btnMaps_Click(sender, e);
+        }
+        private void lblStats_Click(object sender, EventArgs e)
+        {
+            btnStats_Click(sender, e);
         }
         private void btnLogo_Click(object sender, EventArgs e)
         {
             // Redirect to main page
         }
-
         private void txtSearch_Click(object sender, EventArgs e)
         {
-            if(txtSearch.Text == "Buscar . . . ") { txtSearch.Text = ""; }
+            if(txtSearch.Text == "Buscar...") { 
+                txtSearch.Text = ""; 
+            }
             else{  }
             
         }
-        // MouseOver & MouseLeave
-        private void txtSearch_Leave(object sender, EventArgs e)
+        private void txtSearch_MouseLeave(object sender, EventArgs e)
         {
-            if(txtSearch.Text == "")
+            if (txtSearch.Text == "")
             {
-                txtSearch.Text = "Buscar . . .";
+                txtSearch.Text = "Buscar...";
+                lblDate.Focus();
             }
         }
 
-
         #endregion
+
+
+
+
     }
 }

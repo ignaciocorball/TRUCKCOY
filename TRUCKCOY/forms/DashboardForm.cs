@@ -121,19 +121,6 @@ namespace TRUCKCOY.forms
             lblTotal.ForeColor = Color.White;
             lblTotal.TextAlign = ContentAlignment.MiddleCenter;
             #endregion
-            /// Get Data Grid View Scrollbar status
-            foreach (var scroll in dgvHistory.Controls.OfType<VScrollBar>())
-            {
-                if (scroll.Visible == false) {
-                    // Scrollbar is Visible
-                    //checkBoxMain.Location = new Point(795, 61);
-                }
-                else
-                {
-                    // Scrollbar is Invisible
-
-                }
-            }
 
         }
         private void loadDataGridView()
@@ -165,7 +152,7 @@ namespace TRUCKCOY.forms
                 /// Array to add
                 string[] historyDGV = new string[]
                 {
-                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En Proceso"
+                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En Recorrido"
                 };
 
                 /// Add array to Data Grid View
@@ -173,9 +160,9 @@ namespace TRUCKCOY.forms
 
                 /// Validate Cell Status and change color
                 string dataValidator = dgvHistory.Rows[x].Cells[6].Value.ToString();
-                if (dataValidator == "En Proceso")
+                if (dataValidator == "En Recorrido")
                 {
-                    dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.CornflowerBlue;
+                    dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.LightGreen;
                 }
 
                 /// Add cells buttons

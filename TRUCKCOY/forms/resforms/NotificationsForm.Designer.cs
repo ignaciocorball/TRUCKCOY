@@ -30,13 +30,15 @@ namespace TRUCKCOY.forms.resforms
         private void InitializeComponent()
         {
             this.panel0 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label0 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label0 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -44,6 +46,7 @@ namespace TRUCKCOY.forms.resforms
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -51,16 +54,13 @@ namespace TRUCKCOY.forms.resforms
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel0.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -81,7 +81,7 @@ namespace TRUCKCOY.forms.resforms
             // 
             // panel0
             // 
-            this.panel0.BackColor = System.Drawing.Color.White;
+            this.panel0.BackColor = System.Drawing.SystemColors.Control;
             this.panel0.Controls.Add(this.panel4);
             this.panel0.Controls.Add(this.pictureBox3);
             this.panel0.Controls.Add(this.pictureBox2);
@@ -95,41 +95,13 @@ namespace TRUCKCOY.forms.resforms
             this.panel0.Size = new System.Drawing.Size(242, 50);
             this.panel0.TabIndex = 0;
             // 
-            // label2
+            // panel4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(160, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 14);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "07:00 AM";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(70, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "05-01-2022";
-            // 
-            // label0
-            // 
-            this.label0.AutoEllipsis = true;
-            this.label0.AutoSize = true;
-            this.label0.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label0.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(46)))), ((int)(((byte)(75)))));
-            this.label0.Location = new System.Drawing.Point(50, 10);
-            this.label0.MaximumSize = new System.Drawing.Size(164, 16);
-            this.label0.Name = "label0";
-            this.label0.Size = new System.Drawing.Size(164, 16);
-            this.label0.TabIndex = 2;
-            this.label0.Text = "Queremos saber tu opinión";
+            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel4.Location = new System.Drawing.Point(7, 46);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(210, 2);
+            this.panel4.TabIndex = 6;
             // 
             // pictureBox3
             // 
@@ -161,9 +133,47 @@ namespace TRUCKCOY.forms.resforms
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // label0
+            // 
+            this.label0.AutoEllipsis = true;
+            this.label0.AutoSize = true;
+            this.label0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label0.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(46)))), ((int)(((byte)(75)))));
+            this.label0.Location = new System.Drawing.Point(50, 10);
+            this.label0.MaximumSize = new System.Drawing.Size(164, 16);
+            this.label0.MinimumSize = new System.Drawing.Size(164, 16);
+            this.label0.Name = "label0";
+            this.label0.Size = new System.Drawing.Size(164, 16);
+            this.label0.TabIndex = 2;
+            this.label0.Text = "Queremos saber tu opinión";
+            this.label0.Click += new System.EventHandler(this.label0_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(160, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 14);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "07:00 AM";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(70, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 14);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "05-01-2022";
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.pictureBox5);
@@ -176,6 +186,14 @@ namespace TRUCKCOY.forms.resforms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(242, 50);
             this.panel1.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel5.Location = new System.Drawing.Point(7, 46);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(210, 2);
+            this.panel5.TabIndex = 7;
             // 
             // pictureBox6
             // 
@@ -216,10 +234,12 @@ namespace TRUCKCOY.forms.resforms
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(46)))), ((int)(((byte)(75)))));
             this.label3.Location = new System.Drawing.Point(50, 10);
             this.label3.MaximumSize = new System.Drawing.Size(164, 16);
+            this.label3.MinimumSize = new System.Drawing.Size(164, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 16);
+            this.label3.Size = new System.Drawing.Size(164, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nueva actualización del sistema ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -258,6 +278,14 @@ namespace TRUCKCOY.forms.resforms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(242, 50);
             this.panel2.TabIndex = 2;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel6.Location = new System.Drawing.Point(7, 46);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(210, 2);
+            this.panel6.TabIndex = 7;
             // 
             // pictureBox9
             // 
@@ -298,10 +326,12 @@ namespace TRUCKCOY.forms.resforms
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(46)))), ((int)(((byte)(75)))));
             this.label6.Location = new System.Drawing.Point(50, 10);
             this.label6.MaximumSize = new System.Drawing.Size(164, 16);
+            this.label6.MinimumSize = new System.Drawing.Size(164, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 16);
+            this.label6.Size = new System.Drawing.Size(164, 16);
             this.label6.TabIndex = 2;
             this.label6.Text = "Apertura de la plataforma gestión vehicular";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -340,6 +370,14 @@ namespace TRUCKCOY.forms.resforms
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(242, 50);
             this.panel3.TabIndex = 3;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel7.Location = new System.Drawing.Point(7, 46);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(210, 2);
+            this.panel7.TabIndex = 7;
             // 
             // pictureBox12
             // 
@@ -380,10 +418,12 @@ namespace TRUCKCOY.forms.resforms
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(46)))), ((int)(((byte)(75)))));
             this.label9.Location = new System.Drawing.Point(50, 10);
             this.label9.MaximumSize = new System.Drawing.Size(164, 16);
+            this.label9.MinimumSize = new System.Drawing.Size(164, 16);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(150, 16);
+            this.label9.Size = new System.Drawing.Size(164, 16);
             this.label9.TabIndex = 2;
             this.label9.Text = "Bienvenido a TRUCKCOY!";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -406,38 +446,6 @@ namespace TRUCKCOY.forms.resforms
             this.label11.Size = new System.Drawing.Size(63, 14);
             this.label11.TabIndex = 0;
             this.label11.Text = "15-12-2021";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Location = new System.Drawing.Point(7, 46);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(210, 2);
-            this.panel4.TabIndex = 6;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.Location = new System.Drawing.Point(7, 46);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(210, 2);
-            this.panel5.TabIndex = 7;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel6.Location = new System.Drawing.Point(7, 46);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(210, 2);
-            this.panel6.TabIndex = 7;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel7.Location = new System.Drawing.Point(7, 46);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(210, 2);
-            this.panel7.TabIndex = 7;
             // 
             // NotificationsForm
             // 
