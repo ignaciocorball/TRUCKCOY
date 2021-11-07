@@ -47,13 +47,6 @@ namespace TRUCKCOY.forms
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvHistory = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vehicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kilometers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.regdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -61,6 +54,14 @@ namespace TRUCKCOY.forms
             this.button1 = new System.Windows.Forms.Button();
             this.lblFleetStatus = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kilometers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -91,7 +92,7 @@ namespace TRUCKCOY.forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.81818F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.checkBox1, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSatellite, 3, 0);
@@ -123,9 +124,9 @@ namespace TRUCKCOY.forms
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox1.Location = new System.Drawing.Point(268, 3);
+            this.checkBox1.Location = new System.Drawing.Point(267, 3);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(20, 20);
+            this.checkBox1.Size = new System.Drawing.Size(21, 20);
             this.checkBox1.TabIndex = 65;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -134,7 +135,7 @@ namespace TRUCKCOY.forms
             this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSatellite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.delete_on;
-            this.btnSatellite.Location = new System.Drawing.Point(187, 3);
+            this.btnSatellite.Location = new System.Drawing.Point(186, 3);
             this.btnSatellite.MaximumSize = new System.Drawing.Size(75, 20);
             this.btnSatellite.MinimumSize = new System.Drawing.Size(75, 20);
             this.btnSatellite.Name = "btnSatellite";
@@ -148,7 +149,7 @@ namespace TRUCKCOY.forms
             this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNormal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.modificar_on;
-            this.btnNormal.Location = new System.Drawing.Point(108, 3);
+            this.btnNormal.Location = new System.Drawing.Point(107, 3);
             this.btnNormal.MaximumSize = new System.Drawing.Size(75, 20);
             this.btnNormal.MinimumSize = new System.Drawing.Size(75, 20);
             this.btnNormal.Name = "btnNormal";
@@ -236,7 +237,8 @@ namespace TRUCKCOY.forms
             this.patente,
             this.kilometers,
             this.status,
-            this.regdate});
+            this.regdate,
+            this.chk});
             this.dgvHistory.Cursor = System.Windows.Forms.Cursors.Arrow;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
@@ -286,73 +288,6 @@ namespace TRUCKCOY.forms
             this.dgvHistory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistory_CellClick);
             this.dgvHistory.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistory_CellMouseEnter);
             this.dgvHistory.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistory_CellMouseLeave);
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.id.DefaultCellStyle = dataGridViewCellStyle3;
-            this.id.DividerWidth = 1;
-            this.id.HeaderText = "ID";
-            this.id.MaxInputLength = 100;
-            this.id.MinimumWidth = 30;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id.Width = 35;
-            // 
-            // name
-            // 
-            this.name.DividerWidth = 1;
-            this.name.HeaderText = "Conductor";
-            this.name.MinimumWidth = 130;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // vehicle
-            // 
-            this.vehicle.DividerWidth = 1;
-            this.vehicle.HeaderText = "Vehículo";
-            this.vehicle.MinimumWidth = 100;
-            this.vehicle.Name = "vehicle";
-            this.vehicle.ReadOnly = true;
-            // 
-            // patente
-            // 
-            this.patente.DividerWidth = 1;
-            this.patente.HeaderText = "Patente";
-            this.patente.MinimumWidth = 88;
-            this.patente.Name = "patente";
-            this.patente.ReadOnly = true;
-            // 
-            // kilometers
-            // 
-            this.kilometers.DividerWidth = 1;
-            this.kilometers.HeaderText = "Kilometraje";
-            this.kilometers.MinimumWidth = 100;
-            this.kilometers.Name = "kilometers";
-            this.kilometers.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.status.DefaultCellStyle = dataGridViewCellStyle4;
-            this.status.DividerWidth = 1;
-            this.status.HeaderText = "Estado";
-            this.status.MinimumWidth = 100;
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.status.ToolTipText = "Con este botón puedes eliminar multiples registros.";
-            // 
-            // regdate
-            // 
-            this.regdate.DividerWidth = 1;
-            this.regdate.HeaderText = "Fecha de registro";
-            this.regdate.MinimumWidth = 90;
-            this.regdate.Name = "regdate";
-            this.regdate.ReadOnly = true;
             // 
             // button5
             // 
@@ -453,6 +388,82 @@ namespace TRUCKCOY.forms
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.id.DefaultCellStyle = dataGridViewCellStyle3;
+            this.id.DividerWidth = 1;
+            this.id.HeaderText = "ID";
+            this.id.MaxInputLength = 100;
+            this.id.MinimumWidth = 30;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id.Width = 35;
+            // 
+            // name
+            // 
+            this.name.DividerWidth = 1;
+            this.name.HeaderText = "Conductor";
+            this.name.MinimumWidth = 130;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // vehicle
+            // 
+            this.vehicle.DividerWidth = 1;
+            this.vehicle.HeaderText = "Vehículo";
+            this.vehicle.MinimumWidth = 100;
+            this.vehicle.Name = "vehicle";
+            this.vehicle.ReadOnly = true;
+            // 
+            // patente
+            // 
+            this.patente.DividerWidth = 1;
+            this.patente.HeaderText = "Patente";
+            this.patente.MinimumWidth = 88;
+            this.patente.Name = "patente";
+            this.patente.ReadOnly = true;
+            // 
+            // kilometers
+            // 
+            this.kilometers.DividerWidth = 1;
+            this.kilometers.HeaderText = "Kilometraje";
+            this.kilometers.MinimumWidth = 100;
+            this.kilometers.Name = "kilometers";
+            this.kilometers.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.status.DefaultCellStyle = dataGridViewCellStyle4;
+            this.status.DividerWidth = 1;
+            this.status.HeaderText = "Estado";
+            this.status.MinimumWidth = 100;
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.status.ToolTipText = "Con este botón puedes eliminar multiples registros.";
+            // 
+            // regdate
+            // 
+            this.regdate.DividerWidth = 1;
+            this.regdate.HeaderText = "Fecha de registro";
+            this.regdate.MinimumWidth = 90;
+            this.regdate.Name = "regdate";
+            this.regdate.ReadOnly = true;
+            // 
+            // chk
+            // 
+            this.chk.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.chk.HeaderText = "";
+            this.chk.MinimumWidth = 17;
+            this.chk.Name = "chk";
+            this.chk.ReadOnly = true;
+            this.chk.Width = 17;
+            // 
             // DriversForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,5 +525,6 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.DataGridViewTextBoxColumn kilometers;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn regdate;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chk;
     }
 }

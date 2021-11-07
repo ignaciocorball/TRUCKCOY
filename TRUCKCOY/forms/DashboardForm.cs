@@ -160,9 +160,20 @@ namespace TRUCKCOY.forms
 
                 /// Validate Cell Status and change color
                 string dataValidator = dgvHistory.Rows[x].Cells[6].Value.ToString();
-                if (dataValidator == "En Recorrido")
+                switch (dataValidator)
                 {
-                    dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.LightGreen;
+                    case "En recorrido":
+                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.LightSeaGreen;
+                        break;
+                    case "En espera":
+                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.LightSkyBlue;
+                        break;
+                    case "Finalizado":
+                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.Green;
+                        break;
+                    case "Cancelado":
+                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.Gray;
+                        break;
                 }
 
                 /// Add cells buttons
@@ -181,10 +192,6 @@ namespace TRUCKCOY.forms
                 {
                     ((DataGridViewImageColumn)dgvHistory.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Zoom;
                 }
-
-
-            /// Sort Data Grid View by ID
-            // dgvHistory.Sort(dgvHistory.Columns["id"], ListSortDirection.Descending);
         }
 
         #endregion

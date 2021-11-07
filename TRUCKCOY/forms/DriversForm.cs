@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace TRUCKCOY.forms
@@ -9,6 +10,7 @@ namespace TRUCKCOY.forms
     {
         DataGridViewImageColumn btnEditBlue = new DataGridViewImageColumn();
         DataGridViewImageColumn btnDelete = new DataGridViewImageColumn();
+        DataGridViewCheckBoxColumn btnCheckbox = new DataGridViewCheckBoxColumn();
         public DriversForm()
         {
             InitializeComponent();
@@ -16,29 +18,45 @@ namespace TRUCKCOY.forms
         }
         private void loadDGV()
         {
-
             /// <summary>
             /// Load DataGridView information
             /// </summary>
+            /// 
+            DateTime now = DateTime.Now;
+            string monthToUpper = now.ToString("MMM", new CultureInfo("cl")).ToUpper();
 
-            /// Add array data in History Data Grid View
+            // Add array data in History Data Grid View
             for (int x = 0; x < 20; x++)
             {
-                /// Array to add
+                // Array to add
                 string[] historyDGV = new string[]
                 {
-                ""+(x+1)+"","Carlos Fuentes", "Hyundai Elantra", "AB XX 11", "15.777 km","En recorrido","12-12-2021 12:12:12 PM"
+                ""+(x+1)+"","Carlos Fuentes", "Hyundai Elantra", "AB XX 11", "15.777 km","En recorrido",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt")
                 };
 
-                /// Add array to Data Grid View
+                // Add array to Data Grid View
                 dgvHistory.Rows.Add(historyDGV);
 
-                /// Validate Cell Status and change color
+                // Validate Cell Status and change color
                 string dataValidator = dgvHistory.Rows[x].Cells[5].Value.ToString();
-                if (dataValidator == "En recorrido")
+
+                switch (dataValidator)
                 {
-                    dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.LightGreen;
+                    case "En recorrido":
+                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.LightSeaGreen;
+                        break;
+                    case "En espera":
+                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.LightSkyBlue;
+                        break;
+                    case "Finalizado":
+                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.Green;
+                        break;
+                    case "Cancelado":
+                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.Gray;
+                        break;
                 }
+
+
                 /// Edit Button
                 btnEditBlue.Width = 20;
                 btnEditBlue.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
@@ -52,9 +70,13 @@ namespace TRUCKCOY.forms
                 btnDelete.Image = Properties.Resources.trash2;
                 btnDelete.ImageLayout = DataGridViewImageCellLayout.Zoom;
                 btnDelete.DividerWidth = 1;
+
+                /// Checkbox
+                dgvHistory.Rows[x].Cells[7].Value = false;
             }
             dgvHistory.Columns.Add(btnEditBlue);
             dgvHistory.Columns.Add(btnDelete);
+            
         }
         private void dgvHistory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -62,15 +84,29 @@ namespace TRUCKCOY.forms
             /// Buttons edit and delete actions
             /// </summary>
 
-            /// EDIT BUTTON
-            if(e.ColumnIndex == 7)
+            switch (e.ColumnIndex)
             {
-                MessageBox.Show("Button Edit [Row:" + (e.RowIndex + 1) + "Column:" + (e.ColumnIndex) + "]");
-            }
-            /// DELETE BUTTON
-            if (e.ColumnIndex == 8)
-            {
-                MessageBox.Show("Button Delete [Row:" + (e.RowIndex + 1) + "Column:" + (e.ColumnIndex)+"]");
+                case 8: /// EDIT BUTTON
+                    MessageBox.Show("Button Edit [Row:" + (e.RowIndex + 1) + "Column:" + (e.ColumnIndex) + "]");
+                    break;
+                case 9: /// DELETE BUTTON
+                    MessageBox.Show("Button Delete [Row:" + (e.RowIndex + 1) + "Column:" + (e.ColumnIndex) + "]");
+                    break;
+                case 7: /// CHECKBOX BUTTON
+                    bool chk = (bool)dgvHistory.Rows[e.RowIndex + 1].Cells[e.ColumnIndex].Value;
+
+                    switch (chk)
+                    {
+                        case true:
+                            dgvHistory.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = false;
+                            break;
+                        case false:
+                            dgvHistory.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+                            break;
+                    }
+
+                    
+                    break;
             }
         }
         private void dgvHistory_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
