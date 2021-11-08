@@ -10,7 +10,6 @@ namespace TRUCKCOY.forms
     {
         DataGridViewImageColumn btnEditBlue = new DataGridViewImageColumn();
         DataGridViewImageColumn btnDelete = new DataGridViewImageColumn();
-        DataGridViewCheckBoxColumn btnCheckbox = new DataGridViewCheckBoxColumn();
         public DriversForm()
         {
             InitializeComponent();

@@ -13,6 +13,7 @@ using LiveCharts.Defaults;
 using System.Globalization;
 using System.Data;
 using System.Linq;
+using System.Collections;
 
 namespace TRUCKCOY.forms
 {
@@ -144,16 +145,18 @@ namespace TRUCKCOY.forms
             dtTemp.Columns.Add("Dirección de Destino", typeof(string));
             dtTemp.Columns.Add("Estado", typeof(string));
 
-
-
-            // Add array data in History Data Grid View
+            /// Add array into History Data Grid View
             for (int x = 0; x < 30; x++)
             {
                 /// Array to add
                 string[] historyDGV = new string[]
                 {
-                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En Recorrido"
+                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En recorrido"
                 };
+                //ArrayList arlist = new ArrayList()
+                //{
+                //    x+1, now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"), "Carlos Lopez", "AB XZ 11", "Psje Rio Claro #2596", "Teniente vidal #456","En recorrido"
+                //};
 
                 /// Add array to Data Grid View
                 dgvHistory.Rows.Add(historyDGV);
@@ -163,16 +166,16 @@ namespace TRUCKCOY.forms
                 switch (dataValidator)
                 {
                     case "En recorrido":
-                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.LightSeaGreen;
+                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.LightSeaGreen;
                         break;
                     case "En espera":
-                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.LightSkyBlue;
+                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.LightSkyBlue;
                         break;
                     case "Finalizado":
-                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.Green;
+                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.Green;
                         break;
                     case "Cancelado":
-                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.Gray;
+                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.Gray;
                         break;
                 }
 
@@ -180,7 +183,6 @@ namespace TRUCKCOY.forms
                 dgvHistory.Rows[x].Cells[7].Value = img;
                 dgvHistory.Rows[x].Cells[8].Value = img2;
                 dgvHistory.Rows[x].Cells[9].Value = false;
-                
             }
 
             /// Add dtTemp to History data grid view
@@ -389,8 +391,17 @@ namespace TRUCKCOY.forms
             });
         }
 
+
         #endregion
 
+        private void DetailsMain_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void DeleteMain_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

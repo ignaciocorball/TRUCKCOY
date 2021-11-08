@@ -50,16 +50,16 @@ namespace TRUCKCOY.forms
                 switch (dataValidator)
                 {
                     case "En recorrido":
-                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.LightSeaGreen;
+                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.LightSeaGreen;
                         break;
                     case "En espera":
-                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.LightSkyBlue;
+                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.LightSkyBlue;
                         break;
                     case "Finalizado":
-                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.Green;
+                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.Green;
                         break;
                     case "Cancelado":
-                        dgvHistory.Rows[x].Cells[5].Style.ForeColor = Color.Gray;
+                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.Gray;
                         break;
                 }
             }
