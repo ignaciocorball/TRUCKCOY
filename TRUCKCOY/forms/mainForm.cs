@@ -28,10 +28,11 @@ namespace TRUCKCOY
             pnlNotification.Controls.Add(notform);
         }
 
-        #region BackEnd
+
         /// <summary>
         /// Backend Methods
         /// </summary>
+        #region BackEnd
         private void getDateTime()
         {
             // Date & Time 
@@ -218,10 +219,10 @@ namespace TRUCKCOY
         }
         #endregion
 
-        #region FrontEnd
         /// <summary>
         /// Frontend Events
         /// </summary>
+        #region FrontEnd
         private void btnProfile_Click(object sender, EventArgs e)
         {
             switch (pnlProfile.Visible)
@@ -347,9 +348,50 @@ namespace TRUCKCOY
             }
         }
 
+        private void panel11_MouseEnter(object sender, EventArgs e)
+        {
+            panel11.BackColor = Color.IndianRed;
+            btnLogout.Image = Properties.Resources.logout_w;
+            lblLogout.ForeColor = Color.White;
+        }
+
+        private void panel11_MouseLeave(object sender, EventArgs e)
+        {
+            panel11.BackColor = Color.White;
+            btnLogout.Image = Properties.Resources.logout;
+            lblLogout.ForeColor = Color.Firebrick;
+        }
+
+        private void btnLogout_MouseEnter(object sender, EventArgs e)
+        {
+            panel11.BackColor = Color.IndianRed;
+            btnLogout.Image = Properties.Resources.logout_w;
+            lblLogout.ForeColor = Color.White;
+        }
+
+        private void btnLogout_MouseLeave(object sender, EventArgs e)
+        {
+            panel11.BackColor = Color.White;
+            btnLogout.Image = Properties.Resources.logout;
+            lblLogout.ForeColor = Color.Firebrick;
+        }
+
+        private void lblLogout_MouseEnter(object sender, EventArgs e)
+        {
+            panel11.BackColor = Color.IndianRed;
+            btnLogout.Image = Properties.Resources.logout_w;
+            lblLogout.ForeColor = Color.White;
+        }
+
+        private void lblLogout_MouseLeave(object sender, EventArgs e)
+        {
+            panel11.BackColor = Color.White;
+            btnLogout.Image = Properties.Resources.logout;
+            lblLogout.ForeColor = Color.Firebrick;
+        }
+
+
         #endregion
-
-
 
 
     }

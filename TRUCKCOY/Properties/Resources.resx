@@ -124,6 +124,9 @@
   <data name="anadir_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\anadir_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="block" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="calendar_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\calendar_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,6 +135,12 @@
   </data>
   <data name="checkbox_unchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\checkbox_unchecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chk_checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\chk_checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chk_unchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\chk_unchecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clear_bell" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\clear-bell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,8 +154,14 @@
   <data name="dashboard_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\dashboard-on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="default_profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\default-profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="delete_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\delete_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diskette" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\diskette.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="drivers_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\drivers_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,8 +205,17 @@
   <data name="inactive_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\inactive_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loading_drivers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\loading'drivers.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loading_drivers1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\loading-drivers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logout_w" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\logout-w.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="maps_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\maps_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

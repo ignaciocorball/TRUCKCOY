@@ -225,6 +225,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="resources\chk_checked.png" />
+    <None Include="resources\chk_unchecked.png" />
+    <None Include="resources\block.png" />
+    <None Include="resources\default-profile.png" />
+    <None Include="resources\diskette.png" />
+    <None Include="resources\loading-drivers.png" />
+    <None Include="resources\loading%27drivers.gif" />
+    <None Include="resources\logout-w.png" />
     <None Include="resources\hearth.png" />
     <None Include="resources\edit_w.png" />
     <None Include="resources\edit.png" />

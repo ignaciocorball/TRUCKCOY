@@ -27,8 +27,9 @@ namespace TRUCKCOY.forms
             setFrontEnd();
 
         }
-
-
+        /// <summary>
+        /// Frontend Events
+        /// </summary>
         #region Frontend
 
         /// Buttons Events
@@ -67,6 +68,15 @@ namespace TRUCKCOY.forms
         {
             System.Windows.MessageBox.Show("Estamos trabajando en ello :)");
         }
+        private void DetailsMain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteMain_Click(object sender, EventArgs e)
+        {
+
+        }
 
         /// DataGridView Events
         private void dgvHistory_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -95,7 +105,7 @@ namespace TRUCKCOY.forms
             }
         }
 
-        /// Methods Events
+        /// Data Frontend Management
         private void setFrontEnd()
         {
 
@@ -198,6 +208,9 @@ namespace TRUCKCOY.forms
 
         #endregion
 
+        /// <summary>
+        /// Backend Events
+        /// </summary>
         #region Backend
 
         private string getDateByNumber(double num)
@@ -393,15 +406,5 @@ namespace TRUCKCOY.forms
 
 
         #endregion
-
-        private void DetailsMain_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DeleteMain_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
