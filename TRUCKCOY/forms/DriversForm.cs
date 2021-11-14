@@ -29,13 +29,32 @@ namespace TRUCKCOY.forms
 
 
             Bitmap imgEdit = new Bitmap(Properties.Resources.edit);
-            Bitmap imgDelete = new Bitmap(Properties.Resources.trash2);
+            Bitmap imgDelete = new Bitmap(Properties.Resources.trash_small);
 
             dgvHistory.Rows[0].Cells[9].Value = imgEdit;
             dgvHistory.Rows[0].Cells[10].Value = imgDelete;
 
             loadFrontend();
             setRegistersCount();
+
+            /// Validate Cell Status and change color
+            /// 
+            foreach (DataGridViewRow row in dgvHistory.Rows)
+            {
+                string dataValidator = (string)dgvHistory.Rows[row.Index].Cells[8].Value;
+                switch (dataValidator)
+                {
+                    case "Activo":
+                        dgvHistory.Rows[row.Index].Cells[8].Style.ForeColor = Color.LightSeaGreen;
+                        break;
+                    case "Inactivo":
+                        dgvHistory.Rows[row.Index].Cells[8].Style.ForeColor = Color.LightSkyBlue;
+                        break;
+                    case "Eliminado":
+                        dgvHistory.Rows[row.Index].Cells[8].Style.ForeColor = Color.DimGray;
+                        break;
+                }
+            }
         }
         private void loadFrontend()
         {
@@ -89,12 +108,15 @@ namespace TRUCKCOY.forms
                             {
                                 case "Activo":
                                     lblStatus.ForeColor = Color.LimeGreen;
+                                    picStatus.Image = Properties.Resources.status_active;
                                     break;
                                 case "Inactivo":
                                     lblStatus.ForeColor = Color.SteelBlue;
+                                    picStatus.Image = Properties.Resources.status_inactive;
                                     break;
                                 case "Eliminado":
                                     lblStatus.ForeColor = Color.DimGray;
+                                    picStatus.Image = Properties.Resources.status_deleted;
                                     break;
                             }
 
@@ -120,15 +142,18 @@ namespace TRUCKCOY.forms
                             {
                                 case "Activo":
                                     lblStatus.ForeColor = Color.LimeGreen;
+                                    picStatus.Image = Properties.Resources.status_active;
                                     break;
                                 case "Inactivo":
                                     lblStatus.ForeColor = Color.SteelBlue;
+                                    picStatus.Image = Properties.Resources.status_inactive;
                                     break;
                                 case "Eliminado":
                                     lblStatus.ForeColor = Color.DimGray;
+                                    picStatus.Image = Properties.Resources.status_deleted;
                                     break;
                             }
-                         }
+                        }
                         
                     }
                     break;

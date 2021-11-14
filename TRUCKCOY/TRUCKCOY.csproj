@@ -231,6 +231,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="resources\status_inactive.png" />
+    <None Include="resources\status_active.png" />
+    <None Include="resources\status_deleted.png" />
     <None Include="resources\ja_diap917a.gif" />
     <None Include="resources\loading.gif" />
     <None Include="resources\d26ab6e45a7d77b5f41704c31403d40c.gif" />
