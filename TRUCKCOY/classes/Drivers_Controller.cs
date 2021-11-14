@@ -41,15 +41,13 @@ namespace TRUCKCOY.classes
                     _drivers.Patente = reader.GetString(4).ToString();
                     _drivers.Status = reader.GetString(5).ToString();
                     _drivers.Company = reader.GetString(6).ToString();
-                    _drivers.Regdate = reader.GetString(7).ToString();
-                    _drivers.Lastaccess = reader.GetString(8).ToString();
+                    _drivers.Regdate = reader.GetString(7).ToString().Replace("/", "-");
+                    _drivers.Lastaccess = reader.GetString(8).ToString().Replace("/", "-");
                     list.Add(_drivers);
                 }
             }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
+            catch (MySqlException ex) { /*MessageBox.Show(ex.Message.ToString());*/ }
+
             return list;
         }
     }

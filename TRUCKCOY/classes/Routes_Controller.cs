@@ -49,8 +49,8 @@ namespace TRUCKCOY.classes
                     _routes.CurrentLng = reader.GetString(8).ToString();
                     _routes.CurrentAlt = reader.GetString(9).ToString();
                     _routes.CurrentDeg = reader.GetString(10).ToString();
-                    _routes.OrderIncomeDate = reader.GetString(11).ToString();
-                    _routes.OrderFinishedDate = reader.GetString(12).ToString();
+                    _routes.OrderIncomeDate = reader.GetString(11).ToString().Replace("/", "-");
+                    _routes.OrderFinishedDate = reader.GetString(12).ToString().Replace("/", "-");
                     _routes.Company = reader.GetString(13).ToString();
                     _routes.Status = reader.GetString(14).ToString();
                     list.Add(_routes);

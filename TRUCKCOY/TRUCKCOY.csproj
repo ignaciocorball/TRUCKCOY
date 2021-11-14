@@ -231,6 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="resources\hearts-heartbeat.gif" />
     <None Include="resources\status_inactive.png" />
     <None Include="resources\status_active.png" />
     <None Include="resources\status_deleted.png" />

@@ -13,32 +13,40 @@ namespace TRUCKCOY.forms
         public DriversForm()
         {
             InitializeComponent();
-            loadDGV();
-            ImageAnimator.StopAnimate(picLoading.Image, OnFrameChanged);
         }
-
-        private void loadDGV()
+        private void DriversForm_Load(object sender, EventArgs e)
+        {
+            loadDgv();
+        }
+        private void loadDgv()
         {
             /// <summary>
             /// Load DataGridView information
             /// </summary>
-
             //List<Drivers> list = new List<Drivers>();
             Drivers_Controller _ctrlDrivers = new Drivers_Controller();
             dgvHistory.DataSource = _ctrlDrivers.query(null);
 
+            if (dgvHistory.Rows.Count > 0)
+            {
+                Bitmap imgEdit = new Bitmap(Properties.Resources.edit);
+                Bitmap imgDelete = new Bitmap(Properties.Resources.trash_small);
 
-            Bitmap imgEdit = new Bitmap(Properties.Resources.edit);
-            Bitmap imgDelete = new Bitmap(Properties.Resources.trash_small);
+                dgvHistory.Rows[0].Cells[9].Value = imgEdit;
+                dgvHistory.Rows[0].Cells[10].Value = imgDelete;
 
-            dgvHistory.Rows[0].Cells[9].Value = imgEdit;
-            dgvHistory.Rows[0].Cells[10].Value = imgDelete;
-
-            loadFrontend();
-            setRegistersCount();
-
+                lblNoData.Visible = false;
+                setRegistersCount();
+            }
+            else
+            {
+                lblNoData.Visible = true;
+                setRegistersCount();
+            }
+        }
+        private void setColors()
+        {
             /// Validate Cell Status and change color
-            /// 
             foreach (DataGridViewRow row in dgvHistory.Rows)
             {
                 string dataValidator = (string)dgvHistory.Rows[row.Index].Cells[8].Value;
@@ -56,36 +64,12 @@ namespace TRUCKCOY.forms
                 }
             }
         }
-        private void loadFrontend()
-        {
 
-            dgvHistory.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            /// Validate Cell Status and change color
-            if (dgvHistory.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow row in dgvHistory.Rows)
-                {
-                    string dataValidator = (string)dgvHistory.Rows[row.Index].Cells[5].Value;
-                    switch (dataValidator)
-                    {
-                        case "Activo":
-                            dgvHistory.Rows[row.Index].Cells[5].Style.ForeColor = Color.LightSeaGreen;
-                            break;
-                        case "Inactivo":
-                            dgvHistory.Rows[row.Index].Cells[5].Style.ForeColor = Color.LightSkyBlue;
-                            break;
-                        case "Eliminado":
-                            dgvHistory.Rows[row.Index].Cells[5].Style.ForeColor = Color.DimGray;
-                            break;
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron registros");
-            }
-        }
-
+        /// <summary>
+        /// Frontend development
+        /// </summary>
+        
+        // DataGridView
         private void dgvHistory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             switch (e.ColumnIndex)
@@ -103,32 +87,16 @@ namespace TRUCKCOY.forms
                             txtPatente.Text = dgvHistory.Rows[e.RowIndex].Cells[5].Value.ToString();
                             txtLastaccess.Text = dgvHistory.Rows[e.RowIndex].Cells[7].Value.ToString();
                             lblStatus.Text = dgvHistory.Rows[e.RowIndex].Cells[8].Value.ToString();
-
-                            switch (lblStatus.Text)
-                            {
-                                case "Activo":
-                                    lblStatus.ForeColor = Color.LimeGreen;
-                                    picStatus.Image = Properties.Resources.status_active;
-                                    break;
-                                case "Inactivo":
-                                    lblStatus.ForeColor = Color.SteelBlue;
-                                    picStatus.Image = Properties.Resources.status_inactive;
-                                    break;
-                                case "Eliminado":
-                                    lblStatus.ForeColor = Color.DimGray;
-                                    picStatus.Image = Properties.Resources.status_deleted;
-                                    break;
-                            }
-
+                        
                             picBanner.Visible = false;
                             picLoading.Image = Properties.Resources.loading_drivers;
-                            ImageAnimator.Animate(picLoading.Image, OnFrameChanged);
+                            ImageAnimator.Animate(picLoading.Image, null);
                             tmrClock.Enabled = true;
                             tmrClock.Start();
                         }
                         else
                         {
-
+                        
                             txtID.Text = dgvHistory.Rows[e.RowIndex].Cells[0].Value.ToString();
                             txtRegdate.Text = dgvHistory.Rows[e.RowIndex].Cells[1].Value.ToString();
                             txtName.Text = dgvHistory.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -137,24 +105,8 @@ namespace TRUCKCOY.forms
                             txtPatente.Text = dgvHistory.Rows[e.RowIndex].Cells[5].Value.ToString();
                             txtLastaccess.Text = dgvHistory.Rows[e.RowIndex].Cells[7].Value.ToString();
                             lblStatus.Text = dgvHistory.Rows[e.RowIndex].Cells[8].Value.ToString();
-
-                            switch (lblStatus.Text)
-                            {
-                                case "Activo":
-                                    lblStatus.ForeColor = Color.LimeGreen;
-                                    picStatus.Image = Properties.Resources.status_active;
-                                    break;
-                                case "Inactivo":
-                                    lblStatus.ForeColor = Color.SteelBlue;
-                                    picStatus.Image = Properties.Resources.status_inactive;
-                                    break;
-                                case "Eliminado":
-                                    lblStatus.ForeColor = Color.DimGray;
-                                    picStatus.Image = Properties.Resources.status_deleted;
-                                    break;
-                            }
                         }
-                        
+
                     }
                     break;
                 case 10: /// DELETE BUTTON
@@ -164,21 +116,13 @@ namespace TRUCKCOY.forms
                     }
                     break;
                 case 11: /// CHECKBOX BUTTON
-                    /// Prevent header checkbox click error
-                    if(e.RowIndex != -1)
+                         /// Prevent header checkbox click error
+                    if (e.RowIndex != -1)
                     {
                         DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)dgvHistory.Rows[e.RowIndex].Cells[11];
                         chk.Value = !(chk.Value == null ? false : (bool)chk.Value);
                     }
                     break;
-            }
-        }
-        private void chkMain_CheckedChanged(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dgvHistory.Rows)
-            {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[11];
-                chk.Value = !(chk.Value == null ? false : (bool)chk.Value);
             }
         }
         private void dgvHistory_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -187,6 +131,8 @@ namespace TRUCKCOY.forms
             {
                 dgvHistory.Cursor = Cursors.Hand;
             }
+
+            setColors();
         }
         private void dgvHistory_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
@@ -195,10 +141,22 @@ namespace TRUCKCOY.forms
                 dgvHistory.Cursor = Cursors.Default;
             }
         }
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void dgvHistory_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+        // Buttons, Textbox, Inputs, Labels, Picturebox...
+        private void chkMain_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvHistory.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[11];
+                chk.Value = !(chk.Value == null ? false : (bool)chk.Value);
+            }
+        }
+        private void btnFilter_Click(object sender, EventArgs e)
         {
             /// Validate Cell Status and change color
-            /// 
             foreach (DataGridViewRow row in dgvHistory.Rows)
             {
                 string dataValidator = (string)dgvHistory.Rows[row.Index].Cells[8].Value;
@@ -216,28 +174,12 @@ namespace TRUCKCOY.forms
                 }
             }
         }
-        private void dgvHistory_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            e.Cancel = true;
-        }
+
 
 
         /// <summary>
-        /// Example GiF PLAY AND STOP
+        /// Backend development
         /// </summary>
-        private void OnFrameChanged(object sender, EventArgs args)
-        {
-            picLoading.Invalidate();
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            picLoading.Image = Properties.Resources.loading_drivers;
-            ImageAnimator.Animate(picLoading.Image, OnFrameChanged);
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void tmrClock_Tick(object sender, EventArgs e)
         {
@@ -245,7 +187,6 @@ namespace TRUCKCOY.forms
              tmrClock.Enabled = false;
              tmrClock.Stop();
         }
-
         private void dgvHistory_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             /// Add Trash header to dgv
@@ -258,40 +199,34 @@ namespace TRUCKCOY.forms
             }
 
         }
-
-        private void checkboxHeader_Clicked(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void setRegistersCount()
         {
             /// SQL CONNECTION
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=truckcoy;SSL Mode=None";
             string query = "SELECT * FROM `drivers` WHERE `company` = 'truckcoy' ORDER BY `id` DESC";
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
+            MySqlConnection dbcon = new MySqlConnection(connectionString);
+            MySqlCommand dbcom = new MySqlCommand(query, dbcon);
+            dbcom.CommandTimeout = 60;
             MySqlDataReader reader;
             int rowCounter = 0;
 
             try
             {
-                // Open connection
-                databaseConnection.Open();
-                // Execute query
-                reader = commandDatabase.ExecuteReader();
-
+                dbcon.Open();
+                /// Execute query
+                reader = dbcom.ExecuteReader();
+                /// Row Counter
                 if (reader.HasRows) { while (reader.Read()) { rowCounter++; } }
+                /// Counter equals to 0
                 else { lblFleetStatus.Text = "No se encontraron registros Code: 11"; }
-
+                /// Show rows data counter in label Fleet Status
                 lblFleetStatus.Text = "Mostrando " + rowCounter + " de " + rowCounter + " registros";
-
-                // Cerrar la conexión
-                databaseConnection.Close();
+                dbcon.Close();
 
             }
-            catch (Exception ex) { lblFleetStatus.Text = "No se encontraron registros Code: 11"; }
+            catch (Exception ex) { 
+                lblFleetStatus.Text = "Mostrando " + rowCounter + " de " + rowCounter + " registros"; 
+            }
         }
     }
 }
