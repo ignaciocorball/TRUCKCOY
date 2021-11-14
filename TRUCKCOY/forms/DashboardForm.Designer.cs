@@ -79,6 +79,7 @@ namespace TRUCKCOY.forms
             this.checkBoxMain = new System.Windows.Forms.CheckBox();
             this.lblTittleDesc = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblRegError = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.details = new System.Windows.Forms.DataGridViewImageColumn();
@@ -168,6 +169,7 @@ namespace TRUCKCOY.forms
             // 
             // panelContainerTittle
             // 
+            this.panelContainerTittle.Controls.Add(this.lblRegError);
             this.panelContainerTittle.Controls.Add(this.pictureBox1);
             this.panelContainerTittle.Controls.Add(this.panel2);
             this.panelContainerTittle.Controls.Add(this.panel5);
@@ -721,6 +723,22 @@ namespace TRUCKCOY.forms
             this.label1.TabIndex = 15;
             this.label1.Text = "HISTORIAL DE VIAJES";
             // 
+            // lblRegError
+            // 
+            this.lblRegError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRegError.BackColor = System.Drawing.Color.White;
+            this.lblRegError.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblRegError.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold);
+            this.lblRegError.ForeColor = System.Drawing.Color.Gray;
+            this.lblRegError.Location = new System.Drawing.Point(407, 8);
+            this.lblRegError.Name = "lblRegError";
+            this.lblRegError.Size = new System.Drawing.Size(277, 25);
+            this.lblRegError.TabIndex = 31;
+            this.lblRegError.Text = "No se encontraron registros de conductores";
+            this.lblRegError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRegError.Visible = false;
+            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -1024,5 +1042,6 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.DataGridViewImageColumn details;
         private System.Windows.Forms.DataGridViewImageColumn delete;
         private System.Windows.Forms.DataGridViewCheckBoxColumn select;
+        private System.Windows.Forms.Label lblRegError;
     }
 }

@@ -251,7 +251,7 @@ namespace TRUCKCOY.forms
         {
             /// SQL CONNECTION
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=truckcoy;SSL Mode=None";
-            string query = "SELECT * FROM `routes` WHERE `company` = 'truckcoy' ORDER BY `id` DESC";
+            string query = "SELECT * FROM `drivers` WHERE `status` = 'Activo' ORDER BY `id` DESC";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;
@@ -268,16 +268,15 @@ namespace TRUCKCOY.forms
                 {
                     while (reader.Read())
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10) };
-                        int degrees = Convert.ToInt32(row[7]);
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12) };
+                        int degrees = Convert.ToInt32(row[12]);
 
                         /// Marker Personalized
-                        
                         // GMapOverlay points_ = new GMapOverlay("pointCollection");
                         // points_.Markers.Add(new GMapPointExpanded(new PointLatLng(reader.GetFloat(4), reader.GetFloat(5)), 10));
                         // gMapControl1.Overlays.Add(points_);
 
-                        PointLatLng point = new PointLatLng(reader.GetFloat(4), reader.GetFloat(5));
+                        PointLatLng point = new PointLatLng(reader.GetFloat(9), reader.GetFloat(10));
 
                         Bitmap bmpmarker = (Bitmap)Image.FromFile("img/fleeticon_20x20.png");
                         Bitmap bmpMarkerRotated = RotateImage(bmpmarker, degrees);
@@ -288,11 +287,11 @@ namespace TRUCKCOY.forms
                         markers.Markers.Add(marker);
                         gMapControl1.Overlays.Add(markers);
                     }
-
                 }
                 else
                 {
                     overlayGMap.Visible = true;
+                    lblRegError.Visible = true;
                 }
 
                 // Cerrar la conexión
@@ -300,9 +299,8 @@ namespace TRUCKCOY.forms
             }
             catch (Exception ex)
             {
-                // Mostrar cualquier excepción
-                //System.Windows.MessageBox.Show("Error al obtener la flota desde la base de datos"+System.Environment.NewLine+ex.Message);
                 overlayGMap.Visible = true;
+                lblRegError.Visible = true;
             }
         }
         private Bitmap RotateImage(Bitmap bmp, float angle)

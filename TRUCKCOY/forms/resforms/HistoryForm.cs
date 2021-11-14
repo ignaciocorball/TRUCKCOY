@@ -15,33 +15,33 @@ namespace TRUCKCOY.forms
 
         private void loadFrontEnd()
         {
-            //-> Load HistoryForm data
-            Connect con = new Connect();
-
-            if(con.testConnection() == "Successful")
-            {
-                string[] incomeOrders = con.getlast14orders("misupercorreo@123.cl");
-
-                if (incomeOrders.Length >= 14)                                               // If register exist show them
-                {
-                    lblTittleDesc.Text = "El array es mayor a 14: " + "[" + incomeOrders.Length.ToString() + "]";
-                }
-                
-                else if (incomeOrders.Length >= 1)                                          // If registers data is less than 14 show avalaible
-                {
-                    lblTittleDesc.Text = "El array es menor a 14: " + "[" + incomeOrders.Length.ToString() + "]";
-                }
-                else                                                                        // If registers doesn't exists load no data registered
-                {
-                    lblTittleDesc.Text = "El array es nulo: " + "[" + incomeOrders.Length.ToString() + "]";
-                }
-                
-            }
-            else
-            {
-                // Load database connection error
-                // lblCreated0.Text = con.testConnection();
-            }
+            /// Load HistoryForm data
+            //DBConnect con = new DBConnect();
+            //
+            //if(con.testConnection() == "Successful")
+            //{
+            //    string[] incomeOrders = con.getlast14orders("misupercorreo@123.cl");
+            //
+            //    if (incomeOrders.Length >= 14)                                               // If register exist show them
+            //    {
+            //        lblTittleDesc.Text = "El array es mayor a 14: " + "[" + incomeOrders.Length.ToString() + "]";
+            //    }
+            //    
+            //    else if (incomeOrders.Length >= 1)                                          // If registers data is less than 14 show avalaible
+            //    {
+            //        lblTittleDesc.Text = "El array es menor a 14: " + "[" + incomeOrders.Length.ToString() + "]";
+            //    }
+            //    else                                                                        // If registers doesn't exists load no data registered
+            //    {
+            //        lblTittleDesc.Text = "El array es nulo: " + "[" + incomeOrders.Length.ToString() + "]";
+            //    }
+            //    
+            //}
+            //else
+            //{
+            //    // Load database connection error
+            //    // lblCreated0.Text = con.testConnection();
+            //}
             
         }
 

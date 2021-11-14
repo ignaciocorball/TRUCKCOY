@@ -119,9 +119,13 @@
     <Compile Include="classes\CircularProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="classes\Connect.cs" />
+    <Compile Include="classes\DBConnect.cs" />
+    <Compile Include="classes\Drivers.cs" />
+    <Compile Include="classes\Drivers_Controller.cs" />
     <Compile Include="classes\GMapCirclePoint.cs" />
     <Compile Include="classes\GMapCirclePointExpanded.cs" />
+    <Compile Include="classes\Routes_Controller.cs" />
+    <Compile Include="classes\Routes.cs" />
     <Compile Include="forms\DashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +214,8 @@
       <Link>.editorconfig</Link>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\TRUCKCOY.classes.Drivers.datasource" />
+    <None Include="Properties\DataSources\TRUCKCOY.classes.Routes.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -225,6 +231,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="resources\ja_diap917a.gif" />
+    <None Include="resources\loading.gif" />
+    <None Include="resources\d26ab6e45a7d77b5f41704c31403d40c.gif" />
+    <None Include="resources\techcoy_sponsor.png" />
     <None Include="resources\chk_checked.png" />
     <None Include="resources\chk_unchecked.png" />
     <None Include="resources\block.png" />
@@ -250,6 +260,9 @@
     <None Include="resources\total_bg.png" />
     <None Include="resources\active_bg.png" />
     <None Include="resources\anadir_on.png" />
+    <None Include="resources\back.png" />
+    <None Include="resources\200.gif" />
+    <None Include="resources\8fd70dc5ef5793953df3aae7fdf069f0.gif" />
     <Content Include="resources\bell-off.png" />
     <Content Include="resources\bell-on.png" />
     <None Include="resources\inactive_bg.png" />

@@ -63,6 +63,26 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _200 {
+            get {
+                object obj = ResourceManager.GetObject("_200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8fd70dc5ef5793953df3aae7fdf069f0 {
+            get {
+                object obj = ResourceManager.GetObject("_8fd70dc5ef5793953df3aae7fdf069f0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap active_bg {
             get {
                 object obj = ResourceManager.GetObject("active_bg", resourceCulture);
@@ -76,6 +96,16 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap anadir_on {
             get {
                 object obj = ResourceManager.GetObject("anadir_on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +186,16 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap configuracion {
             get {
                 object obj = ResourceManager.GetObject("configuracion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap d26ab6e45a7d77b5f41704c31403d40c {
+            get {
+                object obj = ResourceManager.GetObject("d26ab6e45a7d77b5f41704c31403d40c", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +386,26 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap inactive_bg {
             get {
                 object obj = ResourceManager.GetObject("inactive_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ja_diap917a {
+            get {
+                object obj = ResourceManager.GetObject("ja_diap917a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loading {
+            get {
+                object obj = ResourceManager.GetObject("loading", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -556,6 +616,16 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap techcoy_sponsor {
+            get {
+                object obj = ResourceManager.GetObject("techcoy_sponsor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
