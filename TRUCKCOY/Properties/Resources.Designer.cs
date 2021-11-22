@@ -63,16 +63,6 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8fd70dc5ef5793953df3aae7fdf069f0 {
-            get {
-                object obj = ResourceManager.GetObject("_8fd70dc5ef5793953df3aae7fdf069f0", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap active_bg {
             get {
                 object obj = ResourceManager.GetObject("active_bg", resourceCulture);
@@ -373,9 +363,59 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ignition_off {
+            get {
+                object obj = ResourceManager.GetObject("ignition_off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ignition_on {
+            get {
+                object obj = ResourceManager.GetObject("ignition_on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap inactive_bg {
             get {
                 object obj = ResourceManager.GetObject("inactive_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap load_blue {
+            get {
+                object obj = ResourceManager.GetObject("load_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap load_gray {
+            get {
+                object obj = ResourceManager.GetObject("load_gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap load_green {
+            get {
+                object obj = ResourceManager.GetObject("load_green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -603,29 +643,9 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap status_active {
+        internal static System.Drawing.Bitmap taxi_20x20 {
             get {
-                object obj = ResourceManager.GetObject("status_active", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap status_deleted {
-            get {
-                object obj = ResourceManager.GetObject("status_deleted", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap status_inactive {
-            get {
-                object obj = ResourceManager.GetObject("status_inactive", resourceCulture);
+                object obj = ResourceManager.GetObject("taxi_20x20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

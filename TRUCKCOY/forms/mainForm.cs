@@ -14,6 +14,7 @@ namespace TRUCKCOY
         DriversForm       drform;
         NotificationsForm notform = new NotificationsForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
         ProfilePopupForm  ppForm = new ProfilePopupForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
+        VehiclesForm      veForm = new VehiclesForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false };
         int[]             formsInitialized = { 1, 0, 0, 0, 0, 0 };
         #endregion
         public mainForm()
@@ -151,10 +152,20 @@ namespace TRUCKCOY
 
                     break;
                 case 3:  // Form Maps
+                    // FrontEnd
                     hideNavButtons();
-                    btnMaps.Image = Properties.Resources.maps_on;
+                    hideChildOpenForms(3);
                     lblMaps.ForeColor = Color.CornflowerBlue;
 
+                    veForm = new VehiclesForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false };
+                    btnMaps.Image = Properties.Resources.maps_on;
+
+                    // Add childForm
+                    panelContainer.Controls.Add(veForm);
+                    veForm.Visible = true;
+
+                    // Variables
+                    formsInitialized[3] = 1;
                     Properties.Settings.Default.navButtonSelected = 3;
                     break;
                 case 4:  // Form Stats
@@ -191,7 +202,7 @@ namespace TRUCKCOY
             }
             if (formsInitialized[3] == 1)
             {
-                // add more forms
+                veForm.Visible = false;
             }
             if (formsInitialized[4] == 1)
             {

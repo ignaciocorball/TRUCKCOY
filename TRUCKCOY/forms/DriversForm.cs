@@ -1,7 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.IO;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRUCKCOY.classes;
 
@@ -10,6 +16,7 @@ namespace TRUCKCOY.forms
     public partial class DriversForm : Form
     {
         DateTime now = DateTime.Now;
+        int rowCounter = 0;
         public DriversForm()
         {
             InitializeComponent();
@@ -17,6 +24,7 @@ namespace TRUCKCOY.forms
         private void DriversForm_Load(object sender, EventArgs e)
         {
             loadDgv();
+            getDriversProfileImagesAsync();
         }
         private void loadDgv()
         {
@@ -68,7 +76,7 @@ namespace TRUCKCOY.forms
         /// <summary>
         /// Frontend development
         /// </summary>
-        
+        #region Frontend
         // DataGridView
         private void dgvHistory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -87,7 +95,23 @@ namespace TRUCKCOY.forms
                             txtPatente.Text = dgvHistory.Rows[e.RowIndex].Cells[5].Value.ToString();
                             txtLastaccess.Text = dgvHistory.Rows[e.RowIndex].Cells[7].Value.ToString();
                             lblStatus.Text = dgvHistory.Rows[e.RowIndex].Cells[8].Value.ToString();
-                        
+
+                            switch (lblStatus.Text)
+                            {
+                                case "Activo":
+                                    picStatus.Image = Properties.Resources.load_green;
+                                    lblStatus.ForeColor = Color.LightSeaGreen;
+                                    break;
+                                case "Inactivo":
+                                    picStatus.Image = Properties.Resources.load_blue;
+                                    lblStatus.ForeColor = Color.LightSkyBlue;
+                                    break;
+                                case "Eliminado":
+                                    picStatus.Image = Properties.Resources.load_gray;
+                                    lblStatus.ForeColor = Color.DimGray;
+                                    break;
+                            }
+
                             picBanner.Visible = false;
                             picLoading.Image = Properties.Resources.loading_drivers;
                             ImageAnimator.Animate(picLoading.Image, null);
@@ -105,6 +129,22 @@ namespace TRUCKCOY.forms
                             txtPatente.Text = dgvHistory.Rows[e.RowIndex].Cells[5].Value.ToString();
                             txtLastaccess.Text = dgvHistory.Rows[e.RowIndex].Cells[7].Value.ToString();
                             lblStatus.Text = dgvHistory.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+                            switch (lblStatus.Text)
+                            {
+                                case "Activo":
+                                    picStatus.Image = Properties.Resources.load_green;
+                                    lblStatus.ForeColor = Color.LightSeaGreen;
+                                    break;
+                                case "Inactivo":
+                                    picStatus.Image = Properties.Resources.load_blue;
+                                    lblStatus.ForeColor = Color.LightSkyBlue;
+                                    break;
+                                case "Eliminado":
+                                    picStatus.Image = Properties.Resources.load_gray;
+                                    lblStatus.ForeColor = Color.DimGray;
+                                    break;
+                            }
                         }
 
                     }
@@ -116,7 +156,6 @@ namespace TRUCKCOY.forms
                     }
                     break;
                 case 11: /// CHECKBOX BUTTON
-                         /// Prevent header checkbox click error
                     if (e.RowIndex != -1)
                     {
                         DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)dgvHistory.Rows[e.RowIndex].Cells[11];
@@ -174,13 +213,13 @@ namespace TRUCKCOY.forms
                 }
             }
         }
-
+        #endregion
 
 
         /// <summary>
         /// Backend development
         /// </summary>
-
+        #region Backend
         private void tmrClock_Tick(object sender, EventArgs e)
         {
              picLoading.Visible = false;
@@ -199,6 +238,7 @@ namespace TRUCKCOY.forms
             }
 
         }
+
         private void setRegistersCount()
         {
             /// SQL CONNECTION
@@ -208,7 +248,6 @@ namespace TRUCKCOY.forms
             MySqlCommand dbcom = new MySqlCommand(query, dbcon);
             dbcom.CommandTimeout = 60;
             MySqlDataReader reader;
-            int rowCounter = 0;
 
             try
             {
@@ -222,11 +261,27 @@ namespace TRUCKCOY.forms
                 /// Show rows data counter in label Fleet Status
                 lblFleetStatus.Text = "Mostrando " + rowCounter + " de " + rowCounter + " registros";
                 dbcon.Close();
-
             }
-            catch (Exception ex) { 
-                lblFleetStatus.Text = "Mostrando " + rowCounter + " de " + rowCounter + " registros"; 
+            catch (Exception ex)
+            {
+                lblFleetStatus.Text = "Mostrando " + rowCounter + " de " + rowCounter + " registros";
             }
         }
+        private void getDriversProfileImagesAsync()
+        {
+            var directoryPath = @"C:\temp";
+            var fileName = @"\test.jpg";
+            var url = "https://cdn.discordapp.com/attachments/458291463663386646/592779619212460054/Screenshot_20190624-201411.jpg?query&with.dots";
+
+            DownloadImage(directoryPath, fileName, url);
+        }
+        private void DownloadImage(string directoryPath, string fileName, string url)
+        {
+            using (WebClient client = new WebClient())
+            {
+                client.DownloadFileAsync(new Uri(url), directoryPath + fileName);
+            }
+        }
+        #endregion
     }
 }

@@ -208,6 +208,12 @@
   <data name="icon_chat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icon-chat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ignition_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ignition_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ignition_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ignition_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="inactive_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\inactive_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -219,6 +225,15 @@
   </data>
   <data name="loading_drivers1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\loading-drivers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="load_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\load_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="load_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\load_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="load_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\load_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -277,14 +292,8 @@
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="status_active" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\status_active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="status_deleted" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\status_deleted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="status_inactive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\status_inactive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="taxi_20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\img\taxi_20x20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="techcoy_sponsor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\techcoy_sponsor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -312,8 +321,5 @@
   </data>
   <data name="trash_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\trash_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_8fd70dc5ef5793953df3aae7fdf069f0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\8fd70dc5ef5793953df3aae7fdf069f0.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

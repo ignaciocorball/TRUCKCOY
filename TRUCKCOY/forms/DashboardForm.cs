@@ -12,8 +12,6 @@ using LiveCharts;
 using LiveCharts.Defaults;
 using System.Globalization;
 using System.Data;
-using System.Linq;
-using System.Collections;
 
 namespace TRUCKCOY.forms
 {
