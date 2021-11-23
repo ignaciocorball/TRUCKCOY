@@ -37,6 +37,10 @@ namespace TRUCKCOY.forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMap = new System.Windows.Forms.Panel();
+            this.pnlAddFleet = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,13 +54,6 @@ namespace TRUCKCOY.forms
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblNoData = new System.Windows.Forms.Label();
             this.dgvHistory = new System.Windows.Forms.DataGridView();
-            this.tmrDGVUpdater = new System.Windows.Forms.Timer(this.components);
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Encendido = new System.Windows.Forms.DataGridViewImageColumn();
-            this.details = new System.Windows.Forms.DataGridViewImageColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.checkboxHead = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.driverDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,8 +65,17 @@ namespace TRUCKCOY.forms
             this.kmstodayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastupdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Encendido = new System.Windows.Forms.DataGridViewImageColumn();
+            this.details = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.checkboxHead = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.vehiclesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tmrDGVUpdater = new System.Windows.Forms.Timer(this.components);
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelMap.SuspendLayout();
+            this.pnlAddFleet.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
@@ -87,11 +93,60 @@ namespace TRUCKCOY.forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
+            this.panelMap.Controls.Add(this.pnlAddFleet);
             this.panelMap.Controls.Add(this.gMapControl1);
             this.panelMap.Location = new System.Drawing.Point(29, 41);
             this.panelMap.Name = "panelMap";
             this.panelMap.Size = new System.Drawing.Size(814, 336);
             this.panelMap.TabIndex = 15;
+            // 
+            // pnlAddFleet
+            // 
+            this.pnlAddFleet.BackColor = System.Drawing.Color.White;
+            this.pnlAddFleet.Controls.Add(this.label2);
+            this.pnlAddFleet.Controls.Add(this.label1);
+            this.pnlAddFleet.Controls.Add(this.button1);
+            this.pnlAddFleet.Location = new System.Drawing.Point(7, 73);
+            this.pnlAddFleet.Name = "pnlAddFleet";
+            this.pnlAddFleet.Size = new System.Drawing.Size(130, 173);
+            this.pnlAddFleet.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoEllipsis = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(38)))), ((int)(((byte)(55)))));
+            this.label2.Location = new System.Drawing.Point(10, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 35);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "Para ello presiona el botón";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoEllipsis = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9.5F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(38)))), ((int)(((byte)(55)))));
+            this.label1.Location = new System.Drawing.Point(10, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 55);
+            this.label1.TabIndex = 69;
+            this.label1.Text = "Quieres agregar vehículos a tu flota?";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(10, 131);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // gMapControl1
             // 
@@ -356,89 +411,6 @@ namespace TRUCKCOY.forms
             this.dgvHistory.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvHistory_CellPainting);
             this.dgvHistory.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvHistory_DataError);
             // 
-            // tmrDGVUpdater
-            // 
-            this.tmrDGVUpdater.Interval = 1000;
-            this.tmrDGVUpdater.Tick += new System.EventHandler(this.tmrUpdater_Tick);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::TRUCKCOY.Properties.Resources.edit;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 20;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn1.Width = 20;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::TRUCKCOY.Properties.Resources.trash2;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.MinimumWidth = 20;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewImageColumn2.Width = 20;
-            // 
-            // Encendido
-            // 
-            this.Encendido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Encendido.DataPropertyName = "Ignition";
-            this.Encendido.HeaderText = "";
-            this.Encendido.Image = global::TRUCKCOY.Properties.Resources.ignition_on;
-            this.Encendido.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Encendido.MinimumWidth = 20;
-            this.Encendido.Name = "Encendido";
-            this.Encendido.ReadOnly = true;
-            this.Encendido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Encendido.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Encendido.ToolTipText = "Detección automática del encendido del vehículo";
-            this.Encendido.Width = 20;
-            // 
-            // details
-            // 
-            this.details.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.details.HeaderText = "";
-            this.details.Image = global::TRUCKCOY.Properties.Resources.edit;
-            this.details.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.details.MinimumWidth = 20;
-            this.details.Name = "details";
-            this.details.ReadOnly = true;
-            this.details.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.details.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.details.Width = 20;
-            // 
-            // delete
-            // 
-            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.delete.HeaderText = "";
-            this.delete.Image = global::TRUCKCOY.Properties.Resources.trash2;
-            this.delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.delete.MinimumWidth = 20;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.delete.Width = 20;
-            // 
-            // checkboxHead
-            // 
-            this.checkboxHead.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "true";
-            this.checkboxHead.DefaultCellStyle = dataGridViewCellStyle3;
-            this.checkboxHead.HeaderText = "";
-            this.checkboxHead.MinimumWidth = 20;
-            this.checkboxHead.Name = "checkboxHead";
-            this.checkboxHead.ReadOnly = true;
-            this.checkboxHead.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.checkboxHead.Width = 20;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -547,9 +519,105 @@ namespace TRUCKCOY.forms
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             this.statusDataGridViewTextBoxColumn.Width = 60;
             // 
+            // Encendido
+            // 
+            this.Encendido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Encendido.HeaderText = "";
+            this.Encendido.Image = global::TRUCKCOY.Properties.Resources.ignition_on;
+            this.Encendido.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Encendido.MinimumWidth = 20;
+            this.Encendido.Name = "Encendido";
+            this.Encendido.ReadOnly = true;
+            this.Encendido.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Encendido.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Encendido.ToolTipText = "Detección automática del encendido del vehículo";
+            this.Encendido.Width = 20;
+            // 
+            // details
+            // 
+            this.details.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.details.HeaderText = "";
+            this.details.Image = global::TRUCKCOY.Properties.Resources.edit;
+            this.details.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.details.MinimumWidth = 20;
+            this.details.Name = "details";
+            this.details.ReadOnly = true;
+            this.details.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.details.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.details.Width = 20;
+            // 
+            // delete
+            // 
+            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.delete.HeaderText = "";
+            this.delete.Image = global::TRUCKCOY.Properties.Resources.trash2;
+            this.delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.delete.MinimumWidth = 20;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.delete.Width = 20;
+            // 
+            // checkboxHead
+            // 
+            this.checkboxHead.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "true";
+            this.checkboxHead.DefaultCellStyle = dataGridViewCellStyle3;
+            this.checkboxHead.HeaderText = "";
+            this.checkboxHead.MinimumWidth = 20;
+            this.checkboxHead.Name = "checkboxHead";
+            this.checkboxHead.ReadOnly = true;
+            this.checkboxHead.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.checkboxHead.Width = 20;
+            // 
             // vehiclesBindingSource
             // 
             this.vehiclesBindingSource.DataSource = typeof(TRUCKCOY.classes.Vehicles);
+            // 
+            // tmrDGVUpdater
+            // 
+            this.tmrDGVUpdater.Interval = 200;
+            this.tmrDGVUpdater.Tick += new System.EventHandler(this.tmrUpdater_Tick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::TRUCKCOY.Properties.Resources.edit;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 20;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.ToolTipText = "Detección automática del encendido del vehículo";
+            this.dataGridViewImageColumn1.Width = 20;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::TRUCKCOY.Properties.Resources.trash2;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 20;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn2.Width = 20;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::TRUCKCOY.Properties.Resources.trash2;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.MinimumWidth = 20;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn3.Width = 20;
             // 
             // VehiclesForm
             // 
@@ -567,6 +635,7 @@ namespace TRUCKCOY.forms
             this.Text = "VehiclesForm";
             this.Load += new System.EventHandler(this.VehiclesForm_Load);
             this.panelMap.ResumeLayout(false);
+            this.pnlAddFleet.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -603,6 +672,15 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.Timer tmrDGVUpdater;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn Encendido;
+        private System.Windows.Forms.DataGridViewImageColumn details;
+        private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn checkboxHead;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.Panel pnlAddFleet;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn driverDataGridViewTextBoxColumn;
@@ -614,9 +692,5 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.DataGridViewTextBoxColumn kmstodayDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastupdateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn Encendido;
-        private System.Windows.Forms.DataGridViewImageColumn details;
-        private System.Windows.Forms.DataGridViewImageColumn delete;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn checkboxHead;
     }
 }

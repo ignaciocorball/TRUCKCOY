@@ -24,7 +24,7 @@ namespace TRUCKCOY.forms
         private void DriversForm_Load(object sender, EventArgs e)
         {
             loadDgv();
-            getDriversProfileImagesAsync();
+            //getDriversProfileImagesAsync();
         }
         private void loadDgv()
         {
@@ -35,14 +35,35 @@ namespace TRUCKCOY.forms
             Drivers_Controller _ctrlDrivers = new Drivers_Controller();
             dgvHistory.DataSource = _ctrlDrivers.query(null);
 
+            //Add a CheckBox Column to the DataGridView Header Cell.
+
+            //Find the Location of Header Cell.
+            Point headerCellLocation = this.dgvHistory.GetCellDisplayRectangle(10, -1, true).Location;
+            CheckBox headerCheckBox = new CheckBox();
+            //Place the Header CheckBox in the Location of the Header Cell.
+            headerCheckBox.Location = new Point(headerCellLocation.X, headerCellLocation.Y+2);
+            headerCheckBox.Size = new Size(18, 18);
+            headerCheckBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            headerCheckBox.FlatStyle = FlatStyle.Standard;
+            headerCheckBox.CheckAlign = ContentAlignment.MiddleCenter;
+            headerCheckBox.Name = "chkMain";
+            headerCheckBox.Cursor = Cursors.Hand;
+
+            //Assign Click event to the Header CheckBox.
+            headerCheckBox.Click += new EventHandler(HeaderCheckBox_Clicked);
+            dgvHistory.Controls.Add(headerCheckBox);
+
+            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+            checkBoxColumn.HeaderText = "";
+            checkBoxColumn.Width = 20;
+            checkBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            checkBoxColumn.Resizable = DataGridViewTriState.False;
+            checkBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
+            checkBoxColumn.Name = "chkMain";
+            dgvHistory.Columns.Insert(11, checkBoxColumn);
+
             if (dgvHistory.Rows.Count > 0)
             {
-                Bitmap imgEdit = new Bitmap(Properties.Resources.edit);
-                Bitmap imgDelete = new Bitmap(Properties.Resources.trash_small);
-
-                dgvHistory.Rows[0].Cells[9].Value = imgEdit;
-                dgvHistory.Rows[0].Cells[10].Value = imgDelete;
-
                 lblNoData.Visible = false;
                 setRegistersCount();
             }
@@ -185,14 +206,6 @@ namespace TRUCKCOY.forms
             e.Cancel = true;
         }
         // Buttons, Textbox, Inputs, Labels, Picturebox...
-        private void chkMain_CheckedChanged(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dgvHistory.Rows)
-            {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[11];
-                chk.Value = !(chk.Value == null ? false : (bool)chk.Value);
-            }
-        }
         private void btnFilter_Click(object sender, EventArgs e)
         {
             /// Validate Cell Status and change color
@@ -213,6 +226,14 @@ namespace TRUCKCOY.forms
                 }
             }
         }
+        private void HeaderCheckBox_Clicked(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvHistory.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[11];
+                chk.Value = !(chk.Value == null ? false : (bool)chk.Value);
+            }
+        }
         #endregion
 
 
@@ -222,9 +243,12 @@ namespace TRUCKCOY.forms
         #region Backend
         private void tmrClock_Tick(object sender, EventArgs e)
         {
-             picLoading.Visible = false;
-             tmrClock.Enabled = false;
-             tmrClock.Stop();
+            btnEdit.BackColor = Color.FromArgb(33, 150, 243);
+            btnDelete.BackColor = Color.LightCoral;
+
+            picLoading.Visible = false;
+            tmrClock.Enabled = false;
+            tmrClock.Stop();
         }
         private void dgvHistory_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -238,32 +262,30 @@ namespace TRUCKCOY.forms
             }
 
         }
-
         private void setRegistersCount()
         {
-            /// SQL CONNECTION
-            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=truckcoy;SSL Mode=None";
-            string query = "SELECT * FROM `drivers` WHERE `company` = 'truckcoy' ORDER BY `id` DESC";
-            MySqlConnection dbcon = new MySqlConnection(connectionString);
-            MySqlCommand dbcom = new MySqlCommand(query, dbcon);
-            dbcom.CommandTimeout = 60;
-            MySqlDataReader reader;
-
             try
             {
-                dbcon.Open();
-                /// Execute query
-                reader = dbcom.ExecuteReader();
-                /// Row Counter
-                if (reader.HasRows) { while (reader.Read()) { rowCounter++; } }
-                /// Counter equals to 0
-                else { lblFleetStatus.Text = "No se encontraron registros Code: 11"; }
+                /// Rows Counter
+                if (dgvHistory.Rows.Count > 0) { 
+                    foreach(DataGridViewRow row in dgvHistory.Rows)
+                    {
+                        rowCounter++;
+                    }
+                }
+                else /// Counter equals to 0
+                {
+                    lblFleetStatus.Text = "No se encontraron registros"; 
+                }
                 /// Show rows data counter in label Fleet Status
+                lblNoData.Visible = false;
                 lblFleetStatus.Text = "Mostrando " + rowCounter + " de " + rowCounter + " registros";
-                dbcon.Close();
+                
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                /// Show 0 rows data counter in label Fleet Status
+                lblNoData.Visible = true;
                 lblFleetStatus.Text = "Mostrando " + rowCounter + " de " + rowCounter + " registros";
             }
         }

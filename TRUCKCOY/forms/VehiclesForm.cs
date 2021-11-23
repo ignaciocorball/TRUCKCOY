@@ -9,6 +9,7 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Runtime.Serialization.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRUCKCOY.classes;
@@ -17,14 +18,18 @@ namespace TRUCKCOY.forms
 {
     public partial class VehiclesForm : Form
     {
+        /// <summary>
+        /// Data and controllers
+        /// </summary>
+
         public VehiclesForm()
         {
             InitializeComponent();
+            loadMapSettings();
         }
         private void VehiclesForm_Load(object sender, EventArgs e)
         {
-            loadMapSettings();
-            loadDGV();
+            LoadDGV();
             //getVehiclesFeet();
             tmrDGVUpdater.Enabled = true;
             tmrDGVUpdater.Start();
@@ -51,24 +56,24 @@ namespace TRUCKCOY.forms
             /// Scroll Config
             panelMap.AutoScroll = true;
         }
-        private void loadDGV()
+        private async Task LoadDGV()
         {
-            List<Vehicles> vehiclesList = new List<Vehicles>();
+            // #111 HERE LAG FORMULARY FIX IT SOON
             Vehicles_Controller _ctrlVehicles = new Vehicles_Controller();
             dgvHistory.DataSource = _ctrlVehicles.query(null);
-            if (vehiclesList != null)
-            {
 
-                lblNoData.Visible = false;
-                //setRegistersCount();
+            if (dgvHistory.Rows.Count < 1)
+            {
+                lblNoData.Visible = true;
+                pnlAddFleet.Visible = true;
             }
             else
             {
-                lblNoData.Visible = true;
-                //setRegistersCount();
+                lblNoData.Visible = false;
+                pnlAddFleet.Visible = false;
             }
         }
-        private void setColors()
+        private void setDGVStyles()
         {
             if (dgvHistory.Rows.Count > 0)
             {
@@ -88,21 +93,16 @@ namespace TRUCKCOY.forms
                     }
 
                     /// Ignition Cells
-                    Bitmap imgIgnitionON = new Bitmap(Properties.Resources.ignition_on);
-                    Bitmap imgIgnitionOFF = new Bitmap(Properties.Resources.ignition_off);
-                    string ignitionValidator = dgvHistory.Rows[row.Index].Cells[11].Value.ToString();
-
-                    // Debug
-                    //MessageBox.Show("value: " + IgnitionValidator);
-
-                    switch (ignitionValidator)
+                    if (this.dgvHistory.Columns.Contains("Encendido"))
                     {
-                        case "True":
-                            dgvHistory.Rows[row.Index].Cells[11].Value = imgIgnitionON;
-                            break;
-                        case "False":
-                            dgvHistory.Rows[row.Index].Cells[11].Value = imgIgnitionOFF;
-                            break;
+                        if ((string)dgvHistory.Rows[row.Index].Cells[10].Value == "Online")
+                        {
+                            this.dgvHistory.Rows[row.Index].Cells[11].Value = Properties.Resources.ignition_on;
+                        }
+                        else
+                        {
+                            this.dgvHistory.Rows[row.Index].Cells[11].Value = Properties.Resources.ignition_off;
+                        }
                     }
                 }
             }
@@ -195,17 +195,33 @@ namespace TRUCKCOY.forms
             ObjectRoot AddressObject = (ObjectRoot)ser.ReadObject(new MemoryStream(jsonData));
             return AddressObject;
         }
-
         private void dgvHistory_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;
         }
-
         private void tmrUpdater_Tick(object sender, EventArgs e)
         {
-            setColors();
-            tmrDGVUpdater.Stop();
-            tmrDGVUpdater.Enabled = false;
+            if(dgvHistory.Rows.Count > 0)
+            {
+                setDGVStyles();
+                tmrDGVUpdater.Stop();
+                tmrDGVUpdater.Enabled = false;
+            }
+            else
+            {
+                if(tmrDGVUpdater.Interval > 15000)
+                {
+                    tmrDGVUpdater.Stop();
+                    tmrDGVUpdater.Enabled = false;
+                }
+                else
+                {
+                    tmrDGVUpdater.Interval += 500;
+                }
+                
+                
+            }
+
         }
         #endregion
 

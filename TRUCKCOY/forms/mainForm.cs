@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Net;
 using System.Windows.Forms;
 using TRUCKCOY.forms;
 using TRUCKCOY.forms.resforms;
@@ -9,21 +10,26 @@ namespace TRUCKCOY
     public partial class mainForm : Form
     {
         #region Forms and Collections
-        DashboardForm     dform = new DashboardForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
-        HistoricalForm    hform;
-        DriversForm       drform;
-        NotificationsForm notform = new NotificationsForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
-        ProfilePopupForm  ppForm = new ProfilePopupForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
-        VehiclesForm      veForm = new VehiclesForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false };
-        int[]             formsInitialized = { 1, 0, 0, 0, 0, 0 };
+        NoInternetConnectionForm NoInternet = new NoInternetConnectionForm();
+        DashboardForm            dform = new DashboardForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
+        HistoricalForm           hform;
+        DriversForm              drform;
+        NotificationsForm        notform = new NotificationsForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
+        ProfilePopupForm         ppForm = new ProfilePopupForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
+        VehiclesForm             veForm = new VehiclesForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false };
+        int[]                    formsInitialized = { 1, 0, 0, 0, 0, 0 };
         #endregion
         public mainForm()
         {
             InitializeComponent();
-            getDateTime();
         }
         private void mainForm_Load(object sender, EventArgs e)
         {
+            /// Check for internet connection
+            tmrCheckInternet.Start();
+            /// Update Date & Time
+            getDateTime();
+            /// Add Forms & controlls to main panel
             panelContainer.Controls.Add(dform);
             pnlProfile.Controls.Add(ppForm);
             pnlNotification.Controls.Add(notform);
@@ -34,6 +40,23 @@ namespace TRUCKCOY
         /// Backend Methods
         /// </summary>
         #region BackEnd
+        public static bool CheckForInternetConnnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                {
+                    using (var stream = client.OpenRead("https://www.google.com"))
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
         private void getDateTime()
         {
             // Date & Time 
@@ -53,6 +76,25 @@ namespace TRUCKCOY
         private void tmrSecond_Tick(object sender, EventArgs e)
         {
             getDateTime();
+        }
+        private void reloadApp()
+        {
+            /// Execute Initializing App
+
+            /// Close This App
+            //Application.Exit();
+        }
+        private void tmrCheckInternet_Tick(object sender, EventArgs e)
+        {
+            /// Check for internet connection
+            if (!CheckForInternetConnnection())
+            {
+                NoInternet.Show();
+                tmrCheckInternet.Enabled = false;
+                tmrCheckInternet.Stop();
+                reloadApp();
+            }
+
         }
         private void tmrLoadNavBar_Tick(object sender, EventArgs e)
         {
@@ -402,8 +444,8 @@ namespace TRUCKCOY
         }
 
 
-        #endregion
 
+        #endregion
 
     }
 }

@@ -210,6 +210,12 @@
     <Compile Include="forms\HistoricalForm.Designer.cs">
       <DependentUpon>HistoricalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\resforms\NoInternetConnectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\resforms\NoInternetConnectionForm.Designer.cs">
+      <DependentUpon>NoInternetConnectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\resforms\NotificationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\HistoricalForm.resx">
       <DependentUpon>HistoricalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\resforms\NoInternetConnectionForm.resx">
+      <DependentUpon>NoInternetConnectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\resforms\NotificationsForm.resx">
       <DependentUpon>NotificationsForm.cs</DependentUpon>

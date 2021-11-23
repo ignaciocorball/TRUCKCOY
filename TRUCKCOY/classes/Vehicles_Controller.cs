@@ -1,13 +1,14 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace TRUCKCOY.classes
 {
     class Vehicles_Controller : DBConnect
     {
-        public List<Object> query(string data)
+        public async Task<List<object>> query(string data)
         {
             MySqlDataReader reader;
             List<Object> list = new List<object>();
@@ -28,7 +29,7 @@ namespace TRUCKCOY.classes
             try
             {
                 MySqlConnection dbcon = base.conexion();
-                dbcon.Open();
+                await dbcon.OpenAsync();
                 MySqlCommand command = new MySqlCommand(sql, dbcon);
 
                 reader = command.ExecuteReader();
@@ -53,12 +54,12 @@ namespace TRUCKCOY.classes
                         _vehicles.Status = reader.GetString(12).ToString();
                         list.Add(_vehicles);
                     }
-                    catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+                    catch (Exception ex) { Console.WriteLine(ex); }
                 }
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                Console.WriteLine(ex);
             }
             return list;
         }

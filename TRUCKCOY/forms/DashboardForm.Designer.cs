@@ -248,7 +248,7 @@ namespace TRUCKCOY.forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRegError.BackColor = System.Drawing.Color.White;
             this.lblRegError.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblRegError.Font = new System.Drawing.Font("Bahnschrift", 8F, System.Drawing.FontStyle.Bold);
+            this.lblRegError.Font = new System.Drawing.Font("Bahnschrift", 8.5F, System.Drawing.FontStyle.Bold);
             this.lblRegError.ForeColor = System.Drawing.Color.Gray;
             this.lblRegError.Location = new System.Drawing.Point(407, 8);
             this.lblRegError.Name = "lblRegError";
@@ -315,8 +315,8 @@ namespace TRUCKCOY.forms
             // 
             this.label17.BackColor = System.Drawing.Color.White;
             this.label17.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label17.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold);
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.label17.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(54)))), ((int)(((byte)(105)))));
             this.label17.Location = new System.Drawing.Point(12, 2);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(91, 26);
@@ -516,11 +516,11 @@ namespace TRUCKCOY.forms
             // 
             this.lblFleetStatus.BackColor = System.Drawing.Color.White;
             this.lblFleetStatus.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblFleetStatus.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold);
-            this.lblFleetStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.lblFleetStatus.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
+            this.lblFleetStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(54)))), ((int)(((byte)(105)))));
             this.lblFleetStatus.Location = new System.Drawing.Point(12, 4);
             this.lblFleetStatus.Name = "lblFleetStatus";
-            this.lblFleetStatus.Size = new System.Drawing.Size(91, 26);
+            this.lblFleetStatus.Size = new System.Drawing.Size(111, 26);
             this.lblFleetStatus.TabIndex = 17;
             this.lblFleetStatus.Text = "Estado de Flota";
             this.lblFleetStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -563,8 +563,8 @@ namespace TRUCKCOY.forms
             // 
             this.label15.BackColor = System.Drawing.Color.White;
             this.label15.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.label15.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold);
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(50)))), ((int)(((byte)(58)))));
+            this.label15.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(54)))), ((int)(((byte)(105)))));
             this.label15.Location = new System.Drawing.Point(22, 4);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(137, 26);

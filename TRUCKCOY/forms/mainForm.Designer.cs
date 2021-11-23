@@ -93,6 +93,7 @@ namespace TRUCKCOY
             this.pnlNotification = new System.Windows.Forms.Panel();
             this.tmrLoadNavBar = new System.Windows.Forms.Timer(this.components);
             this.tmrHideNavBar = new System.Windows.Forms.Timer(this.components);
+            this.tmrCheckInternet = new System.Windows.Forms.Timer(this.components);
             this.layoutHeader.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -141,7 +142,7 @@ namespace TRUCKCOY
             this.layoutHeader.ColumnCount = 3;
             this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.9397F));
             this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.0603F));
-            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.layoutHeader.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this.layoutHeader.Controls.Add(this.tableLayoutPanel1, 1, 0);
             this.layoutHeader.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.layoutHeader.Controls.Add(this.tableLayoutPanel2, 2, 0);
@@ -160,12 +161,12 @@ namespace TRUCKCOY
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.94737F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.05264F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
             this.tableLayoutPanel1.Controls.Add(this.lblTime, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblDate, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox6, 2, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(517, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(510, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.62162F));
@@ -179,7 +180,7 @@ namespace TRUCKCOY
             this.lblTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTime.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
             this.lblTime.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblTime.Location = new System.Drawing.Point(160, 15);
+            this.lblTime.Location = new System.Drawing.Point(153, 15);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(96, 17);
             this.lblTime.TabIndex = 2;
@@ -191,7 +192,7 @@ namespace TRUCKCOY
             this.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDate.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
             this.lblDate.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblDate.Location = new System.Drawing.Point(40, 15);
+            this.lblDate.Location = new System.Drawing.Point(38, 15);
             this.lblDate.MinimumSize = new System.Drawing.Size(87, 17);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(87, 17);
@@ -203,7 +204,7 @@ namespace TRUCKCOY
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox2.Image = global::TRUCKCOY.Properties.Resources.calendar_ico;
-            this.pictureBox2.Location = new System.Drawing.Point(9, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(7, 11);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -214,7 +215,7 @@ namespace TRUCKCOY
             // 
             this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox6.Image = global::TRUCKCOY.Properties.Resources.reloj_ico;
-            this.pictureBox6.Location = new System.Drawing.Point(130, 11);
+            this.pictureBox6.Location = new System.Drawing.Point(123, 11);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(24, 25);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -885,6 +886,12 @@ namespace TRUCKCOY
             this.tmrHideNavBar.Interval = 5;
             this.tmrHideNavBar.Tick += new System.EventHandler(this.tmrHideNavBar_Tick);
             // 
+            // tmrCheckInternet
+            // 
+            this.tmrCheckInternet.Enabled = true;
+            this.tmrCheckInternet.Interval = 5000;
+            this.tmrCheckInternet.Tick += new System.EventHandler(this.tmrCheckInternet_Tick);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -897,6 +904,7 @@ namespace TRUCKCOY
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(950, 800);
             this.Name = "mainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TRUCKCOY | Panel";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.layoutHeader.ResumeLayout(false);
@@ -1009,6 +1017,7 @@ namespace TRUCKCOY
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTittleDesc;
         private System.Windows.Forms.Label lblLogout;
+        private System.Windows.Forms.Timer tmrCheckInternet;
     }
 }
 

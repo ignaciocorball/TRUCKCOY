@@ -37,11 +37,12 @@ namespace TRUCKCOY.forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnNormal = new System.Windows.Forms.PictureBox();
-            this.btnTerrain = new System.Windows.Forms.PictureBox();
             this.lblTittlePanel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSatellite = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnTerrain = new System.Windows.Forms.PictureBox();
+            this.btnNormal = new System.Windows.Forms.PictureBox();
             this.dgvHistory = new System.Windows.Forms.DataGridView();
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Src = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,17 +62,16 @@ namespace TRUCKCOY.forms
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.routesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.routesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSatellite = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSatellite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTerrain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSatellite)).BeginInit();
             this.SuspendLayout();
             // 
             // panel13
@@ -93,6 +93,17 @@ namespace TRUCKCOY.forms
             this.panel1.Size = new System.Drawing.Size(874, 41);
             this.panel1.TabIndex = 14;
             // 
+            // lblTittlePanel
+            // 
+            this.lblTittlePanel.AutoSize = true;
+            this.lblTittlePanel.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTittlePanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(38)))), ((int)(((byte)(55)))));
+            this.lblTittlePanel.Location = new System.Drawing.Point(31, 9);
+            this.lblTittlePanel.Name = "lblTittlePanel";
+            this.lblTittlePanel.Size = new System.Drawing.Size(93, 23);
+            this.lblTittlePanel.TabIndex = 0;
+            this.lblTittlePanel.Text = "ORDENES";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -101,7 +112,7 @@ namespace TRUCKCOY.forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.95833F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.04166F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 78F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
             this.tableLayoutPanel1.Controls.Add(this.btnSatellite, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnTerrain, 1, 0);
@@ -113,6 +124,19 @@ namespace TRUCKCOY.forms
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(264, 26);
             this.tableLayoutPanel1.TabIndex = 16;
+            // 
+            // btnSatellite
+            // 
+            this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.delete_on;
+            this.btnSatellite.Location = new System.Drawing.Point(184, 3);
+            this.btnSatellite.MaximumSize = new System.Drawing.Size(75, 20);
+            this.btnSatellite.MinimumSize = new System.Drawing.Size(75, 20);
+            this.btnSatellite.Name = "btnSatellite";
+            this.btnSatellite.Size = new System.Drawing.Size(75, 20);
+            this.btnSatellite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSatellite.TabIndex = 13;
+            this.btnSatellite.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -127,24 +151,11 @@ namespace TRUCKCOY.forms
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
-            // btnNormal
-            // 
-            this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.modificar_on;
-            this.btnNormal.Location = new System.Drawing.Point(108, 3);
-            this.btnNormal.MaximumSize = new System.Drawing.Size(75, 20);
-            this.btnNormal.MinimumSize = new System.Drawing.Size(75, 20);
-            this.btnNormal.Name = "btnNormal";
-            this.btnNormal.Size = new System.Drawing.Size(75, 20);
-            this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnNormal.TabIndex = 14;
-            this.btnNormal.TabStop = false;
-            // 
             // btnTerrain
             // 
             this.btnTerrain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTerrain.Image = global::TRUCKCOY.Properties.Resources.anadir_on;
-            this.btnTerrain.Location = new System.Drawing.Point(28, 3);
+            this.btnTerrain.Location = new System.Drawing.Point(27, 3);
             this.btnTerrain.MaximumSize = new System.Drawing.Size(75, 20);
             this.btnTerrain.MinimumSize = new System.Drawing.Size(75, 20);
             this.btnTerrain.Name = "btnTerrain";
@@ -153,16 +164,18 @@ namespace TRUCKCOY.forms
             this.btnTerrain.TabIndex = 15;
             this.btnTerrain.TabStop = false;
             // 
-            // lblTittlePanel
+            // btnNormal
             // 
-            this.lblTittlePanel.AutoSize = true;
-            this.lblTittlePanel.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTittlePanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(38)))), ((int)(((byte)(55)))));
-            this.lblTittlePanel.Location = new System.Drawing.Point(31, 9);
-            this.lblTittlePanel.Name = "lblTittlePanel";
-            this.lblTittlePanel.Size = new System.Drawing.Size(93, 23);
-            this.lblTittlePanel.TabIndex = 0;
-            this.lblTittlePanel.Text = "ORDENES";
+            this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.modificar_on;
+            this.btnNormal.Location = new System.Drawing.Point(104, 3);
+            this.btnNormal.MaximumSize = new System.Drawing.Size(75, 20);
+            this.btnNormal.MinimumSize = new System.Drawing.Size(75, 20);
+            this.btnNormal.Name = "btnNormal";
+            this.btnNormal.Size = new System.Drawing.Size(75, 20);
+            this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnNormal.TabIndex = 14;
+            this.btnNormal.TabStop = false;
             // 
             // dgvHistory
             // 
@@ -435,19 +448,6 @@ namespace TRUCKCOY.forms
             // 
             this.routesBindingSource.DataSource = typeof(TRUCKCOY.classes.Routes);
             // 
-            // btnSatellite
-            // 
-            this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.delete_on;
-            this.btnSatellite.Location = new System.Drawing.Point(188, 3);
-            this.btnSatellite.MaximumSize = new System.Drawing.Size(75, 20);
-            this.btnSatellite.MinimumSize = new System.Drawing.Size(75, 20);
-            this.btnSatellite.Name = "btnSatellite";
-            this.btnSatellite.Size = new System.Drawing.Size(75, 20);
-            this.btnSatellite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSatellite.TabIndex = 13;
-            this.btnSatellite.TabStop = false;
-            // 
             // HistoricalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,14 +473,14 @@ namespace TRUCKCOY.forms
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnSatellite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTerrain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSatellite)).EndInit();
             this.ResumeLayout(false);
 
         }
