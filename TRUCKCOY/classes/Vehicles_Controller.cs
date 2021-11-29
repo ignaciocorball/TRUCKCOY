@@ -8,7 +8,7 @@ namespace TRUCKCOY.classes
 {
     class Vehicles_Controller : DBConnect
     {
-        public async Task<List<object>> query(string data)
+        public List<Object> query(string data)
         {
             MySqlDataReader reader;
             List<Object> list = new List<object>();
@@ -16,11 +16,11 @@ namespace TRUCKCOY.classes
 
             if (data == null)
             {
-                sql = "SELECT id,name,driver,ignition,temp,kms_today,kms_total,alerts,location,speed,trips,lastupdate,status FROM vehicles ORDER BY id DESC";
+                sql = "SELECT id,name,ignition,temp,kms_today,alerts,location,speed,trips,kms_total,lastupdate,company,driver,lat,lng,deg,status FROM vehicles WHERE company = '"+Properties.Settings.Default.Company+"' ORDER BY id DESC";
             }
             else
             {
-                sql = "SELECT id,name,driver,ignition,temp,kms_today,kms_total,alerts,location,speed,trips,lastupdate,status FROM vehicles WHERE name LIKE '%"
+                sql = "SELECT id,name,ignition,temp,kms_today,alerts,location,speed,trips,kms_total,lastupdate,company,driver,lat,lng,deg,status FROM vehicles WHERE name LIKE '%"
                        + data + "%' OR driver LIKE '%"
                        + data + "%' OR status LIKE '%"
                        + data + "%' ORDER BY id DESC";
@@ -29,37 +29,40 @@ namespace TRUCKCOY.classes
             try
             {
                 MySqlConnection dbcon = base.conexion();
-                await dbcon.OpenAsync();
+                dbcon.Open();
                 MySqlCommand command = new MySqlCommand(sql, dbcon);
 
                 reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    try
-                    {
-                        Vehicles _vehicles = new Vehicles();
-                        _vehicles.Id = int.Parse(reader.GetString(0));
-                        _vehicles.Name = reader.GetString(1).ToString();
-                        _vehicles.Driver = reader.GetString(2).ToString();
-                        _vehicles.Ignition = bool.Parse(reader.GetString(3));
-                        _vehicles.Temperature = int.Parse(reader.GetString(4));
-                        _vehicles.Kms_today = int.Parse(reader.GetString(5));
-                        _vehicles.Kms_total = int.Parse(reader.GetString(6));
-                        _vehicles.Alerts = int.Parse(reader.GetString(7));
-                        _vehicles.Location = reader.GetString(8).ToString();
-                        _vehicles.Speed = int.Parse(reader.GetString(9));
-                        _vehicles.Trips = int.Parse(reader.GetString(10));
-                        _vehicles.Lastupdate = reader.GetString(11).ToString().Replace("/", "-");
-                        _vehicles.Status = reader.GetString(12).ToString();
-                        list.Add(_vehicles);
-                    }
-                    catch (Exception ex) { Console.WriteLine(ex); }
+                    string tempParsed = Convert.ToString(reader.GetInt32(3)) + "°C";
+
+
+                    Vehicles _vehicles = new Vehicles();
+                    _vehicles.Id =          int.Parse(reader.GetString(0));
+                    _vehicles.Name =        reader.GetString(1);
+                    _vehicles.Ignition =    reader.GetBoolean(2);
+                    _vehicles.Temp =        reader.GetString(3) + " °C";
+                    _vehicles.Kms_today =   reader.GetInt32(4);
+                    _vehicles.Alerts =      reader.GetInt32(5);
+                    _vehicles.Location =    reader.GetString(6);
+                    _vehicles.Speed =       reader.GetString(7) + " Km/h";
+                    _vehicles.Trips =       reader.GetInt32(8);
+                    _vehicles.Kms_total =   reader.GetString(9) + " Kms";
+                    _vehicles.Lastupdate =  reader.GetString(10).ToString().Replace("/", "-");
+                    _vehicles.Company =     reader.GetString(11);
+                    _vehicles.Driver =      reader.GetString(12);
+                    _vehicles.Lat =         reader.GetDouble(13);
+                    _vehicles.Lng =         reader.GetDouble(14);
+                    _vehicles.Deg =         reader.GetFloat(15);
+                    _vehicles.Status =      reader.GetString(16);
+                    list.Add(_vehicles);  
                 }
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine(ex);
+                Console.WriteLine(ex.Message.ToString());
             }
             return list;
         }

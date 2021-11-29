@@ -1,12 +1,6 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.IO;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRUCKCOY.classes;
@@ -24,6 +18,7 @@ namespace TRUCKCOY.forms
         private void DriversForm_Load(object sender, EventArgs e)
         {
             loadDgv();
+            tmrDGVUpdater.Start();
             //getDriversProfileImagesAsync();
         }
         private void loadDgv()
@@ -31,16 +26,19 @@ namespace TRUCKCOY.forms
             /// <summary>
             /// Load DataGridView information
             /// </summary>
-            //List<Drivers> list = new List<Drivers>();
+
             Drivers_Controller _ctrlDrivers = new Drivers_Controller();
             dgvHistory.DataSource = _ctrlDrivers.query(null);
 
-            //Add a CheckBox Column to the DataGridView Header Cell.
+            #region loadCheckbox
+
+            // Add a CheckBox Column to the DataGridView Header Cell.
 
             //Find the Location of Header Cell.
             Point headerCellLocation = this.dgvHistory.GetCellDisplayRectangle(10, -1, true).Location;
             CheckBox headerCheckBox = new CheckBox();
-            //Place the Header CheckBox in the Location of the Header Cell.
+
+            // Place the Header CheckBox in the Location of the Header Cell.
             headerCheckBox.Location = new Point(headerCellLocation.X, headerCellLocation.Y+2);
             headerCheckBox.Size = new Size(18, 18);
             headerCheckBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -49,7 +47,7 @@ namespace TRUCKCOY.forms
             headerCheckBox.Name = "chkMain";
             headerCheckBox.Cursor = Cursors.Hand;
 
-            //Assign Click event to the Header CheckBox.
+            // Assign Click event to the Header CheckBox.
             headerCheckBox.Click += new EventHandler(HeaderCheckBox_Clicked);
             dgvHistory.Controls.Add(headerCheckBox);
 
@@ -62,6 +60,8 @@ namespace TRUCKCOY.forms
             checkBoxColumn.Name = "chkMain";
             dgvHistory.Columns.Insert(11, checkBoxColumn);
 
+            #endregion
+
             if (dgvHistory.Rows.Count > 0)
             {
                 lblNoData.Visible = false;
@@ -73,7 +73,7 @@ namespace TRUCKCOY.forms
                 setRegistersCount();
             }
         }
-        private void setColors()
+        private void setDGVStyles()
         {
             /// Validate Cell Status and change color
             foreach (DataGridViewRow row in dgvHistory.Rows)
@@ -81,11 +81,11 @@ namespace TRUCKCOY.forms
                 string dataValidator = (string)dgvHistory.Rows[row.Index].Cells[8].Value;
                 switch (dataValidator)
                 {
-                    case "Activo":
+                    case "Online":
                         dgvHistory.Rows[row.Index].Cells[8].Style.ForeColor = Color.LightSeaGreen;
                         break;
-                    case "Inactivo":
-                        dgvHistory.Rows[row.Index].Cells[8].Style.ForeColor = Color.LightSkyBlue;
+                    case "Offline":
+                        dgvHistory.Rows[row.Index].Cells[8].Style.ForeColor = Color.LightCoral;
                         break;
                     case "Eliminado":
                         dgvHistory.Rows[row.Index].Cells[8].Style.ForeColor = Color.DimGray;
@@ -94,11 +94,13 @@ namespace TRUCKCOY.forms
             }
         }
 
+
         /// <summary>
         /// Frontend development
         /// </summary>
         #region Frontend
-        // DataGridView
+
+
         private void dgvHistory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             switch (e.ColumnIndex)
@@ -191,8 +193,6 @@ namespace TRUCKCOY.forms
             {
                 dgvHistory.Cursor = Cursors.Hand;
             }
-
-            setColors();
         }
         private void dgvHistory_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
@@ -205,7 +205,18 @@ namespace TRUCKCOY.forms
         {
             e.Cancel = true;
         }
-        // Buttons, Textbox, Inputs, Labels, Picturebox...
+        private void dgvHistory_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            /// Add Trash header to dgv
+            if (e.RowIndex == -1 && e.ColumnIndex == 10)
+            {
+                Image img = Properties.Resources.trash2;
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.ContentForeground);
+                e.Graphics.DrawImage(img, e.CellBounds);
+                e.Handled = true;
+            }
+
+        }
         private void btnFilter_Click(object sender, EventArgs e)
         {
             /// Validate Cell Status and change color
@@ -243,42 +254,25 @@ namespace TRUCKCOY.forms
         #region Backend
         private void tmrClock_Tick(object sender, EventArgs e)
         {
-            btnEdit.BackColor = Color.FromArgb(33, 150, 243);
-            btnDelete.BackColor = Color.LightCoral;
-
             picLoading.Visible = false;
             tmrClock.Enabled = false;
             tmrClock.Stop();
         }
-        private void dgvHistory_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            /// Add Trash header to dgv
-            if (e.RowIndex == -1 && e.ColumnIndex == 10)
-            {
-                Image img = Properties.Resources.trash2;
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.ContentForeground);
-                e.Graphics.DrawImage(img, e.CellBounds);
-                e.Handled = true;
-            }
 
-        }
         private void setRegistersCount()
         {
             try
             {
-                /// Rows Counter
                 if (dgvHistory.Rows.Count > 0) { 
                     foreach(DataGridViewRow row in dgvHistory.Rows)
                     {
                         rowCounter++;
                     }
                 }
-                else /// Counter equals to 0
+                else
                 {
                     lblFleetStatus.Text = "No se encontraron registros"; 
                 }
-                /// Show rows data counter in label Fleet Status
-                lblNoData.Visible = false;
                 lblFleetStatus.Text = "Mostrando " + rowCounter + " de " + rowCounter + " registros";
                 
             }
@@ -304,6 +298,29 @@ namespace TRUCKCOY.forms
                 client.DownloadFileAsync(new Uri(url), directoryPath + fileName);
             }
         }
+        private void tmrDGVUpdater_Tick(object sender, EventArgs e)
+        {
+            if (dgvHistory.Rows.Count > 0)
+            {
+                setDGVStyles();
+                tmrDGVUpdater.Stop();
+                tmrDGVUpdater.Enabled = false;
+            }
+            else
+            {
+                if (tmrDGVUpdater.Interval > 15000)
+                {
+                    tmrDGVUpdater.Stop();
+                    tmrDGVUpdater.Enabled = false;
+                }
+                else
+                {
+                    tmrDGVUpdater.Interval += 500;
+                }
+            }
+        }
         #endregion
+
+
     }
 }

@@ -12,11 +12,13 @@ using LiveCharts;
 using LiveCharts.Defaults;
 using System.Globalization;
 using System.Data;
+using TRUCKCOY.forms.resforms;
 
 namespace TRUCKCOY.forms
 {
     public partial class DashboardForm : Form
     {
+        WorkOnItForm workOnIt;
         public DashboardForm()
         {
             InitializeComponent();
@@ -62,9 +64,25 @@ namespace TRUCKCOY.forms
             btnNormal.Image = Properties.Resources.normal_off;
             btnTerrain.Image = Properties.Resources.terr_on;
         }
+        private void label4_Click(object sender, EventArgs e)
+        {
+            workOnIt = new WorkOnItForm() { };
+            workOnIt.Show();
+        }
+        private void label12_Click(object sender, EventArgs e)
+        {
+            workOnIt = new WorkOnItForm() { };
+            workOnIt.Show();
+        }
+        private void label2_Click(object sender, EventArgs e)
+        {
+            workOnIt = new WorkOnItForm() { };
+            workOnIt.Show();
+        }
         private void picRegFleet_Click(object sender, EventArgs e)
         {
-            System.Windows.MessageBox.Show("Estamos trabajando en ello :)");
+            workOnIt = new WorkOnItForm() { };
+            workOnIt.Show();
         }
         private void DetailsMain_Click(object sender, EventArgs e)
         {
@@ -108,7 +126,7 @@ namespace TRUCKCOY.forms
         {
 
             /// Set up History Data Grid View
-            loadDataGridView();
+            loadDGV();
             /// Set up Cartesian Chart
             cartesianChartSetUp();
             /// Set up Solid Gauge Chart
@@ -132,76 +150,26 @@ namespace TRUCKCOY.forms
             #endregion
 
         }
-        private void loadDataGridView()
+        private void loadDGV()
         {
-            Bitmap img,img2,img3;
-
-            img = new Bitmap(Properties.Resources.eye17x17);
-            img2 = new Bitmap(Properties.Resources.trash);
-            img3 = new Bitmap(Properties.Resources.inactive_bg);
-
-            DateTime now = DateTime.Now;
-            string monthToUpper = now.ToString("MMM", new CultureInfo("cl")).ToUpper();
-
-            DataTable dtTemp = new DataTable();
-
-            dtTemp.Columns.Add("ID", typeof(int));
-            dtTemp.Columns.Add("Ingreso de orden", typeof(string));
-            dtTemp.Columns.Add("Conductor", typeof(string));
-            dtTemp.Columns.Add("Patente", typeof(string));
-            dtTemp.Columns.Add("Dirección de Origen", typeof(string));
-            dtTemp.Columns.Add("Dirección de Destino", typeof(string));
-            dtTemp.Columns.Add("Estado", typeof(string));
-
-            /// Add array into History Data Grid View
-            for (int x = 0; x < 30; x++)
-            {
-                /// Array to add
-                string[] historyDGV = new string[]
-                {
-                ""+(x+1)+"",now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"),"Carlos Lopez","AB XX 11","Psje Rio Claro #2596","Teniente vidal #456","En recorrido"
-                };
-                //ArrayList arlist = new ArrayList()
-                //{
-                //    x+1, now.ToString("dd-"+monthToUpper+"-yyyy HH:mm:ss tt"), "Carlos Lopez", "AB XZ 11", "Psje Rio Claro #2596", "Teniente vidal #456","En recorrido"
-                //};
-
-                /// Add array to Data Grid View
-                dgvHistory.Rows.Add(historyDGV);
-
-                /// Validate Cell Status and change color
-                string dataValidator = dgvHistory.Rows[x].Cells[6].Value.ToString();
-                switch (dataValidator)
-                {
-                    case "En recorrido":
-                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.LightSeaGreen;
-                        break;
-                    case "En espera":
-                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.LightSkyBlue;
-                        break;
-                    case "Finalizado":
-                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.Green;
-                        break;
-                    case "Cancelado":
-                        dgvHistory.Rows[x].Cells[6].Style.ForeColor = Color.Gray;
-                        break;
-                }
-
-                /// Add cells buttons
-                dgvHistory.Rows[x].Cells[7].Value = img;
-                dgvHistory.Rows[x].Cells[8].Value = img2;
-                dgvHistory.Rows[x].Cells[9].Value = false;
-            }
-
-            /// Add dtTemp to History data grid view
-            // dgvHistory.DataSource = dtTemp;
+            Routes_Controller _ctrlRoutes = new Routes_Controller();
+            dgvHistory.DataSource = _ctrlRoutes.query(null);
 
             /// Zoom Buttons
-            for (int i = 0; i < dgvHistory.Columns.Count; i++)
-                if (dgvHistory.Columns[i] is DataGridViewImageColumn)
-                {
-                    ((DataGridViewImageColumn)dgvHistory.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Zoom;
-                }
+            //for (int i = 0; i < dgvHistory.Columns.Count; i++)
+            //    if (dgvHistory.Columns[i] is DataGridViewImageColumn)
+            //    {
+            //        ((DataGridViewImageColumn)dgvHistory.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Zoom;
+            //    }
+
+            if (dgvHistory.Rows.Count > 0)
+            {
+                lblNoData.Visible = false;
+            }
+            else
+            {
+                lblNoData.Visible = true;
+            }
         }
 
         #endregion
@@ -249,7 +217,7 @@ namespace TRUCKCOY.forms
         {
             /// SQL CONNECTION
             string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=truckcoy;SSL Mode=None";
-            string query = "SELECT * FROM `drivers` WHERE `status` = 'Activo' ORDER BY `id` DESC";
+            string query = "SELECT * FROM `drivers` WHERE `status` = 'Online' AND `company` = '"+Properties.Settings.Default.Company+"' ORDER BY `id` DESC";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.CommandTimeout = 60;

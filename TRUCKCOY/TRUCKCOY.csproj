@@ -92,6 +92,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Geocoding, Version=3.6.0.0, Culture=neutral, PublicKeyToken=7c714700b88674c7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Geocoding.net.3.6.1\lib\net40\Geocoding.dll</HintPath>
+    </Reference>
     <Reference Include="GMap.NET.Core, Version=2.0.3.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
       <HintPath>..\packages\GMap.NET.Core.2.0.3\lib\net46\GMap.NET.Core.dll</HintPath>
     </Reference>
@@ -103,6 +106,9 @@
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMaps.LocationServices, Version=1.2.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleMaps.LocationServices.1.2.0.5\lib\netstandard2.0\GoogleMaps.LocationServices.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
@@ -126,6 +132,7 @@
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
@@ -150,6 +157,11 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -158,6 +170,7 @@
       <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -183,6 +196,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="classes\DBConnect.cs" />
+    <Compile Include="classes\DriverPosition.cs" />
     <Compile Include="classes\Drivers.cs" />
     <Compile Include="classes\Drivers_Controller.cs" />
     <Compile Include="classes\GMapCirclePoint.cs" />
@@ -228,17 +242,23 @@
     <Compile Include="forms\resforms\ProfilePopupForm.Designer.cs">
       <DependentUpon>ProfilePopupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\resforms\HistoryForm.cs">
+    <Compile Include="forms\resforms\_HistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\resforms\HistoryForm.Designer.cs">
-      <DependentUpon>HistoryForm.cs</DependentUpon>
+    <Compile Include="forms\resforms\_HistoryForm.Designer.cs">
+      <DependentUpon>_HistoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\resforms\WorkOnItForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\resforms\WorkOnItForm.Designer.cs">
+      <DependentUpon>WorkOnItForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\resforms\_TestForm.cs">
       <SubType>Form</SubType>
@@ -272,11 +292,14 @@
     <EmbeddedResource Include="forms\resforms\ProfilePopupForm.resx">
       <DependentUpon>ProfilePopupForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\resforms\HistoryForm.resx">
-      <DependentUpon>HistoryForm.cs</DependentUpon>
+    <EmbeddedResource Include="forms\resforms\_HistoryForm.resx">
+      <DependentUpon>_HistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\resforms\WorkOnItForm.resx">
+      <DependentUpon>WorkOnItForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\resforms\_TestForm.resx">
       <DependentUpon>_TestForm.cs</DependentUpon>
@@ -315,6 +338,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\undo.png" />
+    <None Include="resources\cancel.png" />
+    <None Include="resources\end.png" />
+    <None Include="resources\save.png" />
+    <None Include="resources\delete.png" />
+    <None Include="resources\loadDrivers.png" />
     <None Include="resources\ignition_on.png" />
     <None Include="resources\ignition_off.png" />
     <None Include="resources\ingnition_on.png" />

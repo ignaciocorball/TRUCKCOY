@@ -17,6 +17,7 @@ namespace TRUCKCOY
         NotificationsForm        notform = new NotificationsForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
         ProfilePopupForm         ppForm = new ProfilePopupForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = true };
         VehiclesForm             veForm = new VehiclesForm() { TopLevel = false, TopMost = true, Dock = DockStyle.Fill, Visible = false };
+        WorkOnItForm             workOnIt = new WorkOnItForm();
         int[]                    formsInitialized = { 1, 0, 0, 0, 0, 0 };
         #endregion
         public mainForm()
@@ -211,10 +212,12 @@ namespace TRUCKCOY
                     Properties.Settings.Default.navButtonSelected = 3;
                     break;
                 case 4:  // Form Stats
-                    hideNavButtons();
-                    btnStats.Image = Properties.Resources.temp_on;
-                    lblStats.ForeColor = Color.CornflowerBlue;
-                    Properties.Settings.Default.navButtonSelected = 4;
+                    workOnIt.Show();
+
+                    //hideNavButtons();
+                    //btnStats.Image = Properties.Resources.temp_on;
+                    //lblStats.ForeColor = Color.CornflowerBlue;
+                    //Properties.Settings.Default.navButtonSelected = 4;
 
                     break;
                 case 5:  // Form 

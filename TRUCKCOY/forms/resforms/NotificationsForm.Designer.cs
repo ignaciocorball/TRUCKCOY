@@ -92,7 +92,7 @@ namespace TRUCKCOY.forms.resforms
             this.panel0.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel0.Location = new System.Drawing.Point(0, 0);
             this.panel0.Name = "panel0";
-            this.panel0.Size = new System.Drawing.Size(242, 50);
+            this.panel0.Size = new System.Drawing.Size(259, 50);
             this.panel0.TabIndex = 0;
             // 
             // panel4
@@ -184,7 +184,7 @@ namespace TRUCKCOY.forms.resforms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(242, 50);
+            this.panel1.Size = new System.Drawing.Size(259, 50);
             this.panel1.TabIndex = 1;
             // 
             // panel5
@@ -276,7 +276,7 @@ namespace TRUCKCOY.forms.resforms
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(242, 50);
+            this.panel2.Size = new System.Drawing.Size(259, 50);
             this.panel2.TabIndex = 2;
             // 
             // panel6
@@ -368,7 +368,7 @@ namespace TRUCKCOY.forms.resforms
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 150);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(242, 50);
+            this.panel3.Size = new System.Drawing.Size(259, 50);
             this.panel3.TabIndex = 3;
             // 
             // panel7
@@ -453,7 +453,7 @@ namespace TRUCKCOY.forms.resforms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(259, 195);
+            this.ClientSize = new System.Drawing.Size(276, 195);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

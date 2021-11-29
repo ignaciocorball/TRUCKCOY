@@ -21,6 +21,7 @@ namespace TRUCKCOY.forms
         /// <summary>
         /// Data and controllers
         /// </summary>
+        Vehicles_Controller _ctrlVehicles = new Vehicles_Controller();
 
         public VehiclesForm()
         {
@@ -30,8 +31,7 @@ namespace TRUCKCOY.forms
         private void VehiclesForm_Load(object sender, EventArgs e)
         {
             LoadDGV();
-            //getVehiclesFeet();
-            tmrDGVUpdater.Enabled = true;
+            getVehiclesFeet();
             tmrDGVUpdater.Start();
         }
 
@@ -56,21 +56,21 @@ namespace TRUCKCOY.forms
             /// Scroll Config
             panelMap.AutoScroll = true;
         }
-        private async Task LoadDGV()
+        private void LoadDGV()
         {
-            // #111 HERE LAG FORMULARY FIX IT SOON
-            Vehicles_Controller _ctrlVehicles = new Vehicles_Controller();
+            List<Vehicles> vehicles = new List<Vehicles>();
             dgvHistory.DataSource = _ctrlVehicles.query(null);
 
-            if (dgvHistory.Rows.Count < 1)
-            {
-                lblNoData.Visible = true;
-                pnlAddFleet.Visible = true;
-            }
-            else
+
+            if (dgvHistory.Rows.Count > 0)
             {
                 lblNoData.Visible = false;
                 pnlAddFleet.Visible = false;
+            }
+            else
+            {
+                lblNoData.Visible = true;
+                pnlAddFleet.Visible = true;
             }
         }
         private void setDGVStyles()
@@ -81,27 +81,27 @@ namespace TRUCKCOY.forms
                 foreach (DataGridViewRow row in dgvHistory.Rows)
                 {
                     /// Status Cells
-                    string statusValidator = (string)dgvHistory.Rows[row.Index].Cells[10].Value;
+                    string statusValidator = (string)dgvHistory.Rows[row.Index].Cells[9].Value;
                     switch (statusValidator)
                     {
                         case "Online":
-                            dgvHistory.Rows[row.Index].Cells[10].Style.ForeColor = Color.LightSeaGreen;
+                            dgvHistory.Rows[row.Index].Cells[9].Style.ForeColor = Color.LightSeaGreen;
                             break;
                         case "Offline":
-                            dgvHistory.Rows[row.Index].Cells[10].Style.ForeColor = Color.DimGray;
+                            dgvHistory.Rows[row.Index].Cells[9].Style.ForeColor = Color.LightCoral;
                             break;
                     }
 
                     /// Ignition Cells
                     if (this.dgvHistory.Columns.Contains("Encendido"))
                     {
-                        if ((string)dgvHistory.Rows[row.Index].Cells[10].Value == "Online")
+                        if ((string)dgvHistory.Rows[row.Index].Cells[9].Value == "Online")
                         {
-                            this.dgvHistory.Rows[row.Index].Cells[11].Value = Properties.Resources.ignition_on;
+                            this.dgvHistory.Rows[row.Index].Cells[10].Value = Properties.Resources.ignition_on;
                         }
                         else
                         {
-                            this.dgvHistory.Rows[row.Index].Cells[11].Value = Properties.Resources.ignition_off;
+                            this.dgvHistory.Rows[row.Index].Cells[10].Value = Properties.Resources.ignition_off;
                         }
                     }
                 }
@@ -109,54 +109,53 @@ namespace TRUCKCOY.forms
         }
         private void getVehiclesFeet()
         {
+            /// SQL CONNECTION
+            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=truckcoy;SSL Mode=None";
+            string query = "SELECT * FROM `drivers` WHERE `status` = 'Activo' ORDER BY `id` DESC";
+            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+
             try
             {
-                /// SQL CONNECTION
-                //string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=truckcoy;SSL Mode=None";
-                //string query = "SELECT * FROM `vehicles` WHERE `company` = '"+Properties.Settings.Default.Company+"' ORDER BY `id` DESC";
-                //MySqlConnection dbCon = new MySqlConnection(connectionString);
-                //MySqlCommand dbCom = new MySqlCommand(query, dbCon);
-                //MySqlDataReader reader;
-                //dbCom.CommandTimeout = 60;
-                ///// Open connection
-                //dbCon.Open();
+                // Open connection
+                databaseConnection.Open();
+                // Execute query
+                reader = commandDatabase.ExecuteReader();
 
-                //using (reader = dbCom.ExecuteReader())
-                //{
-                //    while (reader.Read())
-                //    {
-                //        string[] row = { reader.GetString(0),   // ID         (int)
-                //                         reader.GetString(1),   // Name       (string)
-                //                         reader.GetString(2),   // Ignition   (bool)
-                //                         reader.GetString(3),   // Temp       (int)
-                //                         reader.GetString(4),   // Kms_today  (int)
-                //                         reader.GetString(5),   // Alerts     (int)
-                //                         reader.GetString(6),   // Location   (string)
-                //                         reader.GetString(7),   // Speed      (int) 
-                //                         reader.GetString(8),   // Trips      (int) 
-                //                         reader.GetString(9),   // Kms_total  (int)
-                //                         reader.GetString(10),  // Lastupdate (timestamp)
-                //                         reader.GetString(11),  // Company    (string)
-                //                         reader.GetString(12),  // Driver     (string)
-                //                         reader.GetString(13),  // Latitude   (double)
-                //                         reader.GetString(14),  // Longitude  (double)
-                //                         reader.GetString(15),  // Degrees    (float)
-                //                         reader.GetString(16),  // Status     (string)
-                //        };
-                //        int degrees = Convert.ToInt32(row[15]);
-                //        PointLatLng point = new PointLatLng(reader.GetFloat(13), reader.GetFloat(14));
-                //        Bitmap bmpmarker = (Bitmap)Properties.Resources.taxi_20x20;
-                //        Bitmap bmpMarkerRotated = RotateImage(bmpmarker, degrees);
-                //        GMapMarker marker = new GMarkerGoogle(point, bmpMarkerRotated);
-                //        GMapOverlay markers = new GMapOverlay("Markers");
-                //
-                //        markers.Markers.Add(marker);
-                //        gMapControl1.Overlays.Add(markers);
-                //    }
-                //}
-                //dbCon.Close();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12) };
+                        int degrees = Convert.ToInt32(row[12]);
+
+                        /// Marker Personalized
+                        // GMapOverlay points_ = new GMapOverlay("pointCollection");
+                        // points_.Markers.Add(new GMapPointExpanded(new PointLatLng(reader.GetFloat(4), reader.GetFloat(5)), 10));
+                        // gMapControl1.Overlays.Add(points_);
+
+                        PointLatLng point = new PointLatLng(reader.GetFloat(9), reader.GetFloat(10));
+
+                        Bitmap bmpmarker = (Bitmap)Image.FromFile("img/fleeticon_20x20.png");
+                        Bitmap bmpMarkerRotated = RotateImage(bmpmarker, degrees);
+
+                        GMapMarker marker = new GMarkerGoogle(point, bmpMarkerRotated);
+
+                        GMapOverlay markers = new GMapOverlay("Markers");
+                        markers.Markers.Add(marker);
+                        gMapControl1.Overlays.Add(markers);
+                    }
+                    pnlAddFleet.Visible = false;
+                }
+                else { pnlAddFleet.Visible = true; }
+
+                databaseConnection.Close();
             }
-            catch (MySqlException ex){ MessageBox.Show("No hay conexión con la base de datos"); }
+            catch (Exception) { 
+                Console.WriteLine("No hay conexión con la base de datos"); 
+            }
         }
         public string getAddressByCoords(double lat, double lng)
         {
@@ -218,10 +217,7 @@ namespace TRUCKCOY.forms
                 {
                     tmrDGVUpdater.Interval += 500;
                 }
-                
-                
             }
-
         }
         #endregion
 
@@ -255,7 +251,7 @@ namespace TRUCKCOY.forms
             //    }
             //}
             /// Add Edit header to dgv
-            if (e.RowIndex == -1 && e.ColumnIndex == 11)
+            if (e.RowIndex == -1 && e.ColumnIndex == 10)
             {
                 Image img = Properties.Resources.ignition_on;
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.ContentForeground);
@@ -263,7 +259,7 @@ namespace TRUCKCOY.forms
                 e.Handled = true;
             }
             /// Add Edit header to dgv
-            if (e.RowIndex == -1 && e.ColumnIndex == 12)
+            if (e.RowIndex == -1 && e.ColumnIndex == 11)
             {
                 Image img = Properties.Resources.edit;
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.ContentForeground);
@@ -271,7 +267,7 @@ namespace TRUCKCOY.forms
                 e.Handled = true;
             }
             /// Add Trash header to dgv
-            if (e.RowIndex == -1 && e.ColumnIndex == 13)
+            if (e.RowIndex == -1 && e.ColumnIndex == 12)
             {
                 Image img = Properties.Resources.trash2;
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.ContentForeground);

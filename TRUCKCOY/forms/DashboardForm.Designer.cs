@@ -29,14 +29,13 @@ namespace TRUCKCOY.forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -76,22 +75,19 @@ namespace TRUCKCOY.forms
             this.picRegFleet = new System.Windows.Forms.PictureBox();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.panelStats = new System.Windows.Forms.Panel();
+            this.lblNoData = new System.Windows.Forms.Label();
             this.dgvHistory = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.income_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.driver = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address_source = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address_out = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.details = new System.Windows.Forms.DataGridViewImageColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.srcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIncomeDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderFinishedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pTittleHF = new System.Windows.Forms.Panel();
-            this.checkBoxMain = new System.Windows.Forms.CheckBox();
             this.lblTittleDesc = new System.Windows.Forms.Label();
-            this.DeleteMain = new System.Windows.Forms.PictureBox();
-            this.DetailsMain = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -113,9 +109,8 @@ namespace TRUCKCOY.forms
             ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).BeginInit();
             this.panelStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).BeginInit();
             this.pTittleHF.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeleteMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetailsMain)).BeginInit();
             this.SuspendLayout();
             // 
             // panel13
@@ -310,6 +305,7 @@ namespace TRUCKCOY.forms
             this.label4.TabIndex = 30;
             this.label4.Text = "Ver más";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label17
             // 
@@ -475,6 +471,7 @@ namespace TRUCKCOY.forms
             this.label12.TabIndex = 24;
             this.label12.Text = "Ver más";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label9
             // 
@@ -549,6 +546,7 @@ namespace TRUCKCOY.forms
             this.label2.TabIndex = 26;
             this.label2.Text = "Ver más";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cartesianChart1
             // 
@@ -632,6 +630,7 @@ namespace TRUCKCOY.forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelStats.BackColor = System.Drawing.Color.White;
+            this.panelStats.Controls.Add(this.lblNoData);
             this.panelStats.Controls.Add(this.dgvHistory);
             this.panelStats.Controls.Add(this.pTittleHF);
             this.panelStats.Location = new System.Drawing.Point(32, 340);
@@ -639,6 +638,17 @@ namespace TRUCKCOY.forms
             this.panelStats.Name = "panelStats";
             this.panelStats.Size = new System.Drawing.Size(819, 354);
             this.panelStats.TabIndex = 13;
+            // 
+            // lblNoData
+            // 
+            this.lblNoData.AutoSize = true;
+            this.lblNoData.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(38)))), ((int)(((byte)(55)))));
+            this.lblNoData.Location = new System.Drawing.Point(272, 204);
+            this.lblNoData.Name = "lblNoData";
+            this.lblNoData.Size = new System.Drawing.Size(249, 23);
+            this.lblNoData.TabIndex = 69;
+            this.lblNoData.Text = "No se encontraron registros";
             // 
             // dgvHistory
             // 
@@ -652,11 +662,12 @@ namespace TRUCKCOY.forms
             this.dgvHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHistory.AutoGenerateColumns = false;
             this.dgvHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHistory.BackgroundColor = System.Drawing.Color.White;
             this.dgvHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 10F);
@@ -667,49 +678,48 @@ namespace TRUCKCOY.forms
             this.dgvHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.income_date,
-            this.driver,
-            this.patente,
-            this.address_source,
-            this.address_out,
-            this.status,
-            this.details,
-            this.delete,
-            this.select});
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.srcDataGridViewTextBoxColumn,
+            this.destDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.orderIncomeDateDataGridViewTextBoxColumn,
+            this.orderFinishedDateDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
             this.dgvHistory.Cursor = System.Windows.Forms.Cursors.Arrow;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvHistory.DataSource = this.routesBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHistory.EnableHeadersVisualStyles = false;
             this.dgvHistory.GridColor = System.Drawing.Color.Silver;
             this.dgvHistory.Location = new System.Drawing.Point(0, 61);
             this.dgvHistory.Name = "dgvHistory";
             this.dgvHistory.ReadOnly = true;
             this.dgvHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvHistory.RowHeadersVisible = false;
             this.dgvHistory.RowHeadersWidth = 30;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle7.NullValue = "Indefinido";
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistory.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.NullValue = "Indefinido";
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistory.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvHistory.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dgvHistory.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dgvHistory.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -725,129 +735,79 @@ namespace TRUCKCOY.forms
             this.dgvHistory.TabIndex = 63;
             this.dgvHistory.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistory_CellMouseEnter);
             // 
-            // id
+            // idDataGridViewTextBoxColumn
             // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.id.DefaultCellStyle = dataGridViewCellStyle3;
-            this.id.FillWeight = 40F;
-            this.id.HeaderText = "ID";
-            this.id.MaxInputLength = 10;
-            this.id.MinimumWidth = 30;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id.Width = 35;
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 30;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 30;
             // 
-            // income_date
+            // nameDataGridViewTextBoxColumn
             // 
-            this.income_date.HeaderText = "Ingreso de orden";
-            this.income_date.MinimumWidth = 130;
-            this.income_date.Name = "income_date";
-            this.income_date.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Conductor";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // driver
+            // srcDataGridViewTextBoxColumn
             // 
-            this.driver.HeaderText = "Conductor";
-            this.driver.MinimumWidth = 100;
-            this.driver.Name = "driver";
-            this.driver.ReadOnly = true;
+            this.srcDataGridViewTextBoxColumn.DataPropertyName = "Src";
+            this.srcDataGridViewTextBoxColumn.HeaderText = "Origen";
+            this.srcDataGridViewTextBoxColumn.Name = "srcDataGridViewTextBoxColumn";
+            this.srcDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // patente
+            // destDataGridViewTextBoxColumn
             // 
-            this.patente.HeaderText = "Patente";
-            this.patente.MinimumWidth = 88;
-            this.patente.Name = "patente";
-            this.patente.ReadOnly = true;
+            this.destDataGridViewTextBoxColumn.DataPropertyName = "Dest";
+            this.destDataGridViewTextBoxColumn.HeaderText = "Destino";
+            this.destDataGridViewTextBoxColumn.Name = "destDataGridViewTextBoxColumn";
+            this.destDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // address_source
+            // phoneDataGridViewTextBoxColumn
             // 
-            this.address_source.HeaderText = "Dirección de Origen";
-            this.address_source.MinimumWidth = 150;
-            this.address_source.Name = "address_source";
-            this.address_source.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Teléfono";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // address_out
+            // orderIncomeDateDataGridViewTextBoxColumn
             // 
-            this.address_out.HeaderText = "Dirección de Destino";
-            this.address_out.MinimumWidth = 150;
-            this.address_out.Name = "address_out";
-            this.address_out.ReadOnly = true;
+            this.orderIncomeDateDataGridViewTextBoxColumn.DataPropertyName = "OrderIncomeDate";
+            this.orderIncomeDateDataGridViewTextBoxColumn.HeaderText = "Ingreso";
+            this.orderIncomeDateDataGridViewTextBoxColumn.Name = "orderIncomeDateDataGridViewTextBoxColumn";
+            this.orderIncomeDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // status
+            // orderFinishedDateDataGridViewTextBoxColumn
             // 
-            this.status.HeaderText = "Estado";
-            this.status.MinimumWidth = 90;
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
+            this.orderFinishedDateDataGridViewTextBoxColumn.DataPropertyName = "OrderFinishedDate";
+            this.orderFinishedDateDataGridViewTextBoxColumn.HeaderText = "Finalización";
+            this.orderFinishedDateDataGridViewTextBoxColumn.Name = "orderFinishedDateDataGridViewTextBoxColumn";
+            this.orderFinishedDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // details
+            // statusDataGridViewTextBoxColumn
             // 
-            this.details.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.details.DefaultCellStyle = dataGridViewCellStyle4;
-            this.details.HeaderText = "";
-            this.details.Image = global::TRUCKCOY.Properties.Resources.edit;
-            this.details.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.details.MinimumWidth = 17;
-            this.details.Name = "details";
-            this.details.ReadOnly = true;
-            this.details.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.details.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.details.ToolTipText = "Con este botón puedes editar multiples registros.";
-            this.details.Width = 17;
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // delete
+            // routesBindingSource
             // 
-            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.delete.HeaderText = "";
-            this.delete.Image = global::TRUCKCOY.Properties.Resources.trash2;
-            this.delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.delete.MinimumWidth = 17;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.delete.Width = 17;
-            // 
-            // select
-            // 
-            this.select.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.select.HeaderText = "";
-            this.select.MinimumWidth = 17;
-            this.select.Name = "select";
-            this.select.ReadOnly = true;
-            this.select.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.select.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.select.Width = 17;
+            this.routesBindingSource.DataSource = typeof(TRUCKCOY.classes.Routes);
             // 
             // pTittleHF
             // 
             this.pTittleHF.BackColor = System.Drawing.Color.White;
-            this.pTittleHF.Controls.Add(this.checkBoxMain);
             this.pTittleHF.Controls.Add(this.lblTittleDesc);
-            this.pTittleHF.Controls.Add(this.DeleteMain);
-            this.pTittleHF.Controls.Add(this.DetailsMain);
             this.pTittleHF.Controls.Add(this.label1);
             this.pTittleHF.Dock = System.Windows.Forms.DockStyle.Top;
             this.pTittleHF.Location = new System.Drawing.Point(0, 0);
             this.pTittleHF.Name = "pTittleHF";
             this.pTittleHF.Size = new System.Drawing.Size(819, 61);
             this.pTittleHF.TabIndex = 61;
-            // 
-            // checkBoxMain
-            // 
-            this.checkBoxMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxMain.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxMain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkBoxMain.Location = new System.Drawing.Point(796, 38);
-            this.checkBoxMain.Name = "checkBoxMain";
-            this.checkBoxMain.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
-            this.checkBoxMain.Size = new System.Drawing.Size(20, 20);
-            this.checkBoxMain.TabIndex = 17;
-            this.checkBoxMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.checkBoxMain.UseVisualStyleBackColor = true;
-            this.checkBoxMain.CheckedChanged += new System.EventHandler(this.checkBoxMain_CheckedChanged);
             // 
             // lblTittleDesc
             // 
@@ -863,33 +823,6 @@ namespace TRUCKCOY.forms
             this.lblTittleDesc.Text = "Últimos 30 registros";
             this.lblTittleDesc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // DeleteMain
-            // 
-            this.DeleteMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteMain.BackColor = System.Drawing.Color.White;
-            this.DeleteMain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteMain.Image = global::TRUCKCOY.Properties.Resources.trash_small;
-            this.DeleteMain.Location = new System.Drawing.Point(775, 38);
-            this.DeleteMain.Name = "DeleteMain";
-            this.DeleteMain.Size = new System.Drawing.Size(20, 20);
-            this.DeleteMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.DeleteMain.TabIndex = 18;
-            this.DeleteMain.TabStop = false;
-            this.DeleteMain.Click += new System.EventHandler(this.DeleteMain_Click);
-            // 
-            // DetailsMain
-            // 
-            this.DetailsMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DetailsMain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DetailsMain.Image = global::TRUCKCOY.Properties.Resources.eye24x24;
-            this.DetailsMain.Location = new System.Drawing.Point(755, 38);
-            this.DetailsMain.Name = "DetailsMain";
-            this.DetailsMain.Size = new System.Drawing.Size(20, 20);
-            this.DetailsMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.DetailsMain.TabIndex = 19;
-            this.DetailsMain.TabStop = false;
-            this.DetailsMain.Click += new System.EventHandler(this.DetailsMain_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -904,8 +837,8 @@ namespace TRUCKCOY.forms
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = global::TRUCKCOY.Properties.Resources.eye_hover;
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -967,11 +900,11 @@ namespace TRUCKCOY.forms
             this.overlayGMap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).EndInit();
             this.panelStats.ResumeLayout(false);
+            this.panelStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).EndInit();
             this.pTittleHF.ResumeLayout(false);
             this.pTittleHF.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeleteMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DetailsMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1021,20 +954,17 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.PictureBox DetailsMain;
-        private System.Windows.Forms.PictureBox DeleteMain;
-        private System.Windows.Forms.CheckBox checkBoxMain;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblRegError;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn income_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn driver;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address_source;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address_out;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewImageColumn details;
-        private System.Windows.Forms.DataGridViewImageColumn delete;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn select;
+        private System.Windows.Forms.BindingSource routesBindingSource;
+        private System.Windows.Forms.Label lblNoData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn srcDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn destDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIncomeDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderFinishedDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }

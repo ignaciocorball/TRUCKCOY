@@ -1,7 +1,7 @@
 ﻿
 namespace TRUCKCOY.forms.resforms
 {
-    partial class NoInternetConnectionForm
+    partial class WorkOnItForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,10 @@ namespace TRUCKCOY.forms.resforms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NoInternetConnectionForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkOnItForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@ namespace TRUCKCOY.forms.resforms
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -58,7 +56,7 @@ namespace TRUCKCOY.forms.resforms
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(350, 150);
-            this.panel1.TabIndex = 13;
+            this.panel1.TabIndex = 14;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // pictureBox2
@@ -81,24 +79,13 @@ namespace TRUCKCOY.forms.resforms
             this.pictureBox6.TabIndex = 19;
             this.pictureBox6.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(132)))));
-            this.label3.Location = new System.Drawing.Point(150, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 15);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "guarde tu progreso en la nube.";
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(140)))), ((int)(((byte)(225)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
-            this.button2.Location = new System.Drawing.Point(153, 101);
+            this.button2.Location = new System.Drawing.Point(153, 115);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(172, 23);
             this.button2.TabIndex = 14;
@@ -110,25 +97,26 @@ namespace TRUCKCOY.forms.resforms
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            this.label2.AutoEllipsis = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(132)))));
-            this.label2.Location = new System.Drawing.Point(150, 62);
+            this.label2.Location = new System.Drawing.Point(153, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 15);
+            this.label2.Size = new System.Drawing.Size(172, 60);
             this.label2.TabIndex = 12;
-            this.label2.Text = "Revisa tu conexión para que se";
+            this.label2.Text = "Continuamos desarrollando nuevas herramientas que esperamos sean implementadas a " +
+    "la brevedad";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 10F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(140)))), ((int)(((byte)(225)))));
-            this.label1.Location = new System.Drawing.Point(178, 35);
+            this.label1.Location = new System.Drawing.Point(153, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 17);
+            this.label1.Size = new System.Drawing.Size(179, 17);
             this.label1.TabIndex = 11;
-            this.label1.Text = "No tienes internet";
+            this.label1.Text = "Estamos trabajando para ti";
             // 
             // pictureBox1
             // 
@@ -141,18 +129,18 @@ namespace TRUCKCOY.forms.resforms
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
-            // NoInternetConnectionForm
+            // WorkOnItForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 150);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NoInternetConnectionForm";
+            this.Name = "WorkOnItForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NoInternetConnectionForm";
+            this.Text = "WorkOnItForm";
             this.TopMost = true;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -168,7 +156,6 @@ namespace TRUCKCOY.forms.resforms
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

@@ -117,19 +117,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="cityDataGridViewTextBoxColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Src.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Dst.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="details.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="routesBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>182, 17</value>
+    <value>759, 18</value>
   </metadata>
-  <metadata name="routesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="tmrDGVUpdater.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>353, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFAAAAAWCAIAAADYcoyLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAgFJREFUWEftlSGXwjAQhO+nV+OxWCwWi0SeROKQdXXc13x9e7n0SMsDVTqCtzvZ
+        THY2Ab6aD8NqeOlYDS8dq+ER9vv9dwLBQCWcTqf7/b7b7YY8MZQFQwqMt9vt+Xxm9Xg8yrDE9hwwm80m
+        rynQdd3lchmSkcLtduOUYe0xJgwXomEAcAAMNoa8adq2hbler5ECAkZAr0mgh03/a5iOCfCcBP7gcDhY
+        xlBkxgpxdAU1w0jTKOBubRp4HqlnwFgMNAx8C2GYPiD1Y0yB7RaXWTHMmFgCbJTJFdzocXXUDBcqSNMK
+        JLGHscQns7eg99e2jMBJmxpQ5kYmhQhbVAhY+ciwo1eHlyVZKIBXb7gyNkg68J6jP0hACskdmsrDaDjw
+        lGFmDc8W71mpQuEN3+HCMGNWETPwtsVqvHNiQI2XbCpPfXRDQL3tznzSfhFYDeeQoeCIJSfxhGFP9U0S
+        5LDvZLAvtsBHKE/KRmK75NNgjmHJHMqGggUx9zpqhoEm+fQtEUAiTZxDvrebWqEDa/LOeHI4gQdxwzlg
+        bN1KATmuBMXPHpXEMMR1TBimAz0DAlL/HjhgqMhebPLbOwR2kKeOADP+ho9twGg4BwpsIWBJKRySOgsC
+        DbvRUVr2CBOGBXJxXgUclp/HljwlniOSjvpFrvAWzDK8JKyGl47V8NLxYYab5gcK3/wXXoAfVAAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="btnFinish.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFAAAAAWCAIAAADYcoyLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAgRJREFUWEfllbEuRFEQhj2NB/EU3kGxDyBqlUZNLdHpZBWaVShIREJDaES2IRHJ
+        For1rY9xzNm9tkBxTP7czD8zZ+78Zy67sNDr/y9k3jwybx6ZN4/Mm0fmzSPzCuOvNnwcLW8e75/cbexd
+        kt06uMInYjEU6APiHCkjnKJ+cfUwIvhErLFbwFeIo4vh8+gl6Mr2qfNopIhEtguZV3hv+WEIZg4cBiIL
+        xT+7ebAYCvTB7uCW7PX9U0Q4RWRpfRARfNvi2y3MVwAuxcjazrmRJBhDc3mPM5F5BXqVGkAtGPOCoWUx
+        Q5iNT6BbMBNDgW1DHpufdBmP2bMRBceNWF+2nYnMK7y96NN4UxIMEOaSpR50Jkdh1Qa7BQvlhRhA82jl
+        Gn93w6VNFawMUlIPGmS3jJKCHYKh1IOosYDdehH+YSfB1BOx/htkXoF2MY2oBTsle5AS57JDZ1xH+CEG
+        qMdK4DJVJUKnlX5KCqabwxicC5lXoF1MI2rBOCoJkdaUZn234KnTk5qcL4wjITgK/nTDOAyB2ijmC8Qv
+        jSxrVzDPgD9dnPKjwOesKV5kNhk7LwVPvaaZyLwCveYRDIhYzOjplCkO6pRmN4pddWkU+8NGjX3icygF
+        AyLQuZac+Xzgxf5L5KmT4rNAlpoSBHl6qoxH8IeRefPIvHlk3jwybx6ZN4/M20av/woBNA3tbcDtUwAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="tmrClock.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>493, 17</value>
   </metadata>
 </root>

@@ -46,7 +46,9 @@ namespace TRUCKCOY.classes
                     list.Add(_drivers);
                 }
             }
-            catch (MySqlException ex) { /*MessageBox.Show(ex.Message.ToString());*/ }
+            catch (MySqlException ex) { 
+                Console.WriteLine(ex.Message.ToString()); 
+            }
 
             return list;
         }

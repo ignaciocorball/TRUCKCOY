@@ -24,6 +24,8 @@ namespace TRUCKCOY
         public string country { get; set; }
         [DataMember]
         public string country_code { get; set; }
+        public object Coordinates { get; internal set; }
+        public string FormattedAddress { get; internal set; }
     }
 
     [DataContract]
