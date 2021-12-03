@@ -245,6 +245,31 @@ namespace TRUCKCOY.forms
                 chk.Value = !(chk.Value == null ? false : (bool)chk.Value);
             }
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            Size size = TextRenderer.MeasureText(txtCity.Text, txtCity.Font);
+            txtCity.Width = size.Width;
+            txtCity.Height = size.Height;
+        }
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            Size size = TextRenderer.MeasureText(txtName.Text, txtName.Font);
+            txtName.Width = size.Width;
+            txtName.Height = size.Height;
+        }
+        private void txtImei_TextChanged(object sender, EventArgs e)
+        {
+            Size size = TextRenderer.MeasureText(txtImei.Text, txtImei.Font);
+            txtImei.Width = size.Width;
+            txtImei.Height = size.Height;
+        }
+        private void txtPatente_TextChanged(object sender, EventArgs e)
+        {
+            Size size = TextRenderer.MeasureText(txtPatente.Text, txtPatente.Font);
+            txtPatente.Width = size.Width;
+            txtPatente.Height = size.Height;
+        }
         #endregion
 
 
@@ -319,8 +344,7 @@ namespace TRUCKCOY.forms
                 }
             }
         }
+
         #endregion
-
-
     }
 }

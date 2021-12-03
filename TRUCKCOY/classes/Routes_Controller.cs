@@ -1,13 +1,14 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace TRUCKCOY.classes
 {
     class Routes_Controller : DBConnect
     {
-        public List<Object> query(string data)
+        public Task<List<Object>> query(string data)
         {
             MySqlDataReader reader;
             List<Object> list = new List<object>();
@@ -27,49 +28,82 @@ namespace TRUCKCOY.classes
                        + data + "%' ORDER BY id DESC";
             }
 
-            try
+            return Task.Run(() =>
             {
-                MySqlConnection dbcon = conexion();
-                dbcon.Open();
-                MySqlCommand command = new MySqlCommand(sql, dbcon);
-
-                reader = command.ExecuteReader();
-
-                while (reader.Read())
+                try
                 {
-                    Routes _routes = new Routes();
-                    _routes.Id = int.Parse(reader.GetString(0));
-                    _routes.Name = reader.GetString(1).ToString();
-                    _routes.Dest = reader.GetString(2).ToString();
-                    _routes.Src = reader.GetString(3).ToString();
-                    _routes.City = reader.GetString(4).ToString();
-                    _routes.Patente = reader.GetString(5).ToString();
-                    _routes.Phone = reader.GetString(6).ToString();
-                    _routes.LatSrc = reader.GetString(7).ToString();
-                    _routes.LngSrc = reader.GetString(8).ToString();
-                    _routes.DegSrc = reader.GetString(9).ToString();
-                    _routes.LatDest = reader.GetString(10).ToString();
-                    _routes.LngDest = reader.GetString(11).ToString();
-                    _routes.OrderIncomeDate = reader.GetString(12).ToString().Replace("/", "-");
-                    if(reader["order_finished"] != DBNull.Value)
+                    MySqlConnection dbcon = conexion();
+                    dbcon.Open();
+                    MySqlCommand command = new MySqlCommand(sql, dbcon);
+
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
                     {
-                        _routes.OrderFinishedDate = reader.GetString(13).ToString().Replace("/", "-");
+                        Routes _routes = new Routes();
+                        _routes.Id = int.Parse(reader.GetString(0));
+                        _routes.Name = reader.GetString(1).ToString();
+                        _routes.Dest = reader.GetString(2).ToString();
+                        _routes.Src = reader.GetString(3).ToString();
+                        _routes.City = reader.GetString(4).ToString();
+                        _routes.Patente = reader.GetString(5).ToString();
+                        _routes.Phone = reader.GetString(6).ToString();
+                        _routes.LatSrc = reader.GetString(7).ToString();
+                        _routes.LngSrc = reader.GetString(8).ToString();
+                        _routes.DegSrc = reader.GetString(9).ToString();
+                        _routes.LatDest = reader.GetString(10).ToString();
+                        _routes.LngDest = reader.GetString(11).ToString();
+                        _routes.OrderIncomeDate = reader.GetString(12).ToString().Replace("/", "-");
+                        if (reader["order_finished"] != DBNull.Value)
+                        {
+                            _routes.OrderFinishedDate = reader.GetString(13).ToString().Replace("/", "-");
+                        }
+                        else
+                        {
+                            _routes.OrderFinishedDate = "00-00-00 00:00:00";
+                        }
+
+                        _routes.Company = reader.GetString(14).ToString();
+                        _routes.Status = reader.GetString(15).ToString();
+                        list.Add(_routes);
                     }
-                    else
-                    {
-                        _routes.OrderFinishedDate = "En Proceso";
-                    }
-                    
-                    _routes.Company = reader.GetString(14).ToString();
-                    _routes.Status = reader.GetString(15).ToString();
-                    list.Add(_routes);
                 }
-            }
-            catch (MySqlException ex)
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine(ex.Message.ToString());
+                }
+                return list;
+            });
+        }
+        public Task<int> getCount(string data)
+        {
+            return Task.Run(() =>
             {
-                Console.WriteLine(ex.Message.ToString());
-            }
-            return list;
+                int count = 0;
+
+                try
+                {
+                    MySqlDataReader reader;
+                    string sql = "SELECT COUNT(*) FROM routes;";
+
+                    MySqlConnection dbcon = conexion();
+                    dbcon.Open();
+                    MySqlCommand command = new MySqlCommand(sql, dbcon);
+
+                    reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        count = reader.GetInt32(0);
+                    }
+
+                    return count;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: " + ex);
+                    return count;
+                }
+            });
         }
 
         public void insertRoute(List<string> data)
@@ -125,9 +159,7 @@ namespace TRUCKCOY.classes
         {
             MySqlDataReader reader;
             List<string> list = new List<string>();
-            string sql;
-
-            sql = "SELECT lat_src,lng_src,degrees_src FROM drivers WHERE name = '" + data + "'";
+            string sql = "SELECT lat_src,lng_src,degrees_src FROM drivers WHERE name = '" + data + "'";
 
             try
             {
@@ -157,7 +189,6 @@ namespace TRUCKCOY.classes
             List<string> list = new List<string>();
 
             // Get coords & return list
-
 
 
             return list;

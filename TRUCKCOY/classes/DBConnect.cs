@@ -8,10 +8,10 @@ namespace TRUCKCOY.classes
     {
         public MySqlConnection conexion()
         {
-            string servidor = "localhost";
-            string bd = "TRUCKCOY";
-            string usuario = "root";
-            string password = "";
+            string servidor = "156.67.73.151";
+            string bd = "u853513044_truckcoy";
+            string usuario = "u853513044_G";
+            string password = "@Andromeda123@";
 
             string cadenaConexion = "Database=" + bd + "; Data Source=" + servidor + "; User Id= " + usuario + "; Password=" + password + "; SslMode=none";
 

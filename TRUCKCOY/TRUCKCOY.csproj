@@ -338,6 +338,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\loading_square.gif" />
     <None Include="resources\undo.png" />
     <None Include="resources\cancel.png" />
     <None Include="resources\end.png" />

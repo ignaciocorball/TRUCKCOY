@@ -13,6 +13,9 @@ using LiveCharts.Defaults;
 using System.Globalization;
 using System.Data;
 using TRUCKCOY.forms.resforms;
+using System.Threading.Tasks;
+using System.Threading;
+using System.Collections.Generic;
 
 namespace TRUCKCOY.forms
 {
@@ -25,7 +28,8 @@ namespace TRUCKCOY.forms
             loadMapSettings();
             getVehiclesFeet();
             setFrontEnd();
-
+            tmrDGVUpdater.Enabled = true;
+            tmrDGVUpdater.Start();
         }
         /// <summary>
         /// Frontend Events
@@ -88,7 +92,6 @@ namespace TRUCKCOY.forms
         {
 
         }
-
         private void DeleteMain_Click(object sender, EventArgs e)
         {
 
@@ -149,18 +152,12 @@ namespace TRUCKCOY.forms
             lblTotal.TextAlign = ContentAlignment.MiddleCenter;
             #endregion
 
+
         }
-        private void loadDGV()
+        private async Task loadDGV()
         {
             Routes_Controller _ctrlRoutes = new Routes_Controller();
-            dgvHistory.DataSource = _ctrlRoutes.query(null);
-
-            /// Zoom Buttons
-            //for (int i = 0; i < dgvHistory.Columns.Count; i++)
-            //    if (dgvHistory.Columns[i] is DataGridViewImageColumn)
-            //    {
-            //        ((DataGridViewImageColumn)dgvHistory.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Zoom;
-            //    }
+            dgvHistory.DataSource = await _ctrlRoutes.query(null);
 
             if (dgvHistory.Rows.Count > 0)
             {
@@ -171,22 +168,29 @@ namespace TRUCKCOY.forms
                 lblNoData.Visible = true;
             }
         }
-
-        #endregion
-
-        /// <summary>
-        /// Backend Events
-        /// </summary>
-        #region Backend
-
-        private string getDateByNumber(double num)
+        private void setDGVStyles()
         {
-            int num2 = Convert.ToInt32(num);
-            DateTime date = new DateTime(2021, num2, 01);
-            string month_name = date.ToString("MMMM", new CultureInfo("es"));
-            string month_name2 = char.ToUpper(month_name[0]) + month_name.Substring(1);
-            return month_name2;
+            /// Validate Cell Status and change color
+            foreach (DataGridViewRow row in dgvHistory.Rows)
+            {
+                string dataValidator = (string)dgvHistory.Rows[row.Index].Cells[7].Value;
+                switch (dataValidator)
+                {
+                    case "En Tránsito":
+                        dgvHistory.Rows[row.Index].Cells[7].Style.ForeColor = Color.LightSeaGreen;
+                        break;
+                    case "Exitoso":
+                        dgvHistory.Rows[row.Index].Cells[7].Style.ForeColor = Color.LightSkyBlue;
+                        break;
+                    case "Cancelado":
+                        dgvHistory.Rows[row.Index].Cells[7].Style.ForeColor = Color.DimGray;
+                        break;
+                }
+            }
         }
+        /// <summary>
+        /// Maps Settings
+        /// </summary>
         private void loadMapSettings()
         {
             gMapControl1.DragButton = MouseButtons.Left;
@@ -213,61 +217,33 @@ namespace TRUCKCOY.forms
             gMapControl1.Overlays.Add(markers);
 
         }
-        private void getVehiclesFeet()
+        private async Task getVehiclesFeet()
         {
-            /// SQL CONNECTION
-            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=truckcoy;SSL Mode=None";
-            string query = "SELECT * FROM `drivers` WHERE `status` = 'Online' AND `company` = '"+Properties.Settings.Default.Company+"' ORDER BY `id` DESC";
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
-            MySqlDataReader reader;
+            List<string> list = new List<string>();
+            Drivers_Controller _ctrlDrivers = new Drivers_Controller();
+            
+            list.AddRange(await _ctrlDrivers.getFleet(null));
 
-            try
+            /// Recorrer la lista para agregar los vehiculos
+
+            for(int x = 0; x <= list.Count; x++)
             {
-                // Open connection
-                databaseConnection.Open();
-                // Execute query
-                reader = commandDatabase.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12) };
-                        int degrees = Convert.ToInt32(row[12]);
-
-                        /// Marker Personalized
-                        // GMapOverlay points_ = new GMapOverlay("pointCollection");
-                        // points_.Markers.Add(new GMapPointExpanded(new PointLatLng(reader.GetFloat(4), reader.GetFloat(5)), 10));
-                        // gMapControl1.Overlays.Add(points_);
-
-                        PointLatLng point = new PointLatLng(reader.GetFloat(9), reader.GetFloat(10));
-
-                        Bitmap bmpmarker = (Bitmap)Image.FromFile("img/fleeticon_20x20.png");
-                        Bitmap bmpMarkerRotated = RotateImage(bmpmarker, degrees);
-
-                        GMapMarker marker = new GMarkerGoogle(point, bmpMarkerRotated);
-
-                        GMapOverlay markers = new GMapOverlay("Markers");
-                        markers.Markers.Add(marker);
-                        gMapControl1.Overlays.Add(markers);
-                    }
-                }
-                else
-                {
-                    overlayGMap.Visible = true;
-                    lblRegError.Visible = true;
-                }
-
-                // Cerrar la conexión
-                databaseConnection.Close();
+                MessageBox.Show("Element: " + list[x] );
             }
-            catch (Exception ex)
-            {
-                overlayGMap.Visible = true;
-                lblRegError.Visible = true;
-            }
+
+            //PointLatLng point = new PointLatLng(reader.GetFloat(9), reader.GetFloat(10));
+            //
+            //Bitmap bmpmarker = (Bitmap)Image.FromFile("img/fleeticon_20x20.png");
+            //Bitmap bmpMarkerRotated = RotateImage(bmpmarker, degrees);
+            //
+            //GMapMarker marker = new GMarkerGoogle(point, bmpMarkerRotated);
+            //
+            //GMapOverlay markers = new GMapOverlay("Markers");
+            //markers.Markers.Add(marker);
+            //gMapControl1.Overlays.Add(markers);
+            //overlayGMap.Visible = true;
+            //lblRegError.Visible = true;
+
         }
         private Bitmap RotateImage(Bitmap bmp, float angle)
         {
@@ -301,7 +277,7 @@ namespace TRUCKCOY.forms
             // solidGauge1.Value = Math.Round(77.7,1);
 
             /// Graph Gradient
-            
+
             // solidGauge1.Base.LabelsVisibility = Visibility.Hidden;
             // solidGauge1.Base.GaugeActiveFill = new System.Windows.Media.LinearGradientBrush
             // {
@@ -311,7 +287,7 @@ namespace TRUCKCOY.forms
             //     }
             // };
             // solidGauge1.LabelFormatter = val => solidGauge1.Value + "%";
-            
+
         }
         private void cartesianChartSetUp()
         {
@@ -367,7 +343,43 @@ namespace TRUCKCOY.forms
                 }
             });
         }
+        #endregion
 
+        /// <summary>
+        /// Backend Events
+        /// </summary>
+        #region Backend
+        private string getDateByNumber(double num)
+        {
+            int num2 = Convert.ToInt32(num);
+            DateTime date = new DateTime(2021, num2, 01);
+            string month_name = date.ToString("MMMM", new CultureInfo("es"));
+            string month_name2 = char.ToUpper(month_name[0]) + month_name.Substring(1);
+            return month_name2;
+        }
+        private void tmrDGVUpdater_Tick(object sender, EventArgs e)
+        {
+            if (dgvHistory.Rows.Count > 0)
+            {
+                setDGVStyles();
+                picLoading.Visible = false;
+                tmrDGVUpdater.Stop();
+                tmrDGVUpdater.Enabled = false;
+            }
+            else
+            {
+                if (tmrDGVUpdater.Interval > 10000)
+                {
+                    picLoading.Visible = false;
+                    tmrDGVUpdater.Stop();
+                    tmrDGVUpdater.Enabled = false;
+                }
+                else
+                {
+                    tmrDGVUpdater.Interval += 500;
+                }
+            }
+        }
 
         #endregion
     }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using TRUCKCOY.classes;
 
@@ -17,10 +18,35 @@ namespace TRUCKCOY.forms
 
         private void HistoricalForm_Load(object sender, EventArgs e)
         {
-            loadDgv();
+            loadDgvAsync();
             tmrDGVUpdater.Enabled = true;
             tmrDGVUpdater.Start();
+        }
 
+        #region Frontend
+
+        private async Task loadDgvAsync()
+        {
+            /// <summary>
+            /// Load DataGridView information
+            /// </summary>
+
+            Routes_Controller _ctrlRoutes = new Routes_Controller();
+            dgvHistory.DataSource = await _ctrlRoutes.query(null);
+            await SetRegistersCount();
+
+            if (dgvHistory.Rows.Count > 0)
+            {
+                txtCompany.Text = Properties.Settings.Default.Company;
+                lblNoData.Visible = false;
+            }
+            else
+            {
+                lblNoData.Visible = true;
+            }
+        }
+        private void setDGVStyles()
+        {
             txtID.AutoSize = true;
             txtDriver.AutoSize = true;
             txtPhone.AutoSize = true;
@@ -29,33 +55,7 @@ namespace TRUCKCOY.forms
             txtDest.AutoSize = true;
             txtDateFinish.AutoSize = true;
             txtDateIncome.AutoSize = true;
-        }
 
-        #region Frontend
-
-        private void loadDgv()
-        {
-            /// <summary>
-            /// Load DataGridView information
-            /// </summary>
-
-            Routes_Controller _ctrlRoutes = new Routes_Controller();
-            dgvHistory.DataSource = _ctrlRoutes.query(null);
-
-            if (dgvHistory.Rows.Count > 0)
-            {
-                txtCompany.Text = Properties.Settings.Default.Company;
-                lblNoData.Visible = false;
-                setRegistersCount();
-            }
-            else
-            {
-                lblNoData.Visible = true;
-                setRegistersCount();
-            }
-        }
-        private void setDGVStyles()
-        {
             /// Validate Cell Status and change color
             foreach (DataGridViewRow row in dgvHistory.Rows)
             {
@@ -262,47 +262,27 @@ namespace TRUCKCOY.forms
         #endregion
 
         #region backend
-        private void setRegistersCount()
+        private async Task SetRegistersCount()
         {
-            /// SQL CONNECTION
-            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=truckcoy;SSL Mode=None";
-            string query = "SELECT * FROM `routes` WHERE `company` = 'truckcoy' ORDER BY `id` DESC";
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
-            MySqlDataReader reader;
-            int rowCounter = 0;
+            Routes_Controller _ctrlRoutes = new Routes_Controller();
+            int count = await _ctrlRoutes.getCount(null);
+            lblFleetStatus.Text = "Mostrando 1 de "+count+" registros";
 
-            try
-            {
-                // Open connection
-                databaseConnection.Open();
-                // Execute query
-                reader = commandDatabase.ExecuteReader();
-
-                if (reader.HasRows) { while (reader.Read()) { rowCounter++; } }
-                else { lblFleetStatus.Text = "No se encontraron registros Code: 11"; }
-
-                lblFleetStatus.Text = "Mostrando " + rowCounter + " de " + rowCounter + " registros";
-
-                // Cerrar la conexión
-                databaseConnection.Close();
-
-            }
-            catch (Exception ex) { lblFleetStatus.Text = "No se encontraron registros Code: 11"; }
         }
         private void tmrDGVUpdater_Tick(object sender, EventArgs e)
         {
             if (dgvHistory.Rows.Count > 0)
             {
                 setDGVStyles();
+                picLoadingDGV.Visible = false;
                 tmrDGVUpdater.Stop();
                 tmrDGVUpdater.Enabled = false;
             }
             else
             {
-                if (tmrDGVUpdater.Interval > 15000)
+                if (tmrDGVUpdater.Interval > 10000)
                 {
+                    picLoadingDGV.Visible = false;
                     tmrDGVUpdater.Stop();
                     tmrDGVUpdater.Enabled = false;
                 }
@@ -320,6 +300,7 @@ namespace TRUCKCOY.forms
         }
 
         #endregion
+
         private void addMethod()
         {
 
@@ -420,12 +401,10 @@ namespace TRUCKCOY.forms
 
 
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             addMethod();
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             saveMethod();

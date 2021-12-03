@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace TRUCKCOY.classes
@@ -13,15 +14,7 @@ namespace TRUCKCOY.classes
             List<Object> list = new List<object>();
             string sql;
 
-            if(data == null)
-            {
-                sql = "SELECT id,name,phone,imei,patente,status,company,regdate,lastaccess FROM drivers ORDER BY id DESC";
-            }
-            else
-            {
-                sql = "SELECT id,name,phone,imei,patente,status,company,regdate,lastaccess FROM drivers WHERE name LIKE '%"+data+ "%' OR phone LIKE '%" + data + "%' OR company LIKE '%" + data + "%' OR" +
-                    "status LIKE '%" + data + "%' ORDER BY id DESC";
-            }
+            sql = "SELECT id,name,phone,imei,patente,status,company,regdate,lastaccess FROM drivers ORDER BY id DESC";
 
             try
             {
@@ -51,6 +44,44 @@ namespace TRUCKCOY.classes
             }
 
             return list;
+        }
+        public Task<List<string>> getFleet(string data)
+        {
+            return Task.Run(() =>
+            {
+                MySqlDataReader reader;
+                List<string> list = new List<string>();
+
+                string sql = "SELECT name,status,lat_src,lng_src,degrees_src,city FROM drivers ORDER BY id DESC";
+                
+                try
+                {
+                    MySqlConnection dbcon = base.conexion();
+                    dbcon.Open();
+                    MySqlCommand command = new MySqlCommand(sql, dbcon);
+
+                    reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        if(reader.GetString(1) != "Eliminado")
+                        {
+                            list.Add(reader.GetString(0));
+                            list.Add(reader.GetString(1));
+                            list.Add(reader.GetDouble(2).ToString());
+                            list.Add(reader.GetDouble(3).ToString());
+                            list.Add(reader.GetInt32(4).ToString());
+                            list.Add(reader.GetString(5));
+                        }
+                    }
+                    return list;
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Error: " + ex);
+                    return list;
+                }
+            });
         }
     }
 }
