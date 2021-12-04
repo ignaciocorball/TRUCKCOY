@@ -35,6 +35,7 @@ namespace TRUCKCOY.forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -72,9 +73,10 @@ namespace TRUCKCOY.forms
             this.lblTittleDesc = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tmrDGVUpdater = new System.Windows.Forms.Timer(this.components);
-            this.picLoading = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picTotal = new System.Windows.Forms.PictureBox();
+            this.picLoading = new System.Windows.Forms.PictureBox();
+            this.picMaps = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picInactive = new System.Windows.Forms.PictureBox();
             this.picActive = new System.Windows.Forms.PictureBox();
             this.picRegFleet = new System.Windows.Forms.PictureBox();
@@ -103,9 +105,10 @@ namespace TRUCKCOY.forms
             this.panelStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
             this.pTittleHF.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMaps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInactive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picActive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).BeginInit();
@@ -167,6 +170,7 @@ namespace TRUCKCOY.forms
             // 
             // panelContainerTittle
             // 
+            this.panelContainerTittle.Controls.Add(this.picMaps);
             this.panelContainerTittle.Controls.Add(this.lblRegError);
             this.panelContainerTittle.Controls.Add(this.pictureBox1);
             this.panelContainerTittle.Controls.Add(this.panel2);
@@ -304,7 +308,6 @@ namespace TRUCKCOY.forms
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.picTotal);
             this.panel5.Controls.Add(this.picInactive);
             this.panel5.Controls.Add(this.picActive);
             this.panel5.Controls.Add(this.lblActive);
@@ -668,6 +671,16 @@ namespace TRUCKCOY.forms
             this.tmrDGVUpdater.Interval = 200;
             this.tmrDGVUpdater.Tick += new System.EventHandler(this.tmrDGVUpdater_Tick);
             // 
+            // picTotal
+            // 
+            this.picTotal.Image = global::TRUCKCOY.Properties.Resources.picTotal;
+            this.picTotal.Location = new System.Drawing.Point(156, 135);
+            this.picTotal.Name = "picTotal";
+            this.picTotal.Size = new System.Drawing.Size(23, 23);
+            this.picTotal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTotal.TabIndex = 27;
+            this.picTotal.TabStop = false;
+            // 
             // picLoading
             // 
             this.picLoading.Image = global::TRUCKCOY.Properties.Resources.loading_square;
@@ -677,6 +690,19 @@ namespace TRUCKCOY.forms
             this.picLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLoading.TabIndex = 70;
             this.picLoading.TabStop = false;
+            // 
+            // picMaps
+            // 
+            this.picMaps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMaps.BackColor = System.Drawing.Color.White;
+            this.picMaps.Image = global::TRUCKCOY.Properties.Resources.loading_hex;
+            this.picMaps.Location = new System.Drawing.Point(403, 0);
+            this.picMaps.Name = "picMaps";
+            this.picMaps.Size = new System.Drawing.Size(417, 278);
+            this.picMaps.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMaps.TabIndex = 32;
+            this.picMaps.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -688,32 +714,22 @@ namespace TRUCKCOY.forms
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // picTotal
-            // 
-            this.picTotal.Image = global::TRUCKCOY.Properties.Resources.total_bg;
-            this.picTotal.Location = new System.Drawing.Point(122, 90);
-            this.picTotal.Name = "picTotal";
-            this.picTotal.Size = new System.Drawing.Size(26, 26);
-            this.picTotal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTotal.TabIndex = 27;
-            this.picTotal.TabStop = false;
-            // 
             // picInactive
             // 
-            this.picInactive.Image = global::TRUCKCOY.Properties.Resources.inactive_bg;
-            this.picInactive.Location = new System.Drawing.Point(122, 65);
+            this.picInactive.Image = ((System.Drawing.Image)(resources.GetObject("picInactive.Image")));
+            this.picInactive.Location = new System.Drawing.Point(122, 68);
             this.picInactive.Name = "picInactive";
-            this.picInactive.Size = new System.Drawing.Size(26, 26);
+            this.picInactive.Size = new System.Drawing.Size(23, 23);
             this.picInactive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picInactive.TabIndex = 25;
             this.picInactive.TabStop = false;
             // 
             // picActive
             // 
-            this.picActive.Image = global::TRUCKCOY.Properties.Resources.active_bg;
-            this.picActive.Location = new System.Drawing.Point(122, 39);
+            this.picActive.Image = global::TRUCKCOY.Properties.Resources.picActive;
+            this.picActive.Location = new System.Drawing.Point(122, 42);
             this.picActive.Name = "picActive";
-            this.picActive.Size = new System.Drawing.Size(26, 26);
+            this.picActive.Size = new System.Drawing.Size(23, 23);
             this.picActive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picActive.TabIndex = 26;
             this.picActive.TabStop = false;
@@ -898,6 +914,7 @@ namespace TRUCKCOY.forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(874, 706);
+            this.Controls.Add(this.picTotal);
             this.Controls.Add(this.panelStats);
             this.Controls.Add(this.panelContainerTittle);
             this.Controls.Add(this.panel13);
@@ -924,9 +941,10 @@ namespace TRUCKCOY.forms
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
             this.pTittleHF.ResumeLayout(false);
             this.pTittleHF.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMaps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInactive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picActive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).EndInit();
@@ -998,5 +1016,6 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.DataGridViewTextBoxColumn orderFinishedDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.PictureBox picLoading;
+        private System.Windows.Forms.PictureBox picMaps;
     }
 }

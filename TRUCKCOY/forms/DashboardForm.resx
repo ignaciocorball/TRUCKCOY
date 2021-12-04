@@ -117,8 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="picInactive.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAXBJREFUSEvt169rgkEcBvDXIBgEXzAYBHkxGAThNQgGg2AwGASDwSAYBOP7p7xh
+        C4OFhcHCwsJgYWEcC4OFwYWFhYXBwsLCXgwLg/HsOfEVXz0YDL0rCw/cfcN9yv34ngPg11yWSt5VuRxc
+        VyriplqNbms13NXruG808NBsQrZa0WO7LZ46neC52/V0a2xGW4xzXij4F8WiIAzCIAzC0MAgDMIgjJde
+        T7z2+75uzTja4mku557l8yFhEMYfYBDG22AQvg+Hrs7YKpxksy5hSRg7gEFYfoxGW3hicpzJuIQlYewQ
+        BmE5H48T+GpwlE67hCVh7AEGYfk5mazwdTgkjD3CIBwm4MNUyicMAzC+ptPFbo9hYRAWC/jAcTzCMAjj
+        ezbzFBxYgAMFCwuwUHBkAY4UDAsw/mGjsLXNZe04WbtA7FyZ1h6JJWznWVQhbL4RWMJ2Wh8VwuabvTiE
+        zbe3cQibb+jXQ9jsF2YzhHf8aYPzA0Lr5zr1vmHuAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="routesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>18, 18</value>
   </metadata>
   <metadata name="tmrDGVUpdater.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>182, 17</value>

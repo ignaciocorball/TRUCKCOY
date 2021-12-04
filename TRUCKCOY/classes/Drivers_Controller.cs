@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -45,12 +46,13 @@ namespace TRUCKCOY.classes
 
             return list;
         }
-        public Task<List<string>> getFleet(string data)
+        public Task<DataTable> getFleet(string data)
         {
             return Task.Run(() =>
             {
                 MySqlDataReader reader;
-                List<string> list = new List<string>();
+                DataTable list = new DataTable();
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
 
                 string sql = "SELECT name,status,lat_src,lng_src,degrees_src,city FROM drivers ORDER BY id DESC";
                 
@@ -58,22 +60,9 @@ namespace TRUCKCOY.classes
                 {
                     MySqlConnection dbcon = base.conexion();
                     dbcon.Open();
-                    MySqlCommand command = new MySqlCommand(sql, dbcon);
-
-                    reader = command.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        if(reader.GetString(1) != "Eliminado")
-                        {
-                            list.Add(reader.GetString(0));
-                            list.Add(reader.GetString(1));
-                            list.Add(reader.GetDouble(2).ToString());
-                            list.Add(reader.GetDouble(3).ToString());
-                            list.Add(reader.GetInt32(4).ToString());
-                            list.Add(reader.GetString(5));
-                        }
-                    }
+                    dataAdapter.SelectCommand = new MySqlCommand(sql, dbcon);
+                    //MySqlCommand command = new MySqlCommand(sql, dbcon);
+                    dataAdapter.Fill(list);
                     return list;
                 }
                 catch (MySqlException ex)

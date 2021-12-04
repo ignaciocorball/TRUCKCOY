@@ -26,8 +26,8 @@ namespace TRUCKCOY.forms
         {
             InitializeComponent();
             loadMapSettings();
-            getVehiclesFeet();
             setFrontEnd();
+            getVehiclesFeet();
             tmrDGVUpdater.Enabled = true;
             tmrDGVUpdater.Start();
         }
@@ -137,17 +137,17 @@ namespace TRUCKCOY.forms
             /// Labels background transparent 
             #region Transparent Images with labels
             lblActive.Parent = picActive;
-            lblActive.Location = new System.Drawing.Point(0, 0);
+            lblActive.Location = new Point(-1, -1);
             lblActive.ForeColor = Color.White;
             lblActive.TextAlign = ContentAlignment.MiddleCenter;
 
             lblInactive.Parent = picInactive;
-            lblInactive.Location = new System.Drawing.Point(0, 0);
+            lblInactive.Location = new Point(-1, -1);
             lblInactive.ForeColor = Color.White;
             lblInactive.TextAlign = ContentAlignment.MiddleCenter;
 
             lblTotal.Parent = picTotal;
-            lblTotal.Location = new System.Drawing.Point(0, 0);
+            lblTotal.Location = new Point(-1, -1);
             lblTotal.ForeColor = Color.White;
             lblTotal.TextAlign = ContentAlignment.MiddleCenter;
             #endregion
@@ -219,30 +219,48 @@ namespace TRUCKCOY.forms
         }
         private async Task getVehiclesFeet()
         {
-            List<string> list = new List<string>();
             Drivers_Controller _ctrlDrivers = new Drivers_Controller();
-            
-            list.AddRange(await _ctrlDrivers.getFleet(null));
+            DataTable list = await _ctrlDrivers.getFleet(null);
 
-            /// Recorrer la lista para agregar los vehiculos
-
-            for(int x = 0; x <= list.Count; x++)
+            if(list.Rows.Count > 0)
             {
-                MessageBox.Show("Element: " + list[x] );
+                for (int i = 0; i < list.Rows.Count; i++)
+                {
+                    string Name = list.Rows[i][0].ToString();
+                    string Status = list.Rows[i][1].ToString();
+                    double Latitude = Convert.ToDouble(list.Rows[i][2]);
+                    double Longitude = Convert.ToDouble(list.Rows[i][3]);
+                    int Degrees = Convert.ToInt32(list.Rows[i][4]);
+                    string City = list.Rows[i][5].ToString();
+
+                    PointLatLng point = new PointLatLng(Latitude, Longitude);
+                    Bitmap bmpmarker = (Bitmap)Image.FromFile("img/fleeticon_20x20.png");
+                    Bitmap bmpMarkerRotated = RotateImage(bmpmarker, Degrees);
+                    GMapMarker marker = new GMarkerGoogle(point, bmpMarkerRotated);
+                    marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                    marker.ToolTipText = System.Environment.NewLine + 
+                                         "Nombre: " + Name + System.Environment.NewLine +
+                                         "Estado: " + Status + System.Environment.NewLine +
+                                         "Ciudad: " + City + System.Environment.NewLine;
+
+
+                    GMapOverlay markers = new GMapOverlay("Markers");
+                    markers.Markers.Add(marker);
+                    gMapControl1.Overlays.Add(markers);
+                    overlayGMap.Visible = false;
+                    lblRegError.Visible = false;
+                }
+                gMapControl1.Zoom = 12;
+                gMapControl1.Zoom = 13;
+                picMaps.Visible = false;
+            }
+            else
+            {
+                overlayGMap.Visible = true;
+                lblRegError.Visible = true;
+                picMaps.Visible = false;
             }
 
-            //PointLatLng point = new PointLatLng(reader.GetFloat(9), reader.GetFloat(10));
-            //
-            //Bitmap bmpmarker = (Bitmap)Image.FromFile("img/fleeticon_20x20.png");
-            //Bitmap bmpMarkerRotated = RotateImage(bmpmarker, degrees);
-            //
-            //GMapMarker marker = new GMarkerGoogle(point, bmpMarkerRotated);
-            //
-            //GMapOverlay markers = new GMapOverlay("Markers");
-            //markers.Markers.Add(marker);
-            //gMapControl1.Overlays.Add(markers);
-            //overlayGMap.Visible = true;
-            //lblRegError.Visible = true;
 
         }
         private Bitmap RotateImage(Bitmap bmp, float angle)

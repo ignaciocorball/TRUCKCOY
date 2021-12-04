@@ -493,6 +493,16 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loading_hex {
+            get {
+                object obj = ResourceManager.GetObject("loading_hex", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loading_square {
             get {
                 object obj = ResourceManager.GetObject("loading_square", resourceCulture);
@@ -576,6 +586,36 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap pencil {
             get {
                 object obj = ResourceManager.GetObject("pencil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picActive {
+            get {
+                object obj = ResourceManager.GetObject("picActive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picInactive {
+            get {
+                object obj = ResourceManager.GetObject("picInactive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picTotal {
+            get {
+                object obj = ResourceManager.GetObject("picTotal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -137,6 +137,11 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data.SqlClient, Version=4.6.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.8.2\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
@@ -338,6 +343,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\loading_hex.gif" />
+    <None Include="resources\picActive.png" />
+    <None Include="resources\picInactive.png" />
+    <None Include="resources\picTotal.png" />
     <None Include="resources\loading_square.gif" />
     <None Include="resources\undo.png" />
     <None Include="resources\cancel.png" />

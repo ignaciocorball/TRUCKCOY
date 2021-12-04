@@ -238,6 +238,9 @@
   <data name="loading_drivers1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\loading-drivers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loading_hex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\loading_hex.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="loading_square" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\loading_square.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -273,6 +276,15 @@
   </data>
   <data name="pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picActive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\picActive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picInactive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\picInactive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picTotal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\picTotal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
