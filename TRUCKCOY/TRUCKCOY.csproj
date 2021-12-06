@@ -229,6 +229,12 @@
     <Compile Include="forms\HistoricalForm.Designer.cs">
       <DependentUpon>HistoricalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\resforms\NoInternetConnectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,9 @@
     <EmbeddedResource Include="forms\HistoricalForm.resx">
       <DependentUpon>HistoricalForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\resforms\NoInternetConnectionForm.resx">
       <DependentUpon>NoInternetConnectionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -343,6 +352,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\photo-1489549132488-d00b7eee80f1.jpg" />
+    <None Include="resources\photo-1539721972319-f0e80a00d424.jpg" />
+    <None Include="resources\pass_login_ico.png" />
+    <None Include="resources\user_login_ico.png" />
     <None Include="resources\loading_hex.gif" />
     <None Include="resources\picActive.png" />
     <None Include="resources\picInactive.png" />
@@ -398,6 +411,8 @@
     <None Include="resources\back.png" />
     <None Include="resources\200.gif" />
     <None Include="resources\8fd70dc5ef5793953df3aae7fdf069f0.gif" />
+    <None Include="resources\7d060031c60049314536131e18168655.jpg" />
+    <None Include="resources\AdobeStock_352445911-[Converted].jpg" />
     <Content Include="resources\bell-off.png" />
     <Content Include="resources\bell-on.png" />
     <None Include="resources\inactive_bg.png" />

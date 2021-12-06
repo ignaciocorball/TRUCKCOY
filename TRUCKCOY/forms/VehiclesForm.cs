@@ -5,6 +5,7 @@ using GMap.NET.WindowsForms.Markers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Net;
@@ -22,16 +23,16 @@ namespace TRUCKCOY.forms
         /// Data and controllers
         /// </summary>
         Vehicles_Controller _ctrlVehicles = new Vehicles_Controller();
-
+        GMapOverlay markers = new GMapOverlay("Markers");
         public VehiclesForm()
         {
             InitializeComponent();
             loadMapSettings();
         }
+
         private void VehiclesForm_Load(object sender, EventArgs e)
         {
             LoadDGV();
-            getVehiclesFeet();
             tmrDGVUpdater.Start();
         }
 
@@ -48,22 +49,26 @@ namespace TRUCKCOY.forms
             gMapControl1.PolygonsEnabled = true;
             gMapControl1.ShowCenter = false;
             gMapControl1.Position = new PointLatLng(Properties.Settings.Default.lat_coy, Properties.Settings.Default.lng_coy);
-            gMapControl1.MinZoom = 0;
-            gMapControl1.MaxZoom = 24;
+            gMapControl1.MinZoom = 10;
+            gMapControl1.MaxZoom = 16;
             gMapControl1.Zoom = 13;
             gMapControl1.AutoScroll = true;
 
             /// Scroll Config
             panelMap.AutoScroll = true;
+            tmrLoadMap.Enabled = true;
+            tmrLoadMap.Start();
+            picLogo.Parent = circularProgressBar1;
         }
-        private void LoadDGV()
+        private async Task LoadDGV()
         {
             List<Vehicles> vehicles = new List<Vehicles>();
-            dgvHistory.DataSource = _ctrlVehicles.query(null);
-
+            dgvHistory.DataSource = await _ctrlVehicles.query(null);
 
             if (dgvHistory.Rows.Count > 0)
             {
+                getVehiclesFeet();
+                picLoading2.Visible = false;
                 lblNoData.Visible = false;
                 pnlAddFleet.Visible = false;
             }
@@ -107,55 +112,53 @@ namespace TRUCKCOY.forms
                 }
             }
         }
-        private void getVehiclesFeet()
+        private async Task getVehiclesFeet()
         {
-            /// SQL CONNECTION
-            string connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=truckcoy;SSL Mode=None";
-            string query = "SELECT * FROM `drivers` WHERE `status` = 'Activo' ORDER BY `id` DESC";
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
-            commandDatabase.CommandTimeout = 60;
-            MySqlDataReader reader;
+            Vehicles_Controller _ctrlDrivers = new Vehicles_Controller();
+            DataTable list = await _ctrlDrivers.getFleet(null);
 
             try
             {
-                // Open connection
-                databaseConnection.Open();
-                // Execute query
-                reader = commandDatabase.ExecuteReader();
-
-                if (reader.HasRows)
+                /// Clear olds markers to update news
+                markers.Markers.Clear();
+                for (int i = 0; i < list.Rows.Count; i++)
                 {
-                    while (reader.Read())
+                    /// If status is Online, add marker to collections
+                    if (list.Rows[i][15].ToString() == "Online")
                     {
-                        string[] row = { reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12) };
-                        int degrees = Convert.ToInt32(row[12]);
+                        float degrees = float.Parse((list.Rows[i][14].ToString()));
 
-                        /// Marker Personalized
-                        // GMapOverlay points_ = new GMapOverlay("pointCollection");
-                        // points_.Markers.Add(new GMapPointExpanded(new PointLatLng(reader.GetFloat(4), reader.GetFloat(5)), 10));
-                        // gMapControl1.Overlays.Add(points_);
-
-                        PointLatLng point = new PointLatLng(reader.GetFloat(9), reader.GetFloat(10));
+                        PointLatLng point = new PointLatLng(Convert.ToDouble(list.Rows[i][12]), Convert.ToDouble(list.Rows[i][13]));
 
                         Bitmap bmpmarker = (Bitmap)Image.FromFile("img/fleeticon_20x20.png");
                         Bitmap bmpMarkerRotated = RotateImage(bmpmarker, degrees);
 
                         GMapMarker marker = new GMarkerGoogle(point, bmpMarkerRotated);
+                        marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
+                        marker.ToolTipText = Environment.NewLine +
+                                             "Nombre: " + list.Rows[i][11] + Environment.NewLine +
+                                             "Viajes: " + list.Rows[i][7] + Environment.NewLine +
+                                             "Kilometros hoy: " + list.Rows[i][3] + Environment.NewLine;
 
-                        GMapOverlay markers = new GMapOverlay("Markers");
                         markers.Markers.Add(marker);
-                        gMapControl1.Overlays.Add(markers);
                     }
-                    pnlAddFleet.Visible = false;
                 }
-                else { pnlAddFleet.Visible = true; }
+                gMapControl1.Overlays.Add(markers);
 
-                databaseConnection.Close();
+                double currentZoom = gMapControl1.Zoom;
+                gMapControl1.Zoom = currentZoom - 0.01;
+                gMapControl1.Zoom = currentZoom + 0.01;
+                pnlAddFleet.Visible = false;
+                picLogo.Visible = false;
+                circularProgressBar1.Visible = false;
+                panel3.Visible = false;
+                picBanner1.Visible = false;
             }
-            catch (Exception) { 
-                Console.WriteLine("No hay conexión con la base de datos"); 
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
             }
+
         }
         public string getAddressByCoords(double lat, double lng)
         {
@@ -309,5 +312,23 @@ namespace TRUCKCOY.forms
 
         #endregion
 
+        private void reloadMap_Tick(object sender, EventArgs e)
+        {
+            getVehiclesFeet();
+        }
+
+        private void tmrLoadMap_Tick(object sender, EventArgs e)
+        {
+            if(circularProgressBar1.Value < 100)
+            {
+                circularProgressBar1.Value += 4;
+
+            }
+            else
+            {
+                tmrLoadMap.Stop();
+                tmrLoadMap.Enabled = false;
+            }
+        }
     }
 }

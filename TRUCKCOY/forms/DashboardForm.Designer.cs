@@ -30,19 +30,26 @@ namespace TRUCKCOY.forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnRefresh = new System.Windows.Forms.PictureBox();
+            this.btnSatellite = new System.Windows.Forms.PictureBox();
+            this.btnNormal = new System.Windows.Forms.PictureBox();
+            this.btnTerrain = new System.Windows.Forms.PictureBox();
             this.lblTittlePanel = new System.Windows.Forms.Label();
             this.panelContainerTittle = new System.Windows.Forms.Panel();
+            this.picMaps = new System.Windows.Forms.PictureBox();
             this.lblRegError = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,6 +59,8 @@ namespace TRUCKCOY.forms
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.picInactive = new System.Windows.Forms.PictureBox();
+            this.picActive = new System.Windows.Forms.PictureBox();
             this.lblActive = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblInactive = new System.Windows.Forms.Label();
@@ -65,8 +74,10 @@ namespace TRUCKCOY.forms
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.label15 = new System.Windows.Forms.Label();
             this.overlayGMap = new System.Windows.Forms.Panel();
+            this.picRegFleet = new System.Windows.Forms.PictureBox();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.panelStats = new System.Windows.Forms.Panel();
+            this.picLoading = new System.Windows.Forms.PictureBox();
             this.lblNoData = new System.Windows.Forms.Label();
             this.dgvHistory = new System.Windows.Forms.DataGridView();
             this.pTittleHF = new System.Windows.Forms.Panel();
@@ -74,16 +85,6 @@ namespace TRUCKCOY.forms
             this.label1 = new System.Windows.Forms.Label();
             this.tmrDGVUpdater = new System.Windows.Forms.Timer(this.components);
             this.picTotal = new System.Windows.Forms.PictureBox();
-            this.picLoading = new System.Windows.Forms.PictureBox();
-            this.picMaps = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picInactive = new System.Windows.Forms.PictureBox();
-            this.picActive = new System.Windows.Forms.PictureBox();
-            this.picRegFleet = new System.Windows.Forms.PictureBox();
-            this.btnRefresh = new System.Windows.Forms.PictureBox();
-            this.btnSatellite = new System.Windows.Forms.PictureBox();
-            this.btnNormal = new System.Windows.Forms.PictureBox();
-            this.btnTerrain = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,25 +98,25 @@ namespace TRUCKCOY.forms
             this.routesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panelContainerTittle.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.overlayGMap.SuspendLayout();
-            this.panelStats.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
-            this.pTittleHF.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTotal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMaps)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInactive)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picActive)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSatellite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTerrain)).BeginInit();
+            this.panelContainerTittle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMaps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picInactive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picActive)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.overlayGMap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).BeginInit();
+            this.panelStats.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
+            this.pTittleHF.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,6 +158,66 @@ namespace TRUCKCOY.forms
             this.tableLayoutPanel1.Size = new System.Drawing.Size(292, 26);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.Image = global::TRUCKCOY.Properties.Resources.refresh;
+            this.btnRefresh.Location = new System.Drawing.Point(269, 3);
+            this.btnRefresh.MaximumSize = new System.Drawing.Size(20, 20);
+            this.btnRefresh.MinimumSize = new System.Drawing.Size(20, 20);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(20, 20);
+            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRefresh.TabIndex = 12;
+            this.btnRefresh.TabStop = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnSatellite
+            // 
+            this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSatellite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.sat_off;
+            this.btnSatellite.Location = new System.Drawing.Point(189, 3);
+            this.btnSatellite.MaximumSize = new System.Drawing.Size(75, 20);
+            this.btnSatellite.MinimumSize = new System.Drawing.Size(75, 20);
+            this.btnSatellite.Name = "btnSatellite";
+            this.btnSatellite.Size = new System.Drawing.Size(75, 20);
+            this.btnSatellite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSatellite.TabIndex = 13;
+            this.btnSatellite.TabStop = false;
+            this.btnSatellite.Click += new System.EventHandler(this.btnSatellite_Click);
+            // 
+            // btnNormal
+            // 
+            this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNormal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.normal_on;
+            this.btnNormal.Location = new System.Drawing.Point(109, 3);
+            this.btnNormal.MaximumSize = new System.Drawing.Size(75, 20);
+            this.btnNormal.MinimumSize = new System.Drawing.Size(75, 20);
+            this.btnNormal.Name = "btnNormal";
+            this.btnNormal.Size = new System.Drawing.Size(75, 20);
+            this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnNormal.TabIndex = 14;
+            this.btnNormal.TabStop = false;
+            this.btnNormal.Click += new System.EventHandler(this.btnNormal_Click);
+            // 
+            // btnTerrain
+            // 
+            this.btnTerrain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTerrain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTerrain.Image = global::TRUCKCOY.Properties.Resources.terr_off;
+            this.btnTerrain.Location = new System.Drawing.Point(29, 3);
+            this.btnTerrain.MaximumSize = new System.Drawing.Size(75, 20);
+            this.btnTerrain.MinimumSize = new System.Drawing.Size(75, 20);
+            this.btnTerrain.Name = "btnTerrain";
+            this.btnTerrain.Size = new System.Drawing.Size(75, 20);
+            this.btnTerrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnTerrain.TabIndex = 15;
+            this.btnTerrain.TabStop = false;
+            this.btnTerrain.Click += new System.EventHandler(this.btnTerrain_Click);
+            // 
             // lblTittlePanel
             // 
             this.lblTittlePanel.AutoSize = true;
@@ -184,6 +245,19 @@ namespace TRUCKCOY.forms
             this.panelContainerTittle.Size = new System.Drawing.Size(843, 298);
             this.panelContainerTittle.TabIndex = 12;
             // 
+            // picMaps
+            // 
+            this.picMaps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMaps.BackColor = System.Drawing.Color.White;
+            this.picMaps.Image = global::TRUCKCOY.Properties.Resources.loading_hex;
+            this.picMaps.Location = new System.Drawing.Point(403, 0);
+            this.picMaps.Name = "picMaps";
+            this.picMaps.Size = new System.Drawing.Size(417, 278);
+            this.picMaps.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMaps.TabIndex = 32;
+            this.picMaps.TabStop = false;
+            // 
             // lblRegError
             // 
             this.lblRegError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -199,6 +273,16 @@ namespace TRUCKCOY.forms
             this.lblRegError.Text = "No se encontraron registros de conductores";
             this.lblRegError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblRegError.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 277);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(820, 21);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -322,6 +406,26 @@ namespace TRUCKCOY.forms
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(196, 130);
             this.panel5.TabIndex = 20;
+            // 
+            // picInactive
+            // 
+            this.picInactive.Image = ((System.Drawing.Image)(resources.GetObject("picInactive.Image")));
+            this.picInactive.Location = new System.Drawing.Point(122, 68);
+            this.picInactive.Name = "picInactive";
+            this.picInactive.Size = new System.Drawing.Size(23, 23);
+            this.picInactive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInactive.TabIndex = 25;
+            this.picInactive.TabStop = false;
+            // 
+            // picActive
+            // 
+            this.picActive.Image = global::TRUCKCOY.Properties.Resources.picActive;
+            this.picActive.Location = new System.Drawing.Point(122, 42);
+            this.picActive.Name = "picActive";
+            this.picActive.Size = new System.Drawing.Size(23, 23);
+            this.picActive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picActive.TabIndex = 26;
+            this.picActive.TabStop = false;
             // 
             // lblActive
             // 
@@ -487,6 +591,19 @@ namespace TRUCKCOY.forms
             this.overlayGMap.TabIndex = 5;
             this.overlayGMap.Visible = false;
             // 
+            // picRegFleet
+            // 
+            this.picRegFleet.BackColor = System.Drawing.Color.Transparent;
+            this.picRegFleet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picRegFleet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picRegFleet.Image = global::TRUCKCOY.Properties.Resources.reg_fleet;
+            this.picRegFleet.Location = new System.Drawing.Point(0, 0);
+            this.picRegFleet.Name = "picRegFleet";
+            this.picRegFleet.Size = new System.Drawing.Size(120, 25);
+            this.picRegFleet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picRegFleet.TabIndex = 0;
+            this.picRegFleet.TabStop = false;
+            // 
             // gMapControl1
             // 
             this.gMapControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -533,6 +650,19 @@ namespace TRUCKCOY.forms
             this.panelStats.Size = new System.Drawing.Size(819, 354);
             this.panelStats.TabIndex = 13;
             // 
+            // picLoading
+            // 
+            this.picLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picLoading.Image = global::TRUCKCOY.Properties.Resources.loading_square;
+            this.picLoading.Location = new System.Drawing.Point(-1, 61);
+            this.picLoading.Name = "picLoading";
+            this.picLoading.Size = new System.Drawing.Size(820, 293);
+            this.picLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLoading.TabIndex = 70;
+            this.picLoading.TabStop = false;
+            // 
             // lblNoData
             // 
             this.lblNoData.AutoSize = true;
@@ -563,7 +693,7 @@ namespace TRUCKCOY.forms
             this.dgvHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHistory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 10F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(38)))), ((int)(((byte)(55)))));
@@ -583,38 +713,38 @@ namespace TRUCKCOY.forms
             this.statusDataGridViewTextBoxColumn});
             this.dgvHistory.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgvHistory.DataSource = this.routesBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistory.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvHistory.EnableHeadersVisualStyles = false;
             this.dgvHistory.GridColor = System.Drawing.Color.Silver;
             this.dgvHistory.Location = new System.Drawing.Point(0, 61);
             this.dgvHistory.Name = "dgvHistory";
             this.dgvHistory.ReadOnly = true;
             this.dgvHistory.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 10F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvHistory.RowHeadersVisible = false;
-            this.dgvHistory.RowHeadersWidth = 30;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift", 10F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.NullValue = "Indefinido";
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistory.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvHistory.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvHistory.RowHeadersVisible = false;
+            this.dgvHistory.RowHeadersWidth = 30;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift", 10F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle6.NullValue = "Indefinido";
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHistory.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvHistory.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dgvHistory.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dgvHistory.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -681,137 +811,11 @@ namespace TRUCKCOY.forms
             this.picTotal.TabIndex = 27;
             this.picTotal.TabStop = false;
             // 
-            // picLoading
-            // 
-            this.picLoading.Image = global::TRUCKCOY.Properties.Resources.loading_square;
-            this.picLoading.Location = new System.Drawing.Point(-1, 61);
-            this.picLoading.Name = "picLoading";
-            this.picLoading.Size = new System.Drawing.Size(820, 293);
-            this.picLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLoading.TabIndex = 70;
-            this.picLoading.TabStop = false;
-            // 
-            // picMaps
-            // 
-            this.picMaps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMaps.BackColor = System.Drawing.Color.White;
-            this.picMaps.Image = global::TRUCKCOY.Properties.Resources.loading_hex;
-            this.picMaps.Location = new System.Drawing.Point(403, 0);
-            this.picMaps.Name = "picMaps";
-            this.picMaps.Size = new System.Drawing.Size(417, 278);
-            this.picMaps.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMaps.TabIndex = 32;
-            this.picMaps.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 277);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(820, 21);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // picInactive
-            // 
-            this.picInactive.Image = ((System.Drawing.Image)(resources.GetObject("picInactive.Image")));
-            this.picInactive.Location = new System.Drawing.Point(122, 68);
-            this.picInactive.Name = "picInactive";
-            this.picInactive.Size = new System.Drawing.Size(23, 23);
-            this.picInactive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picInactive.TabIndex = 25;
-            this.picInactive.TabStop = false;
-            // 
-            // picActive
-            // 
-            this.picActive.Image = global::TRUCKCOY.Properties.Resources.picActive;
-            this.picActive.Location = new System.Drawing.Point(122, 42);
-            this.picActive.Name = "picActive";
-            this.picActive.Size = new System.Drawing.Size(23, 23);
-            this.picActive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picActive.TabIndex = 26;
-            this.picActive.TabStop = false;
-            // 
-            // picRegFleet
-            // 
-            this.picRegFleet.BackColor = System.Drawing.Color.Transparent;
-            this.picRegFleet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picRegFleet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picRegFleet.Image = global::TRUCKCOY.Properties.Resources.reg_fleet;
-            this.picRegFleet.Location = new System.Drawing.Point(0, 0);
-            this.picRegFleet.Name = "picRegFleet";
-            this.picRegFleet.Size = new System.Drawing.Size(120, 25);
-            this.picRegFleet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRegFleet.TabIndex = 0;
-            this.picRegFleet.TabStop = false;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefresh.Image = global::TRUCKCOY.Properties.Resources.refresh;
-            this.btnRefresh.Location = new System.Drawing.Point(269, 3);
-            this.btnRefresh.MaximumSize = new System.Drawing.Size(20, 20);
-            this.btnRefresh.MinimumSize = new System.Drawing.Size(20, 20);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(20, 20);
-            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnRefresh.TabIndex = 12;
-            this.btnRefresh.TabStop = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnSatellite
-            // 
-            this.btnSatellite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSatellite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSatellite.Image = global::TRUCKCOY.Properties.Resources.sat_off;
-            this.btnSatellite.Location = new System.Drawing.Point(189, 3);
-            this.btnSatellite.MaximumSize = new System.Drawing.Size(75, 20);
-            this.btnSatellite.MinimumSize = new System.Drawing.Size(75, 20);
-            this.btnSatellite.Name = "btnSatellite";
-            this.btnSatellite.Size = new System.Drawing.Size(75, 20);
-            this.btnSatellite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSatellite.TabIndex = 13;
-            this.btnSatellite.TabStop = false;
-            this.btnSatellite.Click += new System.EventHandler(this.btnSatellite_Click);
-            // 
-            // btnNormal
-            // 
-            this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNormal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNormal.Image = global::TRUCKCOY.Properties.Resources.normal_on;
-            this.btnNormal.Location = new System.Drawing.Point(109, 3);
-            this.btnNormal.MaximumSize = new System.Drawing.Size(75, 20);
-            this.btnNormal.MinimumSize = new System.Drawing.Size(75, 20);
-            this.btnNormal.Name = "btnNormal";
-            this.btnNormal.Size = new System.Drawing.Size(75, 20);
-            this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnNormal.TabIndex = 14;
-            this.btnNormal.TabStop = false;
-            this.btnNormal.Click += new System.EventHandler(this.btnNormal_Click);
-            // 
-            // btnTerrain
-            // 
-            this.btnTerrain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTerrain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTerrain.Image = global::TRUCKCOY.Properties.Resources.terr_off;
-            this.btnTerrain.Location = new System.Drawing.Point(29, 3);
-            this.btnTerrain.MaximumSize = new System.Drawing.Size(75, 20);
-            this.btnTerrain.MinimumSize = new System.Drawing.Size(75, 20);
-            this.btnTerrain.Name = "btnTerrain";
-            this.btnTerrain.Size = new System.Drawing.Size(75, 20);
-            this.btnTerrain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnTerrain.TabIndex = 15;
-            this.btnTerrain.TabStop = false;
-            this.btnTerrain.Click += new System.EventHandler(this.btnTerrain_Click);
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = global::TRUCKCOY.Properties.Resources.eye_hover;
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -899,10 +903,14 @@ namespace TRUCKCOY.forms
             // 
             // statusDataGridViewTextBoxColumn
             // 
+            this.statusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.statusDataGridViewTextBoxColumn.HeaderText = "Estado";
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.Width = 75;
             // 
             // routesBindingSource
             // 
@@ -931,27 +939,27 @@ namespace TRUCKCOY.forms
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panelContainerTittle.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.overlayGMap.ResumeLayout(false);
-            this.panelStats.ResumeLayout(false);
-            this.panelStats.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
-            this.pTittleHF.ResumeLayout(false);
-            this.pTittleHF.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTotal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMaps)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInactive)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picActive)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSatellite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnTerrain)).EndInit();
+            this.panelContainerTittle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picMaps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picInactive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picActive)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.overlayGMap.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picRegFleet)).EndInit();
+            this.panelStats.ResumeLayout(false);
+            this.panelStats.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
+            this.pTittleHF.ResumeLayout(false);
+            this.pTittleHF.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1007,6 +1015,8 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.BindingSource routesBindingSource;
         private System.Windows.Forms.Label lblNoData;
         private System.Windows.Forms.Timer tmrDGVUpdater;
+        private System.Windows.Forms.PictureBox picLoading;
+        private System.Windows.Forms.PictureBox picMaps;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn srcDataGridViewTextBoxColumn;
@@ -1015,7 +1025,5 @@ namespace TRUCKCOY.forms
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIncomeDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderFinishedDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.PictureBox picLoading;
-        private System.Windows.Forms.PictureBox picMaps;
     }
 }

@@ -121,6 +121,9 @@
   <data name="active_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\active_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AdobeStock_352445911__Converted_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\AdobeStock_352445911-[Converted].jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="anadir_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\anadir_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -274,8 +277,17 @@
   <data name="normal_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\normal_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pass_login_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\pass_login_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="photo_1489549132488_d00b7eee80f1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\photo-1489549132488-d00b7eee80f1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="photo_1539721972319_f0e80a00d424" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\photo-1539721972319-f0e80a00d424.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="picActive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\picActive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -354,5 +366,11 @@
   </data>
   <data name="undo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\undo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_login_ico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\user_login_ico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7d060031c60049314536131e18168655" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\7d060031c60049314536131e18168655.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

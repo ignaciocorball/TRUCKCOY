@@ -21,14 +21,14 @@ namespace TRUCKCOY.forms
             tmrDGVUpdater.Start();
             //getDriversProfileImagesAsync();
         }
-        private void loadDgv()
+        private async Task loadDgv()
         {
             /// <summary>
             /// Load DataGridView information
             /// </summary>
 
             Drivers_Controller _ctrlDrivers = new Drivers_Controller();
-            dgvHistory.DataSource = _ctrlDrivers.query(null);
+            dgvHistory.DataSource = await _ctrlDrivers.query(null);
 
             #region loadCheckbox
 
@@ -328,13 +328,15 @@ namespace TRUCKCOY.forms
             if (dgvHistory.Rows.Count > 0)
             {
                 setDGVStyles();
+                picLoading2.Visible = false;
                 tmrDGVUpdater.Stop();
                 tmrDGVUpdater.Enabled = false;
             }
             else
             {
-                if (tmrDGVUpdater.Interval > 15000)
+                if (tmrDGVUpdater.Interval > 10000)
                 {
+                    picLoading2.Visible = false;
                     tmrDGVUpdater.Stop();
                     tmrDGVUpdater.Enabled = false;
                 }

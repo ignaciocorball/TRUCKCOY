@@ -63,9 +63,29 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _7d060031c60049314536131e18168655 {
+            get {
+                object obj = ResourceManager.GetObject("_7d060031c60049314536131e18168655", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap active_bg {
             get {
                 object obj = ResourceManager.GetObject("active_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AdobeStock_352445911__Converted_ {
+            get {
+                object obj = ResourceManager.GetObject("AdobeStock_352445911__Converted_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -583,9 +603,39 @@ namespace TRUCKCOY.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pass_login_ico {
+            get {
+                object obj = ResourceManager.GetObject("pass_login_ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pencil {
             get {
                 object obj = ResourceManager.GetObject("pencil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_1489549132488_d00b7eee80f1 {
+            get {
+                object obj = ResourceManager.GetObject("photo_1489549132488_d00b7eee80f1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_1539721972319_f0e80a00d424 {
+            get {
+                object obj = ResourceManager.GetObject("photo_1539721972319_f0e80a00d424", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -846,6 +896,16 @@ namespace TRUCKCOY.Properties {
         internal static System.Drawing.Bitmap undo {
             get {
                 object obj = ResourceManager.GetObject("undo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_login_ico {
+            get {
+                object obj = ResourceManager.GetObject("user_login_ico", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
