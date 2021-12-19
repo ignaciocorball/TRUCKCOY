@@ -10,6 +10,7 @@ namespace TRUCKCOY.forms
     public partial class DriversForm : Form
     {
         DateTime now = DateTime.Now;
+        
         int rowCounter = 0;
         public DriversForm()
         {
@@ -32,33 +33,33 @@ namespace TRUCKCOY.forms
 
             #region loadCheckbox
 
-            // Add a CheckBox Column to the DataGridView Header Cell.
-
-            //Find the Location of Header Cell.
-            Point headerCellLocation = this.dgvHistory.GetCellDisplayRectangle(10, -1, true).Location;
-            CheckBox headerCheckBox = new CheckBox();
-
-            // Place the Header CheckBox in the Location of the Header Cell.
-            headerCheckBox.Location = new Point(headerCellLocation.X, headerCellLocation.Y+2);
-            headerCheckBox.Size = new Size(18, 18);
-            headerCheckBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            headerCheckBox.FlatStyle = FlatStyle.Standard;
-            headerCheckBox.CheckAlign = ContentAlignment.MiddleCenter;
-            headerCheckBox.Name = "chkMain";
-            headerCheckBox.Cursor = Cursors.Hand;
-
-            // Assign Click event to the Header CheckBox.
-            headerCheckBox.Click += new EventHandler(HeaderCheckBox_Clicked);
-            dgvHistory.Controls.Add(headerCheckBox);
-
-            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
-            checkBoxColumn.HeaderText = "";
-            checkBoxColumn.Width = 20;
-            checkBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            checkBoxColumn.Resizable = DataGridViewTriState.False;
-            checkBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
-            checkBoxColumn.Name = "chkMain";
-            dgvHistory.Columns.Insert(11, checkBoxColumn);
+            ///// Add a CheckBox Column to the DataGridView Header Cell.
+            ///
+            /////Find the Location of Header Cell.
+            ///Point headerCellLocation = this.dgvHistory.GetCellDisplayRectangle(10, -1, true).Location;
+            ///CheckBox headerCheckBox = new CheckBox();
+            ///
+            ///// Place the Header CheckBox in the Location of the Header Cell.
+            ///headerCheckBox.Location = new Point(headerCellLocation.X, headerCellLocation.Y+2);
+            ///headerCheckBox.Size = new Size(18, 18);
+            ///headerCheckBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ///headerCheckBox.FlatStyle = FlatStyle.Standard;
+            ///headerCheckBox.CheckAlign = ContentAlignment.MiddleCenter;
+            ///headerCheckBox.Name = "chkMain";
+            ///headerCheckBox.Cursor = Cursors.Hand;
+            ///
+            ///// Assign Click event to the Header CheckBox.
+            ///headerCheckBox.Click += new EventHandler(HeaderCheckBox_Clicked);
+            ///dgvHistory.Controls.Add(headerCheckBox);
+            ///
+            ///DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
+            ///checkBoxColumn.HeaderText = "";
+            ///checkBoxColumn.Width = 20;
+            ///checkBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            ///checkBoxColumn.Resizable = DataGridViewTriState.False;
+            ///checkBoxColumn.SortMode = DataGridViewColumnSortMode.NotSortable;
+            ///checkBoxColumn.Name = "chkMain";
+            ///dgvHistory.Columns.Insert(11, checkBoxColumn);
 
             #endregion
 
@@ -66,6 +67,19 @@ namespace TRUCKCOY.forms
             {
                 lblNoData.Visible = false;
                 setRegistersCount();
+                tmrDGVUpdater.Enabled = true;
+                tmrDGVUpdater.Start();
+
+                txtID.Text = dgvHistory.Rows[0].Cells[0].Value.ToString();
+                txtName.Text = dgvHistory.Rows[0].Cells[1].Value.ToString();
+                txtPhone.Text = dgvHistory.Rows[0].Cells[2].Value.ToString();
+                txtImei.Text = dgvHistory.Rows[0].Cells[3].Value.ToString();
+                txtPatente.Text = dgvHistory.Rows[0].Cells[4].Value.ToString();
+                txtRegdate.Text = dgvHistory.Rows[0].Cells[6].Value.ToString();
+                txtLastaccess.Text = dgvHistory.Rows[0].Cells[7].Value.ToString();
+                lblStatus.Text = dgvHistory.Rows[0].Cells[8].Value.ToString();
+
+                btnSave.Visible = false;
             }
             else
             {
@@ -140,6 +154,7 @@ namespace TRUCKCOY.forms
                             ImageAnimator.Animate(picLoading.Image, null);
                             tmrClock.Enabled = true;
                             tmrClock.Start();
+                            btnSave.Visible = false;
                         }
                         else
                         {
@@ -169,6 +184,7 @@ namespace TRUCKCOY.forms
                                     break;
                             }
                         }
+                        btnSave.Visible = false;
 
                     }
                     break;
@@ -251,24 +267,32 @@ namespace TRUCKCOY.forms
             Size size = TextRenderer.MeasureText(txtCity.Text, txtCity.Font);
             txtCity.Width = size.Width;
             txtCity.Height = size.Height;
+
+            btnSave.Visible = true;
         }
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {
             Size size = TextRenderer.MeasureText(txtName.Text, txtName.Font);
             txtName.Width = size.Width;
             txtName.Height = size.Height;
+
+            btnSave.Visible = true;
         }
         private void txtImei_TextChanged(object sender, EventArgs e)
         {
             Size size = TextRenderer.MeasureText(txtImei.Text, txtImei.Font);
             txtImei.Width = size.Width;
             txtImei.Height = size.Height;
+
+            btnSave.Visible = true;
         }
         private void txtPatente_TextChanged(object sender, EventArgs e)
         {
             Size size = TextRenderer.MeasureText(txtPatente.Text, txtPatente.Font);
             txtPatente.Width = size.Width;
             txtPatente.Height = size.Height;
+
+            btnSave.Visible = true;
         }
         #endregion
 
@@ -331,6 +355,7 @@ namespace TRUCKCOY.forms
                 picLoading2.Visible = false;
                 tmrDGVUpdater.Stop();
                 tmrDGVUpdater.Enabled = false;
+                tmrDGVUpdater.Interval = 200;
             }
             else
             {
@@ -348,5 +373,89 @@ namespace TRUCKCOY.forms
         }
 
         #endregion
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (picBanner.Visible == true)
+            {
+                btnAdd.Visible = false;
+                btnSave.Visible = false;
+                btnDelete.Visible = false;
+
+                txtID.Text = "";
+                txtRegdate.Text = "";
+                txtName.Text = "";
+                txtPhone.Text = "";
+                txtImei.Text = "";
+                txtPatente.Text = "";
+                txtLastaccess.Text = "";
+                lblStatus.Text = "Registro";
+
+                picStatus.Image = Properties.Resources.load_gray;
+                lblStatus.ForeColor = Color.DimGray;
+
+                picBanner.Visible = false;
+                picLoading.Image = Properties.Resources.loading_drivers;
+                ImageAnimator.Animate(picLoading.Image, null);
+                tmrClock.Enabled = true;
+                tmrClock.Start();
+            }
+            else
+            {
+                btnAdd.Visible = false;
+                btnSave.Visible = false;
+                btnDelete.Visible = false;
+
+                txtID.Text = "";
+                txtRegdate.Text = "";
+                txtName.Text = "";
+                txtPhone.Text = "";
+                txtImei.Text = "";
+                txtPatente.Text = "";
+                txtLastaccess.Text = "";
+                lblStatus.Text = "Registro";
+
+                picStatus.Image = Properties.Resources.load_gray;
+                lblStatus.ForeColor = Color.DimGray;
+            }
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            addDriver();
+        }
+        private async Task addDriver()
+        {
+            Drivers_Controller _ctrlDrivers = new Drivers_Controller();
+            int result = await _ctrlDrivers.insertDriver(txtName.Text, txtImei.Text, txtPatente.Text, txtPhone.Text);
+
+            switch (result)
+            {
+                case 0:
+                    // Duplicate entry
+                    lblValidateErr.Text = "Imei o Patente ya se encuentra en el sistema";
+                    lblValidateErr.ForeColor = Color.FromArgb(192, 0, 0);
+                    pnlValidator.BackColor = Color.FromArgb(192, 0, 0);
+                    pnlValidator.Visible = true;
+                    lblValidateErr.Visible = true;
+                    break;
+                case 1:
+                    // Success insert
+                    lblValidateErr.Text = "Conductor añadido exitosamente!";
+                    lblValidateErr.ForeColor = Color.FromArgb(0, 144, 38);
+                    pnlValidator.BackColor = Color.FromArgb(0, 144, 38);
+                    pnlValidator.Visible = true;
+                    lblValidateErr.Visible = true;
+
+                    btnAdd.Visible = false;
+                    btnSave.Visible = false;
+                    btnDelete.Visible = false;
+
+                    loadDgv();
+                    break;
+                case 2:
+                    // Error MySQL
+                    break;
+            }
+        }
     }
 }

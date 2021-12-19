@@ -74,5 +74,86 @@ namespace TRUCKCOY.classes
                 }
             });
         }
+
+        public Task<int> insertDriver(string name, string imei, string patente, string phone)
+        {
+            MySqlDataReader reader;
+            List<Object> list = new List<object>();
+            DateTime now = DateTime.Now;
+
+
+            string imageName = PasswordGenerator(true, true, true, false, 7);
+            string sqlcompare = "SELECT * FROM drivers WHERE imei ='" + imei + "' OR patente = '" + patente + "'";
+            string sqlinsert = "INSERT INTO `drivers`(`id`, `name`, `phone`, `imei`, `patente`, `status`, `company`, `regdate`, `lastaccess`, `lat_src`, `lng_src`, `alt_src`, `degrees_src`, `city`, `img`) VALUES ('', '" + name + "', '+56 " + phone + "', '" + imei + "', '" + patente + "', 'Offline', 'TRUCKCOY', now(), now(), 0, 0, 0, 0, 'Coyhaique', 'TRUCKCOY_" + imageName+".png')";
+
+            return Task.Run(() =>
+            {
+                try
+                {
+                    MySqlConnection dbcon = base.conexion();
+                    dbcon.Open();
+                    MySqlCommand command = new MySqlCommand(sqlcompare, dbcon);
+
+                    reader = command.ExecuteReader();
+                    
+                    while (reader.Read())
+                    {
+                        if (reader.HasRows)
+                        {
+                            Console.WriteLine("El valor que se esta ingresando se encuentra en nuestra base de datos.");
+                            return 0;
+                        }
+                        dbcon.Close();
+                    }
+                    dbcon.Close();
+
+                    dbcon.Open();
+                    command = new MySqlCommand(sqlinsert, dbcon);
+                    reader = command.ExecuteReader();
+                    return 1;
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Error MySQL: " + ex);
+                    return 2;
+                }
+            });
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public string PasswordGenerator(bool lowerCase, bool upperCase, bool mumberic, bool specialCharacter, int length)
+        {
+            const string LOWER_CASE = "abcdefghijklmnopqursuvwxyz";
+            const string UPPER_CASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string NUMBERIC = "1234567890";
+            const string SPECIAL_CHARACTER = @"~!@#$%^&*()+=-";
+
+            char[] password = new char[length];
+            string charSet = "";
+            System.Random _random = new Random();
+            if (lowerCase)
+                charSet += LOWER_CASE;
+            if (upperCase)
+                charSet += UPPER_CASE;
+            if (mumberic)
+                charSet += NUMBERIC;
+            if (specialCharacter)
+                charSet += SPECIAL_CHARACTER;
+            for (int i = 0; i < length; i++)
+                password[i] = charSet[_random.Next(charSet.Length - 1)];
+            return string.Join(null, password);
+        }
     }
 }
