@@ -2,36 +2,46 @@
 
 TRUCKCOY es un panel de administración para gestionar tu flota vehicular
 
-## Installation
-# Descargar Binario
-# Compilar con C# IDE
+# Información importante
+Este proyecto es de carácter educativo y se realizó el 05-05-2020 utilizando C#, MySQL y mucho café 😊, por lo que te recomendamos analizar el código para comprender como funciona el transporte de datos desde que el GPS envía la información, como es captada por el servidor y como es manipulada utilizando el software de escritorio.
 
-## Usage
-# Abrir y utilizar
+Puede que no todas las funciones se encuentren disponibles debido a que utiliza una base de datos existente hasta 2025 en Hostinger. Puedes configurar tu propia string de conexión y generar tus propias consultas para gestionar apropiadamente la información.
+
+Dentro de la carpeta raiz {\TRUCKCOY} podrás encontrar otra carpeta llamada {\NaheimGPS} la cual consta de 3 partes.
+1. Un archivo de arduino el cual contiene la configuración para un modulo ESP32 SIM800L (Funciona en derivados) el cual envía información hacia un script en PHP el cúal se encarga de gestionar esta y el acceso mediante una apikey.
+2. El archivo php se encarga de recibir la información brindada por el módulo ESP32 y envía los datos hacia el servidor para ser subidos a la base de datos MySQL.
+3. También encontrarás un archivo .sql el cúal podrás exportar directamente a tu base de datos MYSQL y generará las tablas y columnas utilizadas dentro del software, lo que permitirá una implementación más rápida de tu sistema de gestión de flota vehicular.
+
+Truckcoy is powered by .NET & MySQL technology.
+
+## Instalación mediante VSCommunity
+1. Pega el siguiente link en tu terminal
+    git clone https://github.com/ignaciocorball/truckcoy.git
+2. Abre el archivo de la solución dentro de la ruta {TRUCKCOY/TRUCKCOY.sln}
+3. Compila la app y encuentra los binarios en {TRUCKCOY\TRUCKCOY\bin}
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+Pull requests son bienvenidos. Para cambios importantes, abra un problema primero para discutir lo que le gustaría cambiar.
+Asegúrese de actualizar las pruebas según corresponda.
 
 ## License
 
 #### [MIT LICENSE](https://choosealicense.com/licenses/mit/)
 #### Copyright (c) [2019 - 2021] [TRUCKCOY]
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Por la presente se concede permiso, sin cargo, a cualquier persona que obtenga una copia
+de este software y los archivos de documentación asociados (el "Software"), para tratar
+en el Software sin restricciones, incluidos, entre otros, los derechos
+usar, copiar, modificar, fusionar, publicar, distribuir, otorgar sublicencias y permitir a las personas a quienes se les otorga el Software
+provisto para hacerlo, sujeto a las siguientes condiciones:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+El aviso de derechos de autor anterior y este aviso de permiso se incluirán en todos
+copias o partes sustanciales del Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O
+IMPLÍCITO, INCLUYENDO PERO NO LIMITADO A LAS GARANTÍAS DE COMERCIABILIDAD,
+IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO VIOLACIÓN. EN NINGÚN CASO LA
+LOS AUTORES O TITULARES DE LOS DERECHOS DE AUTOR SERÁN RESPONSABLES DE CUALQUIER RECLAMACIÓN, DAÑOS U OTROS
+RESPONSABILIDAD, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O DE OTRA FORMA, DERIVADA DE,
+FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U OTROS TRATOS EN EL
 SOFTWARE.

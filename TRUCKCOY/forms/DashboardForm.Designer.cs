@@ -36,8 +36,8 @@ namespace TRUCKCOY.forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -80,13 +80,6 @@ namespace TRUCKCOY.forms
             this.picLoading = new System.Windows.Forms.PictureBox();
             this.lblNoData = new System.Windows.Forms.Label();
             this.dgvHistory = new System.Windows.Forms.DataGridView();
-            this.pTittleHF = new System.Windows.Forms.Panel();
-            this.lblTittleDesc = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tmrDGVUpdater = new System.Windows.Forms.Timer(this.components);
-            this.picTotal = new System.Windows.Forms.PictureBox();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.srcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,6 +89,13 @@ namespace TRUCKCOY.forms
             this.orderFinishedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.routesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pTittleHF = new System.Windows.Forms.Panel();
+            this.lblTittleDesc = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tmrDGVUpdater = new System.Windows.Forms.Timer(this.components);
+            this.picTotal = new System.Windows.Forms.PictureBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
@@ -115,9 +115,9 @@ namespace TRUCKCOY.forms
             this.panelStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).BeginInit();
             this.pTittleHF.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTotal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel13
@@ -253,7 +253,7 @@ namespace TRUCKCOY.forms
             this.picMaps.Image = global::TRUCKCOY.Properties.Resources.loading_hex;
             this.picMaps.Location = new System.Drawing.Point(403, 0);
             this.picMaps.Name = "picMaps";
-            this.picMaps.Size = new System.Drawing.Size(417, 278);
+            this.picMaps.Size = new System.Drawing.Size(440, 278);
             this.picMaps.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMaps.TabIndex = 32;
             this.picMaps.TabStop = false;
@@ -760,6 +760,82 @@ namespace TRUCKCOY.forms
             this.dgvHistory.TabIndex = 63;
             this.dgvHistory.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistory_CellMouseEnter);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 30;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Conductor";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // srcDataGridViewTextBoxColumn
+            // 
+            this.srcDataGridViewTextBoxColumn.DataPropertyName = "Src";
+            this.srcDataGridViewTextBoxColumn.HeaderText = "Origen";
+            this.srcDataGridViewTextBoxColumn.Name = "srcDataGridViewTextBoxColumn";
+            this.srcDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // destDataGridViewTextBoxColumn
+            // 
+            this.destDataGridViewTextBoxColumn.DataPropertyName = "Dest";
+            this.destDataGridViewTextBoxColumn.HeaderText = "Destino";
+            this.destDataGridViewTextBoxColumn.Name = "destDataGridViewTextBoxColumn";
+            this.destDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Teléfono";
+            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 85;
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // orderIncomeDateDataGridViewTextBoxColumn
+            // 
+            this.orderIncomeDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.orderIncomeDateDataGridViewTextBoxColumn.DataPropertyName = "OrderIncomeDate";
+            this.orderIncomeDateDataGridViewTextBoxColumn.HeaderText = "Ingreso";
+            this.orderIncomeDateDataGridViewTextBoxColumn.MinimumWidth = 130;
+            this.orderIncomeDateDataGridViewTextBoxColumn.Name = "orderIncomeDateDataGridViewTextBoxColumn";
+            this.orderIncomeDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.orderIncomeDateDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // orderFinishedDateDataGridViewTextBoxColumn
+            // 
+            this.orderFinishedDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.orderFinishedDateDataGridViewTextBoxColumn.DataPropertyName = "OrderFinishedDate";
+            this.orderFinishedDateDataGridViewTextBoxColumn.HeaderText = "Finalización";
+            this.orderFinishedDateDataGridViewTextBoxColumn.MinimumWidth = 130;
+            this.orderFinishedDateDataGridViewTextBoxColumn.Name = "orderFinishedDateDataGridViewTextBoxColumn";
+            this.orderFinishedDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.orderFinishedDateDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.Width = 75;
+            // 
+            // routesBindingSource
+            // 
+            this.routesBindingSource.DataSource = typeof(TRUCKCOY.classes.Routes);
+            // 
             // pTittleHF
             // 
             this.pTittleHF.BackColor = System.Drawing.Color.White;
@@ -840,82 +916,6 @@ namespace TRUCKCOY.forms
             this.dataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewImageColumn2.Width = 25;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 30;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Conductor";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // srcDataGridViewTextBoxColumn
-            // 
-            this.srcDataGridViewTextBoxColumn.DataPropertyName = "Src";
-            this.srcDataGridViewTextBoxColumn.HeaderText = "Origen";
-            this.srcDataGridViewTextBoxColumn.Name = "srcDataGridViewTextBoxColumn";
-            this.srcDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // destDataGridViewTextBoxColumn
-            // 
-            this.destDataGridViewTextBoxColumn.DataPropertyName = "Dest";
-            this.destDataGridViewTextBoxColumn.HeaderText = "Destino";
-            this.destDataGridViewTextBoxColumn.Name = "destDataGridViewTextBoxColumn";
-            this.destDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Teléfono";
-            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 85;
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // orderIncomeDateDataGridViewTextBoxColumn
-            // 
-            this.orderIncomeDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.orderIncomeDateDataGridViewTextBoxColumn.DataPropertyName = "OrderIncomeDate";
-            this.orderIncomeDateDataGridViewTextBoxColumn.HeaderText = "Ingreso";
-            this.orderIncomeDateDataGridViewTextBoxColumn.MinimumWidth = 130;
-            this.orderIncomeDateDataGridViewTextBoxColumn.Name = "orderIncomeDateDataGridViewTextBoxColumn";
-            this.orderIncomeDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.orderIncomeDateDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // orderFinishedDateDataGridViewTextBoxColumn
-            // 
-            this.orderFinishedDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.orderFinishedDateDataGridViewTextBoxColumn.DataPropertyName = "OrderFinishedDate";
-            this.orderFinishedDateDataGridViewTextBoxColumn.HeaderText = "Finalización";
-            this.orderFinishedDateDataGridViewTextBoxColumn.MinimumWidth = 130;
-            this.orderFinishedDateDataGridViewTextBoxColumn.Name = "orderFinishedDateDataGridViewTextBoxColumn";
-            this.orderFinishedDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.orderFinishedDateDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.statusDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // routesBindingSource
-            // 
-            this.routesBindingSource.DataSource = typeof(TRUCKCOY.classes.Routes);
-            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -957,10 +957,10 @@ namespace TRUCKCOY.forms
             this.panelStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).EndInit();
             this.pTittleHF.ResumeLayout(false);
             this.pTittleHF.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTotal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.routesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
