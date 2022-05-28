@@ -9,10 +9,10 @@ Este proyecto es de carácter educativo y se realizó el 05-05-2020 utilizando C
 
 Puede que no todas las funciones se encuentren disponibles debido a que utiliza una base de datos existente hasta 2025 en Hostinger. Puedes configurar tu propia string de conexión y generar tus propias consultas para gestionar apropiadamente la información.
 
-Dentro de la carpeta raiz `\TRUCKCOY` podrás encontrar otra carpeta llamada {\NaheimGPS} la cual consta de 3 partes.
-1. Un archivo de arduino el cual contiene la configuración para un modulo ESP32 SIM800L (Funciona en derivados) el cual envía información hacia un script en PHP el cúal se encarga de gestionar esta y el acceso mediante una apikey.
-2. El archivo php se encarga de recibir la información brindada por el módulo ESP32 y envía los datos hacia el servidor para ser subidos a la base de datos MySQL.
-3. También encontrarás un archivo .sql el cúal podrás exportar directamente a tu base de datos MYSQL y generará las tablas y columnas utilizadas dentro del software, lo que permitirá una implementación más rápida de tu sistema de gestión de flota vehicular.
+Dentro de la carpeta raiz `\TRUCKCOY` podrás encontrar otra carpeta llamada `\NaheimGPS` la cual consta de 3 partes.
+1. Un archivo de `arduino` el cual contiene la configuración para un modulo `ESP32 SIM800L` (Funciona en derivados) el cual envía información hacia un script en PHP el cúal se encarga de gestionar esta y el acceso mediante una apikey.
+2. El archivo `PHP` se encarga de recibir la información brindada por el módulo `ESP32` y envía los datos hacia el servidor para ser subidos a la base de datos `MySQL`.
+3. También encontrarás un archivo con la extensión `.sql` el cúal podrás exportar directamente a tu base de datos MYSQL y generará las tablas y columnas utilizadas dentro del software, lo que permitirá una implementación más rápida de tu sistema de gestión de flota vehicular.
 
 Truckcoy is powered by .NET & MySQL technology.
 
