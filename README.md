@@ -5,7 +5,7 @@ TRUCKCOY es un software de escritorio que permite la administración y gestion d
 Una de sus carácteristicas fundamentales es la capacidad de añadir más módulos los cuales permitan un analísis de datos mayor tanto de los conductores como del vehículo o camión.
 
 # Información importante
-Este proyecto es de carácter educativo y se realizó el 05-05-2020 utilizando C#, MySQL y mucho café 😊, por lo que te recomendamos analizar el código para comprender como funciona el transporte de datos desde que el GPS envía la información, como es captada por el servidor y como es manipulada utilizando el software de escritorio.
+Este proyecto es de carácter educativo y se realizó el 05-05-2020 utilizando C#, C++, PHP, MySQL y mucho café 😊, por lo que te recomendamos analizar el código para comprender como funciona el transporte de datos desde que el GPS envía la información, como es captada por el servidor y como es manipulada utilizando el software de escritorio.
 
 Puede que no todas las funciones se encuentren disponibles debido a que utiliza una base de datos existente hasta 2025 en Hostinger. Puedes configurar tu propia string de conexión y generar tus propias consultas para gestionar apropiadamente la información.
 
@@ -19,7 +19,7 @@ Truckcoy is powered by .NET & MySQL technology.
 ## Instalación mediante VSCommunity
 1. Pega el siguiente link en tu terminal
     `git clone https://github.com/ignaciocorball/truckcoy.git`
-2. Abre el archivo de la solución dentro de la ruta `TRUCKCOY/TRUCKCOY.sln`
+2. Abre el archivo de la solución dentro de la ruta `TRUCKCOY\TRUCKCOY.sln`
 3. Compila la app y encuentra los binarios en `TRUCKCOY\TRUCKCOY\bin`
 
 ## Contributing
