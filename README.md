@@ -2,7 +2,7 @@
 
 TRUCKCOY es un software de escritorio que permite la administración y gestion de flotas vehiculares mediante un módulo `ESP32 SIM800L` que interactua con la base de datos mediante un chip de datos móviles. 
 
-Una de sus carácteristicas fundamentales es la capacidad de añadir más módulos los cuales permitan un analísis de datos mayor tanto de los conductores como del vehículo o camión.
+Una de sus carácteristicas fundamentales es la capacidad de añadir más módulos los cuales permiten un analísis de datos mayor tanto de los conductores como del vehículo o camión.
 
 [![Ver video](https://j.gifs.com/vQzX15.gif)](https://youtu.be/HGKjjoifl3Y)
 
