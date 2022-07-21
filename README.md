@@ -1,6 +1,6 @@
 # TRUCKCOY
 
-[![Ver video](https://img.youtube.com/vi/vt5fpE0bzSY/maxresdefault.jpg)]([https://youtu.be/T-D1KVIuvjA](https://youtu.be/vt5fpE0bzSY))
+[![Ver video](https://img.youtube.com/vi/HGKjjoifl3Y/maxresdefault.jpg)](https://youtu.be/HGKjjoifl3Y)
 
 TRUCKCOY es un software de escritorio que permite la administración y gestion de flotas vehiculares mediante un módulo `ESP32 SIM800L` que interactua con la base de datos mediante un chip de datos móviles. 
 
